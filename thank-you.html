@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/><meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Thank You | Clear Line Signs</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@300;400;500;600;700&family=DM+Serif+Display:ital@0;1&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="./assets/css/main.css">
+  <style>
+    .thankyou-wrap {
+      min-height: 70vh; display: flex; align-items: center; justify-content: center;
+      background: var(--teal-900); position: relative; overflow: hidden; text-align: center;
+      padding: 80px 32px;
+    }
+    .thankyou-wrap::before {
+      content: ''; position: absolute; inset: 0;
+      background: radial-gradient(ellipse 70% 70% at 50% 50%, rgba(0,163,187,0.14) 0%, transparent 60%);
+    }
+    .ty-inner { position: relative; z-index: 1; max-width: 520px; }
+    .ty-icon {
+      width: 80px; height: 80px; border-radius: 50%;
+      background: rgba(0,163,187,0.15); border: 2px solid rgba(0,163,187,0.3);
+      display: flex; align-items: center; justify-content: center; margin: 0 auto 28px;
+    }
+    .ty-icon svg { width: 36px; height: 36px; }
+    .ty-inner h1 { font-family: 'DM Serif Display', serif; font-size: 2.8rem; color: var(--white); margin-bottom: 16px; }
+    .ty-inner p { font-size: 1.05rem; color: var(--text-light); line-height: 1.75; margin-bottom: 36px; }
+  </style>
+</head>
+<body>
+<div class="thankyou-wrap">
+  <div class="ty-inner">
+    <div class="ty-icon">
+      <svg viewBox="0 0 36 36" fill="none"><path d="M6 18l8 8L30 8" stroke="var(--teal-400)" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+    </div>
+    <h1>Quote Request Received</h1>
+    <p>Thank you for reaching out to Clear Line Signs. We've received your request and will be in touch within 1 business day with options, pricing, and recommendations.</p>
+    <a href="./index.html" class="btn btn-white">Back to Home <svg viewBox="0 0 16 16" fill="none"><path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+  </div>
+</div>
+<script src="./assets/js/shared.js"></script>
+</body>
+</html>
