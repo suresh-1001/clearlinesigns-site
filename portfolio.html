@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Commercial Signage Portfolio San Jose | Clear Line Signs</title>
+  <meta name="description" content="View Clear Line Signs' portfolio of custom commercial signage projects — interior lobby signs, exterior building signage, vinyl graphics, vehicle wraps, and more. Serving San Jose & Silicon Valley." />
+  <meta name="keywords" content="sign company portfolio san jose, commercial signage portfolio, lobby signs portfolio, storefront signs, vinyl graphics san jose, custom signs portfolio" />
+  <link rel="canonical" href="https://www.clearlinesigns.com/portfolio.html" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="./assets/css/main.css">
+  <style>
+    /* Filter tabs */
+    .filter-bar {
+      display: flex; gap: 8px; flex-wrap: wrap; margin-bottom: 40px;
+    }
+    .filter-btn {
+      background: var(--white); border: 1.5px solid var(--gray-200);
+      color: var(--gray-600); font-family: 'Outfit', sans-serif;
+      font-size: .83rem; font-weight: 600; padding: 8px 18px;
+      border-radius: 100px; cursor: pointer; transition: .2s;
+    }
+    .filter-btn:hover, .filter-btn.active {
+      background: var(--teal); border-color: var(--teal); color: var(--white);
+    }
+
+    /* Gallery grid */
+    .gallery-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 16px;
+    }
+    .gallery-item {
+      position: relative; overflow: hidden; border-radius: var(--radius);
+      background: var(--teal-pale); aspect-ratio: 4/3;
+      cursor: pointer;
+    }
+    .gallery-item img {
+      width: 100%; height: 100%; object-fit: cover;
+      transition: transform .4s ease;
+    }
+    .gallery-item:hover img { transform: scale(1.05); }
+    .gallery-overlay {
+      position: absolute; inset: 0;
+      background: linear-gradient(to top, rgba(0,61,72,.75) 0%, transparent 60%);
+      opacity: 0; transition: opacity .3s;
+      display: flex; align-items: flex-end; padding: 20px;
+    }
+    .gallery-item:hover .gallery-overlay { opacity: 1; }
+    .gallery-overlay span {
+      color: var(--white); font-size: .83rem; font-weight: 600;
+      letter-spacing: .04em; text-transform: uppercase;
+    }
+
+    /* Placeholder items (no image) */
+    .gallery-item.placeholder {
+      display: flex; align-items: center; justify-content: center;
+    }
+    .gallery-item.placeholder svg { width: 60px; height: 60px; opacity: .2; }
+
+    /* Lightbox */
+    .lightbox {
+      display: none; position: fixed; inset: 0; z-index: 1000;
+      background: rgba(0,0,0,.92); align-items: center; justify-content: center;
+      padding: 20px;
+    }
+    .lightbox.open { display: flex; }
+    .lightbox img { max-width: 90vw; max-height: 88vh; object-fit: contain; border-radius: var(--radius); }
+    .lb-close {
+      position: absolute; top: 20px; right: 24px;
+      background: none; border: none; color: white; font-size: 2rem;
+      cursor: pointer; line-height: 1; opacity: .7; transition: opacity .2s;
+    }
+    .lb-close:hover { opacity: 1; }
+    .lb-nav {
+      position: absolute; top: 50%; transform: translateY(-50%);
+      background: rgba(255,255,255,.12); border: none; color: white;
+      font-size: 1.6rem; padding: 10px 18px; cursor: pointer; border-radius: var(--radius-sm);
+      transition: background .2s;
+    }
+    .lb-nav:hover { background: rgba(255,255,255,.22); }
+    .lb-prev { left: 16px; }
+    .lb-next { right: 16px; }
+
+    /* Category sections */
+    .portfolio-section { padding: 72px 28px; }
+    .portfolio-section:nth-child(odd) { background: var(--white); }
+    .portfolio-section:nth-child(even) { background: var(--off-white); }
+    .ps-head { margin-bottom: 36px; }
+
+    @media (max-width: 860px) { .gallery-grid { grid-template-columns: repeat(2,1fr); } }
+    @media (max-width: 500px) { .gallery-grid { grid-template-columns: 1fr; } }
+  </style>
+</head>
+<body>
+<script src="./assets/js/shared.js"></script>
+
+<!-- PAGE HERO -->
+<div class="page-hero">
+  <span class="eyebrow">Our Work</span>
+  <h1>Commercial Signage Portfolio</h1>
+  <p>A selection of custom signage projects for businesses throughout San Jose and the Bay Area — from lobby signs and storefronts to vinyl graphics and vehicle wraps.</p>
+</div>
+
+<!-- PORTFOLIO INTRO + GALLERY -->
+<section class="portfolio-section" style="background:var(--white)">
+  <div class="container">
+    <div class="ps-head">
+      <span class="section-label">Portfolio</span>
+      <h2>Recent Projects</h2>
+      <p class="section-intro">Each sign is custom designed, fabricated, and installed by our team. Every project reflects our commitment to precision, quality materials, and clear brand communication.</p>
+    </div>
+
+    <!-- Gallery grid — using Carrd CDN images -->
+    <div class="gallery-grid" id="galleryGrid">
+
+      <div class="gallery-item" onclick="openLightbox(0)">
+        <img src="https://portfolio.clearlinesigns.com/assets/images/gallery01/54e5fd75_original.jpg"
+             alt="Custom commercial sign project — Clear Line Signs San Jose"
+             loading="lazy" onerror="this.parentElement.classList.add('placeholder'); this.style.display='none'" />
+        <div class="gallery-overlay"><span>Commercial Signage</span></div>
+      </div>
+
+      <div class="gallery-item" onclick="openLightbox(1)">
+        <img src="https://portfolio.clearlinesigns.com/assets/images/gallery01/29688c5a_original.jpg"
+             alt="Business sign — Clear Line Signs San Jose"
+             loading="lazy" onerror="this.parentElement.classList.add('placeholder'); this.style.display='none'" />
+        <div class="gallery-overlay"><span>Business Signs</span></div>
+      </div>
+
+      <div class="gallery-item" onclick="openLightbox(2)">
+        <img src="https://portfolio.clearlinesigns.com/assets/images/gallery01/690d09e1_original.jpg"
+             alt="Custom sign project — Clear Line Signs San Jose"
+             loading="lazy" onerror="this.parentElement.classList.add('placeholder'); this.style.display='none'" />
+        <div class="gallery-overlay"><span>Custom Sign</span></div>
+      </div>
+
+      <div class="gallery-item" onclick="openLightbox(3)">
+        <img src="https://portfolio.clearlinesigns.com/assets/images/gallery01/0c7ad8e6_original.jpg"
+             alt="Storefront signage — Clear Line Signs San Jose"
+             loading="lazy" onerror="this.parentElement.classList.add('placeholder'); this.style.display='none'" />
+        <div class="gallery-overlay"><span>Storefront Sign</span></div>
+      </div>
+
+      <div class="gallery-item" onclick="openLightbox(4)">
+        <img src="https://portfolio.clearlinesigns.com/assets/images/gallery01/ed659db7_original.jpg"
+             alt="Commercial graphics — Clear Line Signs San Jose"
+             loading="lazy" onerror="this.parentElement.classList.add('placeholder'); this.style.display='none'" />
+        <div class="gallery-overlay"><span>Commercial Graphics</span></div>
+      </div>
+
+      <div class="gallery-item" onclick="openLightbox(5)">
+        <img src="https://portfolio.clearlinesigns.com/assets/images/gallery01/457c7f8b_original.jpg"
+             alt="Signage project — Clear Line Signs San Jose"
+             loading="lazy" onerror="this.parentElement.classList.add('placeholder'); this.style.display='none'" />
+        <div class="gallery-overlay"><span>Custom Signage</span></div>
+      </div>
+
+      <div class="gallery-item" onclick="openLightbox(6)">
+        <img src="https://portfolio.clearlinesigns.com/assets/images/gallery01/0b47ce63_original.jpg"
+             alt="Sign installation — Clear Line Signs San Jose"
+             loading="lazy" onerror="this.parentElement.classList.add('placeholder'); this.style.display='none'" />
+        <div class="gallery-overlay"><span>Sign Installation</span></div>
+      </div>
+
+      <div class="gallery-item" onclick="openLightbox(7)">
+        <img src="https://portfolio.clearlinesigns.com/assets/images/gallery01/0834f0d4_original.jpg"
+             alt="Business signage — Clear Line Signs San Jose"
+             loading="lazy" onerror="this.parentElement.classList.add('placeholder'); this.style.display='none'" />
+        <div class="gallery-overlay"><span>Business Signage</span></div>
+      </div>
+
+      <!-- Placeholder slots to fill grid visually if some images are missing -->
+      <div class="gallery-item placeholder" id="ph1" style="display:none">
+        <svg viewBox="0 0 60 60" fill="none"><rect x="5" y="5" width="50" height="50" rx="3" stroke="var(--teal)" stroke-width="3"/><path d="M15 35l10-15 8 10 6-8 11 13" stroke="var(--teal)" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- WHAT WE CAN DO -->
+<section class="portfolio-section" style="background:var(--off-white)">
+  <div class="container">
+    <span class="section-label">Our Capabilities</span>
+    <h2>What We Design &amp; Install</h2>
+    <p class="section-intro" style="margin-bottom:40px">Our portfolio spans a wide range of sign types, materials, and industries across San Jose and Silicon Valley.</p>
+
+    <div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:16px;">
+      <!-- Capability cards -->
+      <div style="background:var(--white);border:1px solid var(--gray-200);border-radius:var(--radius);padding:24px 20px;">
+        <div style="font-size:.72rem;font-weight:700;letter-spacing:.18em;text-transform:uppercase;color:var(--teal);margin-bottom:10px;">Interior</div>
+        <p style="font-size:.88rem;color:var(--text-muted);line-height:1.65">Lobby signs, wayfinding, ADA signs, office signs, room ID, wall graphics, floor graphics</p>
+      </div>
+      <div style="background:var(--white);border:1px solid var(--gray-200);border-radius:var(--radius);padding:24px 20px;">
+        <div style="font-size:.72rem;font-weight:700;letter-spacing:.18em;text-transform:uppercase;color:var(--teal);margin-bottom:10px;">Exterior</div>
+        <p style="font-size:.88rem;color:var(--text-muted);line-height:1.65">Storefront signs, monument signs, channel letters, pylon signs, cabinet signs, building signs</p>
+      </div>
+      <div style="background:var(--white);border:1px solid var(--gray-200);border-radius:var(--radius);padding:24px 20px;">
+        <div style="font-size:.72rem;font-weight:700;letter-spacing:.18em;text-transform:uppercase;color:var(--teal);margin-bottom:10px;">Vinyl</div>
+        <p style="font-size:.88rem;color:var(--text-muted);line-height:1.65">Window graphics, wall murals, vehicle wraps, vinyl banners, decals, window film, vinyl lettering</p>
+      </div>
+      <div style="background:var(--white);border:1px solid var(--gray-200);border-radius:var(--radius);padding:24px 20px;">
+        <div style="font-size:.72rem;font-weight:700;letter-spacing:.18em;text-transform:uppercase;color:var(--teal);margin-bottom:10px;">Dimensional</div>
+        <p style="font-size:.88rem;color:var(--text-muted);line-height:1.65">Acrylic signs, dimensional letters, metal letters, foam letters, raised logos, sandblasted signs</p>
+      </div>
+      <div style="background:var(--white);border:1px solid var(--gray-200);border-radius:var(--radius);padding:24px 20px;">
+        <div style="font-size:.72rem;font-weight:700;letter-spacing:.18em;text-transform:uppercase;color:var(--teal);margin-bottom:10px;">Events</div>
+        <p style="font-size:.88rem;color:var(--text-muted);line-height:1.65">Retractable banners, trade show booths, fabric backdrops, table covers, step & repeat, pop-up displays</p>
+      </div>
+      <div style="background:var(--white);border:1px solid var(--gray-200);border-radius:var(--radius);padding:24px 20px;">
+        <div style="font-size:.72rem;font-weight:700;letter-spacing:.18em;text-transform:uppercase;color:var(--teal);margin-bottom:10px;">Custom</div>
+        <p style="font-size:.88rem;color:var(--text-muted);line-height:1.65">LED signs, lighted cabinet signs, real estate signs, construction signs, specialty materials & formats</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA BAND -->
+<div class="cta-band">
+  <h2>Ready to Add Your Project to Our Portfolio?</h2>
+  <p>Contact us for a free consultation and quote. We'll help you design signage that gets noticed.</p>
+  <a href="./contact.html" class="btn btn-white">Get a Free Quote</a>
+  <a href="./services.html" class="btn btn-outline-white">View All Services</a>
+</div>
+
+<!-- LIGHTBOX -->
+<div class="lightbox" id="lightbox" onclick="closeLightbox(event)">
+  <button class="lb-close" onclick="closeLb()">&times;</button>
+  <button class="lb-nav lb-prev" onclick="lbNav(-1,event)">&#8249;</button>
+  <img id="lbImg" src="" alt="Clear Line Signs project" />
+  <button class="lb-nav lb-next" onclick="lbNav(1,event)">&#8250;</button>
+</div>
+
+<script>
+  const imgs = [
+    'https://portfolio.clearlinesigns.com/assets/images/gallery01/54e5fd75_original.jpg',
+    'https://portfolio.clearlinesigns.com/assets/images/gallery01/29688c5a_original.jpg',
+    'https://portfolio.clearlinesigns.com/assets/images/gallery01/690d09e1_original.jpg',
+    'https://portfolio.clearlinesigns.com/assets/images/gallery01/0c7ad8e6_original.jpg',
+    'https://portfolio.clearlinesigns.com/assets/images/gallery01/ed659db7_original.jpg',
+    'https://portfolio.clearlinesigns.com/assets/images/gallery01/457c7f8b_original.jpg',
+    'https://portfolio.clearlinesigns.com/assets/images/gallery01/0b47ce63_original.jpg',
+    'https://portfolio.clearlinesigns.com/assets/images/gallery01/0834f0d4_original.jpg',
+  ];
+  let cur = 0;
+  function openLightbox(i) { cur = i; document.getElementById('lbImg').src = imgs[i]; document.getElementById('lightbox').classList.add('open'); }
+  function closeLb() { document.getElementById('lightbox').classList.remove('open'); }
+  function closeLightbox(e) { if (e.target === document.getElementById('lightbox')) closeLb(); }
+  function lbNav(dir, e) { e.stopPropagation(); cur = (cur + dir + imgs.length) % imgs.length; document.getElementById('lbImg').src = imgs[cur]; }
+  document.addEventListener('keydown', e => { if (e.key==='Escape') closeLb(); if (e.key==='ArrowRight') lbNav(1,{stopPropagation:()=>{}}); if (e.key==='ArrowLeft') lbNav(-1,{stopPropagation:()=>{}}); });
+</script>
+
+</body>
+</html>
