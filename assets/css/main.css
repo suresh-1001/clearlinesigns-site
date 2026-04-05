@@ -83,6 +83,7 @@ body {
 .topbar-left svg { width: 13px; height: 13px; opacity: 0.5; flex-shrink: 0; }
 .topbar a { color: var(--text-light); text-decoration: none; transition: color .2s; }
 .topbar a:hover { color: var(--white); }
+.tb-left { color: var(--text-dim); }
 .tb-right { display: flex; align-items: center; gap: 20px; }
 
 /* ── NAV ── */
