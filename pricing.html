@@ -17,11 +17,9 @@
 }
 html { scroll-behavior: smooth; }
 body { font-family:'DM Sans',sans-serif; background:var(--cream); color:var(--dark); min-height:100vh; display:flex; flex-direction:column; }
-
 .topbar { background:var(--dark); color:#7a9496; font-size:11.5px; letter-spacing:.04em; padding:6px 2rem; display:flex; justify-content:space-between; align-items:center; }
 .topbar a { color:#7a9496; text-decoration:none; transition:color .15s; }
 .topbar a:hover { color:#fff; }
-
 header { background:var(--white); border-bottom:1px solid var(--border); padding:0 2rem; display:flex; align-items:center; justify-content:space-between; height:68px; position:sticky; top:0; z-index:100; box-shadow:0 1px 16px rgba(13,92,99,.07); }
 .logo-wrap { display:flex; align-items:center; gap:10px; text-decoration:none; }
 .logo-icon { width:34px; height:34px; flex-shrink:0; }
@@ -34,7 +32,6 @@ nav a:hover { color:var(--teal); }
 nav a.active { color:var(--teal); font-weight:500; }
 .btn-quote { background:var(--teal); color:#fff !important; padding:8px 18px; border-radius:6px; font-size:13px; font-weight:500; text-decoration:none; transition:background .15s,transform .1s; }
 .btn-quote:hover { background:var(--teal-mid) !important; transform:translateY(-1px); }
-
 .hero { background:linear-gradient(150deg,var(--teal-dark) 0%,var(--teal) 55%,#0f7a85 100%); color:#fff; padding:4rem 2rem 3.5rem; text-align:center; position:relative; overflow:hidden; }
 .hero::before { content:''; position:absolute; inset:0; background:url("data:image/svg+xml,%3Csvg width='80' height='80' viewBox='0 0 80 80' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='%23ffffff' fill-opacity='0.03'%3E%3Cpath d='M0 0h40v40H0zm40 40h40v40H40z'/%3E%3C/g%3E%3C/svg%3E"); }
 .hero-badge { display:inline-flex; align-items:center; gap:6px; background:rgba(255,255,255,.12); border:1px solid rgba(255,255,255,.18); color:rgba(255,255,255,.9); font-size:11px; letter-spacing:.1em; text-transform:uppercase; padding:5px 14px; border-radius:20px; margin-bottom:1.25rem; position:relative; }
@@ -45,15 +42,12 @@ nav a.active { color:var(--teal); font-weight:500; }
 .hero-cta:hover { transform:translateY(-2px); box-shadow:0 6px 28px rgba(0,0,0,.22); }
 .hero-cta svg { transition:transform .15s; }
 .hero-cta:hover svg { transform:translateX(3px); }
-
 .notice { background:var(--teal-pale); border-bottom:1px solid var(--border); padding:11px 2rem; text-align:center; font-size:12.5px; color:var(--teal); display:flex; align-items:center; justify-content:center; gap:7px; }
 .notice a { color:var(--teal); font-weight:500; text-decoration:underline; }
-
 .section { max-width:1100px; margin:0 auto; padding:3.5rem 2rem; width:100%; }
 .section-header { display:flex; align-items:flex-end; justify-content:space-between; margin-bottom:1.75rem; flex-wrap:wrap; gap:1rem; }
 .section-header h2 { font-family:'Playfair Display',serif; font-size:1.6rem; font-weight:500; color:var(--dark); }
 .section-header p { font-size:13px; color:var(--mid); max-width:340px; line-height:1.5; text-align:right; }
-
 .cat-grid { display:grid; grid-template-columns:repeat(auto-fill,minmax(220px,1fr)); gap:16px; }
 .cat-card { background:var(--white); border:1px solid var(--border); border-radius:12px; padding:1.5rem 1.25rem 1.25rem; text-decoration:none; color:var(--dark); display:flex; flex-direction:column; gap:10px; transition:border-color .15s,box-shadow .15s,transform .15s; cursor:pointer; position:relative; overflow:hidden; }
 .cat-card::before { content:''; position:absolute; top:0; left:0; right:0; height:3px; background:var(--teal); transform:scaleX(0); transition:transform .2s; transform-origin:left; }
@@ -64,7 +58,6 @@ nav a.active { color:var(--teal); font-weight:500; }
 .cat-name { font-size:14.5px; font-weight:500; color:var(--dark); line-height:1.3; }
 .cat-desc { font-size:12.5px; color:var(--mid); line-height:1.5; font-weight:300; }
 .cat-link { font-size:12px; color:var(--teal); font-weight:500; display:flex; align-items:center; gap:4px; margin-top:auto; }
-
 .cta-band { background:var(--white); border-top:1px solid var(--border); border-bottom:1px solid var(--border); }
 .cta-inner { max-width:1100px; margin:0 auto; padding:3rem 2rem; display:flex; align-items:center; justify-content:space-between; gap:2rem; flex-wrap:wrap; }
 .cta-text h2 { font-family:'Playfair Display',serif; font-size:1.5rem; font-weight:500; margin-bottom:.4rem; }
@@ -74,7 +67,6 @@ nav a.active { color:var(--teal); font-weight:500; }
 .btn-primary:hover { background:var(--teal-mid); transform:translateY(-1px); }
 .btn-secondary { background:transparent; color:var(--teal); padding:11px 22px; border-radius:7px; font-size:13.5px; font-weight:500; text-decoration:none; border:1px solid var(--border); display:inline-flex; align-items:center; gap:8px; transition:border-color .15s,background .15s; white-space:nowrap; }
 .btn-secondary:hover { border-color:var(--teal); background:var(--teal-pale); }
-
 .steps-wrap { background:var(--white); border-top:1px solid var(--border); border-bottom:1px solid var(--border); }
 .steps { max-width:1100px; margin:0 auto; padding:3rem 2rem; }
 .steps h2 { font-family:'Playfair Display',serif; font-size:1.5rem; font-weight:500; margin-bottom:2rem; text-align:center; }
@@ -83,12 +75,10 @@ nav a.active { color:var(--teal); font-weight:500; }
 .step-num { width:40px; height:40px; background:var(--teal); color:#fff; border-radius:50%; font-size:15px; font-weight:500; display:flex; align-items:center; justify-content:center; margin:0 auto 1rem; font-family:'Playfair Display',serif; }
 .step h3 { font-size:14px; font-weight:500; margin-bottom:.4rem; }
 .step p { font-size:12.5px; color:var(--mid); line-height:1.6; font-weight:300; }
-
 footer { margin-top:auto; background:var(--dark); color:#5a7879; font-size:12px; padding:1.5rem 2rem; display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:10px; }
 footer a { color:#5a7879; text-decoration:none; transition:color .15s; }
 footer a:hover { color:#a8babb; }
 .footer-links { display:flex; gap:1.5rem; }
-
 @media (max-width:680px) {
   nav { display:none; }
   .topbar span:last-child { display:none; }
@@ -104,8 +94,8 @@ footer a:hover { color:#a8babb; }
 <body>
 
 <div class="topbar">
-  <span>Serving San Jose · Santa Clara · Sunnyvale · Silicon Valley</span>
-  <span><a href="tel:4087801035">(408) 780-1035</a> · <a href="mailto:info@clearlinesigns.com">info@clearlinesigns.com</a></span>
+  <span>Serving San Jose &middot; Santa Clara &middot; Sunnyvale &middot; Silicon Valley</span>
+  <span><a href="tel:4087801035">(408) 780-1035</a> &middot; <a href="mailto:info@clearlinesigns.com">info@clearlinesigns.com</a></span>
 </div>
 
 <header>
@@ -260,7 +250,7 @@ footer a:hover { color:#a8babb; }
 </div>
 
 <footer>
-  <span>© 2025 Clear Line Signs · San Jose, CA · <a href="tel:4087801035">(408) 780-1035</a> · <a href="mailto:info@clearlinesigns.com">info@clearlinesigns.com</a></span>
+  <span>&copy; 2025 Clear Line Signs &middot; San Jose, CA &middot; <a href="tel:4087801035">(408) 780-1035</a> &middot; <a href="mailto:info@clearlinesigns.com">info@clearlinesigns.com</a></span>
   <div class="footer-links">
     <a href="https://www.clearlinesigns.com">Home</a>
     <a href="https://www.clearlinesigns.com/services.html">Services</a>
