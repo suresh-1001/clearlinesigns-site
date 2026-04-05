@@ -11,54 +11,26 @@
   <link rel="stylesheet" href="./assets/css/main.css">
   <style>
     .contact-layout { display: grid; grid-template-columns: 1fr 1.2fr; gap: 72px; align-items: start; }
-
     .info-block { margin-bottom: 28px; }
     .info-label { font-size: 0.7rem; font-weight: 700; letter-spacing: 0.2em; text-transform: uppercase; color: var(--teal-400); margin-bottom: 7px; }
     .info-value { font-size: 1rem; font-weight: 500; color: var(--white); }
     .info-value a { color: var(--teal-200); text-decoration: none; }
     .info-value a:hover { color: var(--white); }
-
     .promise-list { list-style: none; margin-top: 36px; display: flex; flex-direction: column; gap: 14px; }
     .promise-list li { display: flex; align-items: center; gap: 11px; font-size: 0.92rem; color: rgba(255,255,255,0.6); }
-    .p-check {
-      width: 24px; height: 24px; border-radius: 50%;
-      background: rgba(0,163,187,0.15); border: 1px solid rgba(0,163,187,0.3);
-      display: flex; align-items: center; justify-content: center; flex-shrink: 0;
-    }
+    .p-check { width: 24px; height: 24px; border-radius: 50%; background: rgba(0,163,187,0.15); border: 1px solid rgba(0,163,187,0.3); display: flex; align-items: center; justify-content: center; flex-shrink: 0; }
     .p-check svg { width: 11px; height: 11px; }
-
-    .email-box {
-      margin-top: 40px; padding: 24px;
-      background: rgba(255,255,255,0.06); border: 1px solid rgba(255,255,255,0.12);
-      border-radius: var(--r);
-    }
+    .email-box { margin-top: 40px; padding: 24px; background: rgba(255,255,255,0.06); border: 1px solid rgba(255,255,255,0.12); border-radius: var(--r); }
     .email-box-label { font-size: 0.7rem; font-weight: 700; letter-spacing: 0.18em; text-transform: uppercase; color: var(--teal-400); margin-bottom: 8px; }
-    .email-box a { color: var(--white); font-size: 1.05rem; font-weight: 500; text-decoration: none; }
-
-    /* Areas grid */
-    .areas-grid {
-      display: grid; grid-template-columns: repeat(auto-fill,minmax(185px,1fr)); gap: 10px;
-      margin-top: 40px;
-    }
-    .area-card {
-      background: var(--white); border: 1px solid var(--gray-200);
-      border-radius: var(--r); padding: 20px 18px; text-align: center;
-      box-shadow: var(--sh-sm);
-    }
+    .email-box a { color: var(--white); font-size: 1.05rem; font-weight: 500; text-decoration: none; display: block; }
+    .areas-grid { display: grid; grid-template-columns: repeat(auto-fill,minmax(185px,1fr)); gap: 10px; margin-top: 40px; }
+    .area-card { background: var(--white); border: 1px solid var(--gray-200); border-radius: var(--r); padding: 20px 18px; text-align: center; box-shadow: var(--sh-sm); }
     .area-name { font-weight: 700; color: var(--gray-900); margin-bottom: 4px; }
     .area-desc { font-size: 0.76rem; color: var(--text-muted); }
-
-    /* FAQ */
     .faq-list { margin-top: 44px; display: flex; flex-direction: column; gap: 0; border: 1px solid var(--gray-200); border-radius: var(--r-lg); overflow: hidden; box-shadow: var(--sh-sm); }
     .faq-item { border-bottom: 1px solid var(--gray-200); }
     .faq-item:last-child { border-bottom: none; }
-    .faq-q {
-      width: 100%; background: var(--white); border: none; text-align: left;
-      padding: 22px 26px; font-family: 'DM Sans',sans-serif;
-      font-size: 0.97rem; font-weight: 600; color: var(--gray-900);
-      cursor: pointer; display: flex; justify-content: space-between; align-items: center; gap: 16px;
-      transition: background .2s;
-    }
+    .faq-q { width: 100%; background: var(--white); border: none; text-align: left; padding: 22px 26px; font-family: 'DM Sans',sans-serif; font-size: 0.97rem; font-weight: 600; color: var(--gray-900); cursor: pointer; display: flex; justify-content: space-between; align-items: center; gap: 16px; transition: background .2s; }
     .faq-q:hover { background: var(--gray-50); }
     .faq-icon { color: var(--teal-500); font-size: 1.4rem; flex-shrink: 0; transition: transform .3s var(--ease); line-height: 1; }
     .faq-item.open .faq-icon { transform: rotate(45deg); }
@@ -66,7 +38,6 @@
     .faq-item.open .faq-a { max-height: 240px; padding: 0 26px 22px; }
     .faq-a p { font-size: 0.9rem; color: var(--text-muted); line-height: 1.75; }
     .faq-a a { color: var(--teal-500); text-decoration: none; }
-
     @media (max-width: 860px) { .contact-layout { grid-template-columns: 1fr; gap: 48px; } }
   </style>
 </head>
@@ -121,10 +92,52 @@
         <div class="email-box">
           <div class="email-box-label">Call or Email Us</div>
           <a href="tel:4087801035">(408) 780-1035</a>
-          <a href="mailto:info@clearlinesigns.com" style="display:block;margin-top:8px;font-size:0.9rem;opacity:0.75;">info@clearlinesigns.com</a>
+          <a href="mailto:info@clearlinesigns.com" style="margin-top:8px;font-size:0.9rem;opacity:0.75;">info@clearlinesigns.com</a>
         </div>
       </div>
+
+      <!-- RIGHT: Form -->
+      <div class="quote-wrap">
+        <h3>Request a Free Quote</h3>
+        <p class="form-sub">Tell us about your project and we'll get back to you with options and pricing.</p>
+        <form action="https://api.web3forms.com/submit" method="POST">
+          <input type="hidden" name="access_key" value="0163d307-e9bf-40cd-a985-2e75f3a645c5">
+          <input type="hidden" name="subject" value="New Quote Request — Clear Line Signs">
+          <input type="hidden" name="redirect" value="https://www.clearlinesigns.com/thank-you.html">
+          <div class="form-row">
+            <div class="form-group"><label>Full Name *</label><input type="text" name="name" placeholder="Jane Smith" required/></div>
+            <div class="form-group"><label>Phone Number</label><input type="tel" name="phone" placeholder="(408) 555-0100"/></div>
+          </div>
+          <div class="form-group"><label>Email Address *</label><input type="email" name="email" placeholder="jane@yourbusiness.com" required/></div>
+          <div class="form-row">
+            <div class="form-group"><label>Business Name</label><input type="text" name="business" placeholder="Your Business"/></div>
+            <div class="form-group"><label>City</label><input type="text" name="city" placeholder="San Jose, CA"/></div>
+          </div>
+          <div class="form-group">
+            <label>Type of Sign Needed</label>
+            <select name="sign_type">
+              <option value="">Select a sign type...</option>
+              <option>Storefront / Exterior Sign</option>
+              <option>Lobby / Interior Sign</option>
+              <option>Vinyl Graphics / Window Graphics</option>
+              <option>Acrylic / Dimensional Letters</option>
+              <option>Trade Show / Event Display</option>
+              <option>Banners</option>
+              <option>Vehicle Graphics / Wrap</option>
+              <option>ADA / Wayfinding Signs</option>
+              <option>Monument / Pylon Sign</option>
+              <option>LED Signs</option>
+              <option>Custom / Other</option>
+            </select>
+          </div>
+          <div class="form-group"><label>Project Details &amp; Timeline</label><textarea name="message" placeholder="Tell us about your project — size, quantity, location, installation needs, timeline, budget..."></textarea></div>
+          <button type="submit" class="submit-btn">Send My Quote Request →</button>
+          <p class="form-note">Powered by Web3Forms · We respond within 1 business day · No spam, ever</p>
+        </form>
+      </div>
+
     </div>
+  </div>
 </section>
 
 <!-- AREAS SERVED -->
@@ -132,7 +145,7 @@
   <div class="container">
     <span class="overline">Service Area</span>
     <h2>Cities We Serve</h2>
-    <p class="lead">Clear Line Signs serves businesses throughout San Jose and the greater Silicon Valley / South Bay Area.</p>
+    <p class="lead">Clear Line Signs serves businesses throughout San Jose and the greater Silicon Valley / South Bay Area. <a href="./cities.html" style="color:var(--teal-500);font-weight:500;">View all 30 cities →</a></p>
     <div class="areas-grid">
       <a href="./cities/san-jose.html" class="area-card" style="text-decoration:none;display:block;"><div class="area-name">San Jose</div><div class="area-desc">All sign types · Primary service area</div></a>
       <a href="./cities/santa-clara.html" class="area-card" style="text-decoration:none;display:block;"><div class="area-name">Santa Clara</div><div class="area-desc">Business &amp; corporate signs</div></a>
@@ -179,4 +192,14 @@
   </div>
 </section>
 
-<script data-cfasync="false" src="/cdn
+<script>
+function toggleFaq(btn) {
+  const item = btn.parentElement;
+  const isOpen = item.classList.contains('open');
+  document.querySelectorAll('.faq-item.open').forEach(i => i.classList.remove('open'));
+  if (!isOpen) item.classList.add('open');
+}
+</script>
+<script src="./assets/js/shared.js"></script>
+</body>
+</html>
