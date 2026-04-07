@@ -1,0 +1,403 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Sign Company Near Me | Silicon Valley & Bay Area | Clear Line Signs</title>
+  <meta name="description" content="Clear Line Signs serves businesses across Silicon Valley, the Bay Area, and Sacramento — San Jose, Santa Clara, Sunnyvale, Fremont, Oakland, San Francisco and 25 more cities. Custom signs, fast turnaround, full installation."/>
+  <link rel="canonical" href="https://www.clearlinesigns.com/cities.html"/>
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"LocalBusiness","name":"Clear Line Signs","url":"https://www.clearlinesigns.com","telephone":"+14087801035","email":"info@clearlinesigns.com","areaServed":["San Jose","Santa Clara","Sunnyvale","Milpitas","Cupertino","Mountain View","Campbell","Los Gatos","Los Altos","Saratoga","Fremont","Newark","Union City","Hayward","San Leandro","Oakland","San Francisco","South San Francisco","Daly City","San Mateo","Redwood City","Palo Alto","Livermore","Pleasanton","Dublin","San Ramon","Walnut Creek","Concord","Gilroy","Morgan Hill","Sacramento"]}</script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@300;400;500;600;700&family=DM+Serif+Display:ital@0;1&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="./assets/css/main.css">
+  <style>
+    .cities-hero {
+      background: var(--teal-900);
+      position: relative; overflow: hidden;
+      padding: 88px 32px 72px; text-align: center;
+    }
+    .cities-hero::before {
+      content: '';
+      position: absolute; inset: 0;
+      background:
+        radial-gradient(ellipse 70% 60% at 20% 50%, rgba(0,163,187,0.14) 0%, transparent 60%),
+        radial-gradient(ellipse 50% 70% at 80% 40%, rgba(0,81,95,0.2) 0%, transparent 55%);
+      pointer-events: none;
+    }
+    .cities-hero::after {
+      content: '';
+      position: absolute; inset: 0;
+      background-image:
+        linear-gradient(135deg, rgba(255,255,255,0.02) 25%, transparent 25%),
+        linear-gradient(225deg, rgba(255,255,255,0.02) 25%, transparent 25%),
+        linear-gradient(315deg, rgba(255,255,255,0.02) 25%, transparent 25%),
+        linear-gradient(45deg,  rgba(255,255,255,0.02) 25%, transparent 25%);
+      background-size: 48px 48px;
+      pointer-events: none;
+    }
+    .cities-hero-inner { position: relative; z-index: 1; max-width: 720px; margin: 0 auto; }
+    .cities-hero h1 {
+      font-family: 'DM Serif Display', serif;
+      font-size: clamp(2rem, 5vw, 3.4rem);
+      font-weight: 400; color: var(--white);
+      line-height: 1.12; margin-bottom: 18px; letter-spacing: -0.02em;
+    }
+    .cities-hero h1 em { font-style: italic; color: var(--teal-200); }
+    .cities-hero p {
+      font-size: 1.05rem; color: var(--text-light);
+      max-width: 540px; margin: 0 auto 32px;
+      font-weight: 300; line-height: 1.8;
+    }
+    .hero-stats {
+      display: flex; justify-content: center; gap: 0;
+      border-top: 1px solid var(--border); margin-top: 48px; padding-top: 40px;
+    }
+    .hero-stat { text-align: center; padding: 0 40px; border-right: 1px solid var(--border); }
+    .hero-stat:last-child { border-right: none; }
+    .hero-stat-num { display: block; font-family: 'DM Serif Display', serif; font-size: 2.2rem; color: var(--white); line-height: 1; margin-bottom: 5px; }
+    .hero-stat-label { font-size: 0.7rem; color: var(--text-dim); letter-spacing: 0.12em; text-transform: uppercase; }
+
+    /* Region sections */
+    .region-section { padding: 64px 32px; }
+    .region-section:nth-child(even) { background: var(--gray-50); border-top: 1px solid var(--gray-200); border-bottom: 1px solid var(--gray-200); }
+    .region-section:nth-child(odd) { background: var(--white); }
+
+    .region-header { margin-bottom: 36px; display: flex; align-items: flex-end; justify-content: space-between; flex-wrap: wrap; gap: 12px; }
+    .region-title { font-family: 'DM Serif Display', serif; font-size: 1.6rem; font-weight: 400; color: var(--gray-900); }
+    .region-count { font-size: 0.75rem; color: var(--text-muted); font-weight: 500; letter-spacing: 0.08em; text-transform: uppercase; }
+
+    .city-cards {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+      gap: 14px;
+    }
+    .city-card {
+      background: var(--white);
+      border: 1px solid var(--gray-200);
+      border-radius: var(--r-lg);
+      padding: 24px 22px;
+      text-decoration: none;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 12px;
+      transition: border-color 0.18s, box-shadow 0.18s, transform 0.18s;
+      box-shadow: var(--sh-sm);
+      position: relative;
+      overflow: hidden;
+    }
+    .city-card::before {
+      content: '';
+      position: absolute; top: 0; left: 0; right: 0; height: 3px;
+      background: linear-gradient(90deg, var(--teal-500), var(--teal-400));
+      transform: scaleX(0); transform-origin: left;
+      transition: transform 0.22s var(--ease);
+    }
+    .city-card:hover { border-color: var(--teal-200); box-shadow: 0 6px 24px rgba(0,105,122,0.12); transform: translateY(-2px); }
+    .city-card:hover::before { transform: scaleX(1); }
+
+    .city-card-left {}
+    .city-name { font-size: 1rem; font-weight: 600; color: var(--gray-900); margin-bottom: 3px; }
+    .city-desc { font-size: 0.78rem; color: var(--text-muted); line-height: 1.4; }
+
+    .city-arrow {
+      width: 32px; height: 32px; border-radius: 50%;
+      background: var(--teal-50); border: 1px solid var(--teal-100);
+      display: flex; align-items: center; justify-content: center;
+      flex-shrink: 0; transition: background 0.18s, border-color 0.18s;
+    }
+    .city-card:hover .city-arrow { background: var(--teal-500); border-color: var(--teal-500); }
+    .city-arrow svg { width: 14px; height: 14px; }
+    .city-arrow svg path { stroke: var(--teal-500); transition: stroke 0.18s; }
+    .city-card:hover .city-arrow svg path { stroke: white; }
+
+    /* CTA band */
+    .cta-section {
+      background: var(--teal-900); padding: 80px 32px; text-align: center;
+      position: relative; overflow: hidden;
+    }
+    .cta-section::before {
+      content: '';
+      position: absolute; inset: 0;
+      background: radial-gradient(ellipse 60% 70% at 50% 50%, rgba(0,163,187,0.15) 0%, transparent 60%);
+    }
+    .cta-section-inner { position: relative; z-index: 1; }
+    .cta-section h2 { font-family: 'DM Serif Display', serif; font-size: clamp(1.8rem, 4vw, 2.8rem); font-weight: 400; color: var(--white); margin-bottom: 14px; }
+    .cta-section p { color: var(--text-light); font-size: 1.05rem; font-weight: 300; max-width: 480px; margin: 0 auto 36px; line-height: 1.8; }
+    .cta-btns { display: flex; gap: 14px; justify-content: center; flex-wrap: wrap; }
+
+    @media (max-width: 640px) {
+      .hero-stats { flex-direction: column; gap: 20px; }
+      .hero-stat { border-right: none; padding: 0; }
+      .region-section { padding: 48px 20px; }
+      .city-cards { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- HERO -->
+<section class="cities-hero">
+  <div class="cities-hero-inner">
+    <span class="overline" style="color:var(--teal-400)">Service Area</span>
+    <h1>Sign Company Serving<br><em>Silicon Valley & the Bay Area</em></h1>
+    <p>Clear Line Signs designs, fabricates, and installs custom commercial signage for businesses across 31 cities in the South Bay, greater Bay Area, and Sacramento.</p>
+    <div class="hero-btns">
+      <a href="./contact.html" class="btn btn-white">
+        Get a Free Quote
+        <svg viewBox="0 0 16 16" fill="none"><path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      </a>
+      <a href="tel:4087801035" class="btn btn-ghost">(408) 780-1035</a>
+    </div>
+    <div class="hero-stats">
+      <div class="hero-stat"><span class="hero-stat-num">31</span><span class="hero-stat-label">Cities Served</span></div>
+      <div class="hero-stat"><span class="hero-stat-num">500+</span><span class="hero-stat-label">Projects Completed</span></div>
+      <div class="hero-stat"><span class="hero-stat-num">Full-Service</span><span class="hero-stat-label">Design · Fab · Install</span></div>
+    </div>
+  </div>
+</section>
+
+<!-- TRUST BAR -->
+<div class="trust-bar">
+  <div class="trust-bar-inner">
+    <div class="trust-item"><div class="trust-dot"></div>Custom Commercial Signage</div>
+    <div class="trust-item"><div class="trust-dot"></div>Design · Fabrication · Installation</div>
+    <div class="trust-item"><div class="trust-dot"></div>Fast Turnaround Times</div>
+    <div class="trust-item"><div class="trust-dot"></div>ADA Compliant Options</div>
+    <div class="trust-item"><div class="trust-dot"></div>Free Consultation</div>
+  </div>
+</div>
+
+<!-- SOUTH BAY / SILICON VALLEY -->
+<section class="region-section">
+  <div class="container">
+    <div class="region-header">
+      <div>
+        <span class="overline">Primary Service Area</span>
+        <div class="region-title">South Bay & Silicon Valley</div>
+      </div>
+      <span class="region-count">10 cities</span>
+    </div>
+    <div class="city-cards">
+      <a href="./cities/san-jose.html" class="city-card">
+        <div class="city-card-left"><div class="city-name">San Jose</div><div class="city-desc">All sign types · Primary area</div></div>
+        <div class="city-arrow"><svg viewBox="0 0 16 16" fill="none"><path d="M3 8h10M9 4l4 4-4 4" stroke="" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+      </a>
+      <a href="./cities/santa-clara.html" class="city-card">
+        <div class="city-card-left"><div class="city-name">Santa Clara</div><div class="city-desc">Business & corporate signs</div></div>
+        <div class="city-arrow"><svg viewBox="0 0 16 16" fill="none"><path d="M3 8h10M9 4l4 4-4 4" stroke="" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+      </a>
+      <a href="./cities/sunnyvale.html" class="city-card">
+        <div class="city-card-left"><div class="city-name">Sunnyvale</div><div class="city-desc">Tech & commercial signage</div></div>
+        <div class="city-arrow"><svg viewBox="0 0 16 16" fill="none"><path d="M3 8h10M9 4l4 4-4 4" stroke="" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+      </a>
+      <a href="./cities/milpitas.html" class="city-card">
+        <div class="city-card-left"><div class="city-name">Milpitas</div><div class="city-desc">Retail & warehouse signs</div></div>
+        <div class="city-arrow"><svg viewBox="0 0 16 16" fill="none"><path d="M3 8h10M9 4l4 4-4 4" stroke="" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+      </a>
+      <a href="./cities/cupertino.html" class="city-card">
+        <div class="city-card-left"><div class="city-name">Cupertino</div><div class="city-desc">Corporate & retail signs</div></div>
+        <div class="city-arrow"><svg viewBox="0 0 16 16" fill="none"><path d="M3 8h10M9 4l4 4-4 4" stroke="" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+      </a>
+      <a href="./cities/mountain-view.html" class="city-card">
+        <div class="city-card-left"><div class="city-name">Mountain View</div><div class="city-desc">Storefront & office signs</div></div>
+        <div class="city-arrow"><svg viewBox="0 0 16 16" fill="none"><path d="M3 8h10M9 4l4 4-4 4" stroke="" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+      </a>
+      <a href="./cities/campbell.html" class="city-card">
+        <div class="city-card-left"><div class="city-name">Campbell</div><div class="city-desc">Small business signs</div></div>
+        <div class="city-arrow"><svg viewBox="0 0 16 16" fill="none"><path d="M3 8h10M9 4l4 4-4 4" stroke="" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+      </a>
+      <a href="./cities/los-gatos.html" class="city-card">
+        <div class="city-card-left"><div class="city-name">Los Gatos</div><div class="city-desc">Interior & exterior signs</div></div>
+        <div class="city-arrow"><svg viewBox="0 0 16 16" fill="none"><path d="M3 8h10M9 4l4 4-4 4" stroke="" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+      </a>
+      <a href="./cities/los-altos.html" class="city-card">
+        <div class="city-card-left"><div class="city-name">Los Altos</div><div class="city-desc">Business graphics & signs</div></div>
+        <div class="city-arrow"><svg viewBox="0 0 16 16" fill="none"><path d="M3 8h10M9 4l4 4-4 4" stroke="" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+      </a>
+      <a href="./cities/saratoga.html" class="city-card">
+        <div class="city-card-left"><div class="city-name">Saratoga</div><div class="city-desc">Custom signage solutions</div></div>
+        <div class="city-arrow"><svg viewBox="0 0 16 16" fill="none"><path d="M3 8h10M9 4l4 4-4 4" stroke="" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- EAST BAY -->
+<section class="region-section">
+  <div class="container">
+    <div class="region-header">
+      <div>
+        <span class="overline">East Bay</span>
+        <div class="region-title">Fremont, Oakland & East Bay</div>
+      </div>
+      <span class="region-count">7 cities</span>
+    </div>
+    <div class="city-cards">
+      <a href="./cities/fremont.html" class="city-card">
+        <div class="city-card-left"><div class="city-name">Fremont</div><div class="city-desc">Commercial & industrial signs</div></div>
+        <div class="city-arrow"><svg viewBox="0 0 16 16" fill="none"><path d="M3 8h10M9 4l4 4-4 4" stroke="" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+      </a>
+      <a href="./cities/newark.html" class="city-card">
+        <div class="city-card-left"><div class="city-name">Newark</div><div class="city-desc">Business & warehouse signs</div></div>
+        <div class="city-arrow"><svg viewBox="0 0 16 16" fill="none"><path d="M3 8h10M9 4l4 4-4 4" stroke="" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+      </a>
+      <a href="./cities/union-city.html" class="city-card">
+        <div class="city-card-left"><div class="city-name">Union City</div><div class="city-desc">Retail & storefront signs</div></div>
+        <div class="city-arrow"><svg viewBox="0 0 16 16" fill="none"><path d="M3 8h10M9 4l4 4-4 4" stroke="" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+      </a>
+      <a href="./cities/hayward.html" class="city-card">
+        <div class="city-card-left"><div class="city-name">Hayward</div><div class="city-desc">Commercial signage</div></div>
+        <div class="city-arrow"><svg viewBox="0 0 16 16" fill="none"><path d="M3 8h10M9 4l4 4-4 4" stroke="" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+      </a>
+      <a href="./cities/san-leandro.html" class="city-card">
+        <div class="city-card-left"><div class="city-name">San Leandro</div><div class="city-desc">Business & retail signs</div></div>
+        <div class="city-arrow"><svg viewBox="0 0 16 16" fill="none"><path d="M3 8h10M9 4l4 4-4 4" stroke="" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+      </a>
+      <a href="./cities/oakland.html" class="city-card">
+        <div class="city-card-left"><div class="city-name">Oakland</div><div class="city-desc">Storefront & building signs</div></div>
+        <div class="city-arrow"><svg viewBox="0 0 16 16" fill="none"><path d="M3 8h10M9 4l4 4-4 4" stroke="" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+      </a>
+      <a href="./cities/livermore.html" class="city-card">
+        <div class="city-card-left"><div class="city-name">Livermore</div><div class="city-desc">Commercial & office signs</div></div>
+        <div class="city-arrow"><svg viewBox="0 0 16 16" fill="none"><path d="M3 8h10M9 4l4 4-4 4" stroke="" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- PENINSULA & SF -->
+<section class="region-section">
+  <div class="container">
+    <div class="region-header">
+      <div>
+        <span class="overline">Peninsula & San Francisco</span>
+        <div class="region-title">SF, Peninsula & Mid-Peninsula</div>
+      </div>
+      <span class="region-count">6 cities</span>
+    </div>
+    <div class="city-cards">
+      <a href="./cities/san-francisco.html" class="city-card">
+        <div class="city-card-left"><div class="city-name">San Francisco</div><div class="city-desc">Commercial & retail signs</div></div>
+        <div class="city-arrow"><svg viewBox="0 0 16 16" fill="none"><path d="M3 8h10M9 4l4 4-4 4" stroke="" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+      </a>
+      <a href="./cities/south-san-francisco.html" class="city-card">
+        <div class="city-card-left"><div class="city-name">South San Francisco</div><div class="city-desc">Biotech & corporate signs</div></div>
+        <div class="city-arrow"><svg viewBox="0 0 16 16" fill="none"><path d="M3 8h10M9 4l4 4-4 4" stroke="" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+      </a>
+      <a href="./cities/daly-city.html" class="city-card">
+        <div class="city-card-left"><div class="city-name">Daly City</div><div class="city-desc">Retail & business signs</div></div>
+        <div class="city-arrow"><svg viewBox="0 0 16 16" fill="none"><path d="M3 8h10M9 4l4 4-4 4" stroke="" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+      </a>
+      <a href="./cities/san-mateo.html" class="city-card">
+        <div class="city-card-left"><div class="city-name">San Mateo</div><div class="city-desc">Corporate & office signs</div></div>
+        <div class="city-arrow"><svg viewBox="0 0 16 16" fill="none"><path d="M3 8h10M9 4l4 4-4 4" stroke="" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+      </a>
+      <a href="./cities/redwood-city.html" class="city-card">
+        <div class="city-card-left"><div class="city-name">Redwood City</div><div class="city-desc">Tech & commercial signage</div></div>
+        <div class="city-arrow"><svg viewBox="0 0 16 16" fill="none"><path d="M3 8h10M9 4l4 4-4 4" stroke="" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+      </a>
+      <a href="./cities/palo-alto.html" class="city-card">
+        <div class="city-card-left"><div class="city-name">Palo Alto</div><div class="city-desc">Tech & startup signage</div></div>
+        <div class="city-arrow"><svg viewBox="0 0 16 16" fill="none"><path d="M3 8h10M9 4l4 4-4 4" stroke="" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- TRI-VALLEY -->
+<section class="region-section">
+  <div class="container">
+    <div class="region-header">
+      <div>
+        <span class="overline">Tri-Valley & Contra Costa</span>
+        <div class="region-title">Tri-Valley & East Contra Costa</div>
+      </div>
+      <span class="region-count">5 cities</span>
+    </div>
+    <div class="city-cards">
+      <a href="./cities/pleasanton.html" class="city-card">
+        <div class="city-card-left"><div class="city-name">Pleasanton</div><div class="city-desc">Corporate & retail signs</div></div>
+        <div class="city-arrow"><svg viewBox="0 0 16 16" fill="none"><path d="M3 8h10M9 4l4 4-4 4" stroke="" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+      </a>
+      <a href="./cities/dublin.html" class="city-card">
+        <div class="city-card-left"><div class="city-name">Dublin</div><div class="city-desc">Business & storefront signs</div></div>
+        <div class="city-arrow"><svg viewBox="0 0 16 16" fill="none"><path d="M3 8h10M9 4l4 4-4 4" stroke="" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+      </a>
+      <a href="./cities/san-ramon.html" class="city-card">
+        <div class="city-card-left"><div class="city-name">San Ramon</div><div class="city-desc">Corporate office signs</div></div>
+        <div class="city-arrow"><svg viewBox="0 0 16 16" fill="none"><path d="M3 8h10M9 4l4 4-4 4" stroke="" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+      </a>
+      <a href="./cities/walnut-creek.html" class="city-card">
+        <div class="city-card-left"><div class="city-name">Walnut Creek</div><div class="city-desc">Retail & commercial signs</div></div>
+        <div class="city-arrow"><svg viewBox="0 0 16 16" fill="none"><path d="M3 8h10M9 4l4 4-4 4" stroke="" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+      </a>
+      <a href="./cities/concord.html" class="city-card">
+        <div class="city-card-left"><div class="city-name">Concord</div><div class="city-desc">Business & industrial signs</div></div>
+        <div class="city-arrow"><svg viewBox="0 0 16 16" fill="none"><path d="M3 8h10M9 4l4 4-4 4" stroke="" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- SOUTH COUNTY -->
+<section class="region-section">
+  <div class="container">
+    <div class="region-header">
+      <div>
+        <span class="overline">South County</span>
+        <div class="region-title">South Santa Clara County</div>
+      </div>
+      <span class="region-count">2 cities</span>
+    </div>
+    <div class="city-cards">
+      <a href="./cities/gilroy.html" class="city-card">
+        <div class="city-card-left"><div class="city-name">Gilroy</div><div class="city-desc">Retail & business signs</div></div>
+        <div class="city-arrow"><svg viewBox="0 0 16 16" fill="none"><path d="M3 8h10M9 4l4 4-4 4" stroke="" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+      </a>
+      <a href="./cities/morgan-hill.html" class="city-card">
+        <div class="city-card-left"><div class="city-name">Morgan Hill</div><div class="city-desc">Commercial & storefront signs</div></div>
+        <div class="city-arrow"><svg viewBox="0 0 16 16" fill="none"><path d="M3 8h10M9 4l4 4-4 4" stroke="" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- SACRAMENTO -->
+<section class="region-section">
+  <div class="container">
+    <div class="region-header">
+      <div>
+        <span class="overline">Sacramento Region</span>
+        <div class="region-title">Sacramento & Capital Region</div>
+      </div>
+      <span class="region-count">1 city</span>
+    </div>
+    <div class="city-cards">
+      <a href="./cities/sacramento.html" class="city-card">
+        <div class="city-card-left"><div class="city-name">Sacramento</div><div class="city-desc">Vinyl, banners, lobby & trade show signs · Local install available</div></div>
+        <div class="city-arrow"><svg viewBox="0 0 16 16" fill="none"><path d="M3 8h10M9 4l4 4-4 4" stroke="" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<section class="cta-section">
+  <div class="cta-section-inner">
+    <span class="overline" style="color:var(--teal-400)">Get Started</span>
+    <h2>Don't See Your City?</h2>
+    <p>We serve the entire Bay Area and beyond. Contact us and we'll let you know if we can help with your project.</p>
+    <div class="cta-btns">
+      <a href="./contact.html" class="btn btn-white">
+        Get a Free Quote
+        <svg viewBox="0 0 16 16" fill="none"><path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      </a>
+      <a href="tel:4087801035" class="btn btn-ghost">(408) 780-1035</a>
+    </div>
+  </div>
+</section>
+
+<script src="./assets/js/shared.js"></script>
+</body>
+</html>
