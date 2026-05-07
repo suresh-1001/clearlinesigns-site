@@ -6,12 +6,53 @@
   <title>Sign Company San Jose | Custom Business Signs & Graphics | Clear Line Signs</title>
   <meta name="description" content="Clear Line Signs is San Jose's trusted commercial sign company. Custom storefront signs, lobby signs, vinyl graphics, dimensional letters & full-service signage. Serving all of Silicon Valley."/>
   <meta name="keywords" content="sign company san jose, business signs san jose, custom signs san jose, storefront signs, lobby signs, vinyl graphics, commercial signage, acrylic signs, dimensional letters, san jose ca, silicon valley"/>
-  <link rel="canonical" href="https://www.clearlinesigns.com/"/>
+  <link rel="canonical" href="https://clearlinesigns.com/"/>
   <meta property="og:title" content="Clear Line Signs | San Jose Sign Company"/>
   <meta property="og:description" content="Custom business signs & commercial graphics in San Jose, CA. Design · Fabrication · Installation."/>
   <meta property="og:type" content="website"/>
-  <meta property="og:url" content="https://www.clearlinesigns.com"/>
-  <script type="application/ld+json">{"@context":"https://schema.org","@type":"LocalBusiness","name":"Clear Line Signs","description":"Custom commercial sign company in San Jose, CA.","url":"https://www.clearlinesigns.com","email":"info@clearlinesigns.com","address":{"@type":"PostalAddress","addressLocality":"San Jose","addressRegion":"CA","addressCountry":"US"},"areaServed":["San Jose","Santa Clara","Sunnyvale","Milpitas","Mountain View","Cupertino","Campbell"]}</script>
+  <meta property="og:url" content="https://clearlinesigns.com"/>
+  <meta property="og:image" content="https://clearlinesigns.com/assets/images/hero-bg.webp"/>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "LocalBusiness",
+    "name": "Clear Line Signs",
+    "description": "Custom commercial sign company in San Jose, CA. Design, fabrication, and installation of storefront signs, lobby signs, vinyl graphics, trade show displays, and more.",
+    "url": "https://clearlinesigns.com",
+    "telephone": "+14087801035",
+    "email": "info@clearlinesigns.com",
+    "image": "https://clearlinesigns.com/assets/images/logo.webp",
+    "priceRange": "$$",
+    "address": {
+      "@type": "PostalAddress",
+      "addressLocality": "San Jose",
+      "addressRegion": "CA",
+      "addressCountry": "US"
+    },
+    "geo": {
+      "@type": "GeoCoordinates",
+      "latitude": 37.3382,
+      "longitude": -121.8863
+    },
+    "areaServed": [
+      "San Jose", "Santa Clara", "Sunnyvale", "Milpitas", "Mountain View",
+      "Cupertino", "Campbell", "Los Gatos", "Los Altos", "Saratoga",
+      "Fremont", "Palo Alto", "Oakland", "San Francisco", "Sacramento"
+    ],
+    "hasOfferCatalog": {
+      "@type": "OfferCatalog",
+      "name": "Sign & Display Products",
+      "itemListElement": [
+        {"@type": "Offer", "itemOffered": {"@type": "Service", "name": "Storefront Signs"}},
+        {"@type": "Offer", "itemOffered": {"@type": "Service", "name": "Lobby Signs"}},
+        {"@type": "Offer", "itemOffered": {"@type": "Service", "name": "Vinyl Banners"}},
+        {"@type": "Offer", "itemOffered": {"@type": "Service", "name": "Window Graphics"}},
+        {"@type": "Offer", "itemOffered": {"@type": "Service", "name": "Trade Show Displays"}},
+        {"@type": "Offer", "itemOffered": {"@type": "Service", "name": "Real Estate Signs"}}
+      ]
+    }
+  }
+  </script>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@300;400;500;600;700&family=DM+Serif+Display:ital@0;1&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="./assets/css/main.css">
@@ -23,12 +64,8 @@
       top: 50%; left: 50%; transform: translate(-50%,-50%);
       pointer-events: none; z-index: 0;
     }
-    .hero-ring-2 {
-      width: 500px; height: 500px; border-color: rgba(0,163,187,0.06);
-    }
-    .hero-ring-3 {
-      width: 300px; height: 300px; border-color: rgba(0,163,187,0.1);
-    }
+    .hero-ring-2 { width: 500px; height: 500px; border-color: rgba(0,163,187,0.06); }
+    .hero-ring-3 { width: 300px; height: 300px; border-color: rgba(0,163,187,0.1); }
 
     /* ── ABOUT SPLIT ── */
     .about-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 80px; align-items: center; }
@@ -67,6 +104,17 @@
     .why-icon svg { width: 20px; height: 20px; }
     .why-text strong { display: block; font-size: 1rem; font-weight: 600; color: var(--gray-900); margin-bottom: 3px; }
     .why-text p { font-size: 0.88rem; color: var(--text-muted); line-height: 1.65; }
+
+    /* ── PRODUCTS BROWSE ── */
+    .products-browse { background: var(--teal-50); border-top: 1px solid var(--teal-100); border-bottom: 1px solid var(--teal-100); padding: 48px 32px; }
+    .products-browse .container { max-width: 1200px; margin: 0 auto; display: flex; align-items: center; justify-content: space-between; gap: 32px; flex-wrap: wrap; }
+    .pb-left .overline { display: block; font-size: 0.72rem; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase; color: var(--teal-600); font-family: var(--font-sans); margin-bottom: 8px; }
+    .pb-left h3 { font-family: 'DM Serif Display', serif; font-size: 1.5rem; font-weight: 400; color: #0d1f2d; line-height: 1.25; margin-bottom: 8px; }
+    .pb-left p { font-size: 0.9rem; color: #4a5568; max-width: 480px; line-height: 1.6; }
+    .pb-chips { display: flex; flex-wrap: wrap; gap: 8px; max-width: 480px; }
+    .pb-chip { display: inline-block; padding: 6px 14px; border: 1px solid var(--teal-300); border-radius: 999px; font-size: 0.8rem; font-weight: 500; color: var(--teal-700); text-decoration: none; background: var(--white); transition: background .15s, color .15s; }
+    .pb-chip:hover { background: var(--teal-600); color: var(--white); border-color: var(--teal-600); }
+    @media(max-width:860px) { .products-browse .container { flex-direction: column; align-items: flex-start; } }
 
     /* ── QUOTE SECTION ── */
     .quote-section { background: var(--teal-900); position: relative; overflow: hidden; }
@@ -110,7 +158,7 @@
       <span class="hero-badge-dot"></span>
       San Jose's Commercial Sign Company
     </div>
-    <h1>Signs That Work.<br><em>Precision in Every Detail.</em></h1>
+    <h1>San Jose Sign Company.<br><em>Precision in Every Detail.</em></h1>
     <p class="hero-sub">Custom business signage designed, fabricated, and installed across San Jose and Silicon Valley — from storefront signs and lobby displays to vinyl graphics and trade show exhibits.</p>
     <div class="hero-btns">
       <a href="./contact.html" class="btn btn-white">
@@ -120,22 +168,10 @@
       <a href="./portfolio.html" class="btn btn-ghost">View Our Portfolio</a>
     </div>
     <div class="hero-stats">
-      <div class="stat">
-        <span class="stat-num">500+</span>
-        <span class="stat-label">Projects Completed</span>
-      </div>
-      <div class="stat">
-        <span class="stat-num">100%</span>
-        <span class="stat-label">Custom Made</span>
-      </div>
-      <div class="stat">
-        <span class="stat-num">5 ★</span>
-        <span class="stat-label">Client Satisfaction</span>
-      </div>
-      <div class="stat">
-        <span class="stat-num">Full-Service</span>
-        <span class="stat-label">Design · Fab · Install</span>
-      </div>
+      <div class="stat"><span class="stat-num">500+</span><span class="stat-label">Projects Completed</span></div>
+      <div class="stat"><span class="stat-num">100%</span><span class="stat-label">Custom Made</span></div>
+      <div class="stat"><span class="stat-num">5 ★</span><span class="stat-label">Client Satisfaction</span></div>
+      <div class="stat"><span class="stat-num">Full-Service</span><span class="stat-label">Design · Fab · Install</span></div>
     </div>
   </div>
 </section>
@@ -157,57 +193,44 @@
     <span class="overline">What We Do</span>
     <h2>Complete Signage Solutions<br>for Every Business</h2>
     <p class="lead">From concept to installation — your full-service sign and graphics partner across San Jose and Silicon Valley.</p>
-
     <div class="svc-grid">
       <a href="./services.html#indoor" class="svc-card">
-        <div class="svc-icon-wrap">
-          <svg viewBox="0 0 28 28" fill="none"><rect x="3" y="7" width="22" height="15" rx="2.5" stroke="var(--teal-500)" stroke-width="1.5"/><path d="M8 13h12M8 17h8" stroke="var(--teal-500)" stroke-width="1.5" stroke-linecap="round"/></svg>
-        </div>
+        <div class="svc-icon-wrap"><svg viewBox="0 0 28 28" fill="none"><rect x="3" y="7" width="22" height="15" rx="2.5" stroke="var(--teal-500)" stroke-width="1.5"/><path d="M8 13h12M8 17h8" stroke="var(--teal-500)" stroke-width="1.5" stroke-linecap="round"/></svg></div>
         <h3>Indoor &amp; Lobby Signs</h3>
         <p>Lobby signs, ADA signage, wayfinding systems, and office branding that make lasting first impressions.</p>
         <div class="svc-tags"><span class="tag">Lobby</span><span class="tag">Wayfinding</span><span class="tag">ADA</span><span class="tag">Office</span></div>
         <div class="svc-arrow">Learn more <svg viewBox="0 0 16 16" fill="none"><path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
       </a>
       <a href="./services.html#outdoor" class="svc-card">
-        <div class="svc-icon-wrap">
-          <svg viewBox="0 0 28 28" fill="none"><rect x="3" y="4" width="22" height="14" rx="2.5" stroke="var(--teal-500)" stroke-width="1.5"/><path d="M10 23h8M14 18v5" stroke="var(--teal-500)" stroke-width="1.5" stroke-linecap="round"/></svg>
-        </div>
+        <div class="svc-icon-wrap"><svg viewBox="0 0 28 28" fill="none"><rect x="3" y="4" width="22" height="14" rx="2.5" stroke="var(--teal-500)" stroke-width="1.5"/><path d="M10 23h8M14 18v5" stroke="var(--teal-500)" stroke-width="1.5" stroke-linecap="round"/></svg></div>
         <h3>Outdoor &amp; Building Signs</h3>
         <p>High-visibility storefront signs, monument signs, channel letters, and pylon signs built to represent your brand.</p>
         <div class="svc-tags"><span class="tag">Storefront</span><span class="tag">Monument</span><span class="tag">Channel Letters</span></div>
         <div class="svc-arrow">Learn more <svg viewBox="0 0 16 16" fill="none"><path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
       </a>
       <a href="./services.html#vinyl" class="svc-card">
-        <div class="svc-icon-wrap">
-          <svg viewBox="0 0 28 28" fill="none"><path d="M4 22l5-10 4 6 4-5 5 9" stroke="var(--teal-500)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
-        </div>
+        <div class="svc-icon-wrap"><svg viewBox="0 0 28 28" fill="none"><path d="M4 22l5-10 4 6 4-5 5 9" stroke="var(--teal-500)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
         <h3>Vinyl Graphics &amp; Decals</h3>
         <p>Window graphics, wall murals, vehicle wraps, and vinyl banners for any surface or promotion.</p>
         <div class="svc-tags"><span class="tag">Window</span><span class="tag">Wall Murals</span><span class="tag">Vehicle</span></div>
         <div class="svc-arrow">Learn more <svg viewBox="0 0 16 16" fill="none"><path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
       </a>
       <a href="./services.html#dimensional" class="svc-card">
-        <div class="svc-icon-wrap">
-          <svg viewBox="0 0 28 28" fill="none"><circle cx="14" cy="14" r="9" stroke="var(--teal-500)" stroke-width="1.5"/><path d="M10 14l3 3 5-6" stroke="var(--teal-500)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
-        </div>
+        <div class="svc-icon-wrap"><svg viewBox="0 0 28 28" fill="none"><circle cx="14" cy="14" r="9" stroke="var(--teal-500)" stroke-width="1.5"/><path d="M10 14l3 3 5-6" stroke="var(--teal-500)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
         <h3>Acrylic &amp; Dimensional Letters</h3>
         <p>Premium 3D lettering and acrylic signs that add depth, sophistication, and a polished professional look.</p>
         <div class="svc-tags"><span class="tag">Acrylic</span><span class="tag">Dimensional</span><span class="tag">Metal</span></div>
         <div class="svc-arrow">Learn more <svg viewBox="0 0 16 16" fill="none"><path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
       </a>
       <a href="./services.html#tradeshow" class="svc-card">
-        <div class="svc-icon-wrap">
-          <svg viewBox="0 0 28 28" fill="none"><rect x="3" y="9" width="22" height="14" rx="2" stroke="var(--teal-500)" stroke-width="1.5"/><path d="M10 9V7a4 4 0 018 0v2" stroke="var(--teal-500)" stroke-width="1.5"/></svg>
-        </div>
+        <div class="svc-icon-wrap"><svg viewBox="0 0 28 28" fill="none"><rect x="3" y="9" width="22" height="14" rx="2" stroke="var(--teal-500)" stroke-width="1.5"/><path d="M10 9V7a4 4 0 018 0v2" stroke="var(--teal-500)" stroke-width="1.5"/></svg></div>
         <h3>Trade Show &amp; Event Displays</h3>
         <p>Retractable banners, booth displays, fabric backdrops, and portable signage for events and trade shows.</p>
         <div class="svc-tags"><span class="tag">Trade Show</span><span class="tag">Banners</span><span class="tag">Backdrops</span></div>
         <div class="svc-arrow">Learn more <svg viewBox="0 0 16 16" fill="none"><path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
       </a>
       <a href="./services.html#custom" class="svc-card">
-        <div class="svc-icon-wrap">
-          <svg viewBox="0 0 28 28" fill="none"><path d="M4 4h8v8H4zM16 4h8v8h-8zM4 16h8v8H4zM16 16h8v8h-8z" stroke="var(--teal-500)" stroke-width="1.5" stroke-linejoin="round"/></svg>
-        </div>
+        <div class="svc-icon-wrap"><svg viewBox="0 0 28 28" fill="none"><path d="M4 4h8v8H4zM16 4h8v8h-8zM4 16h8v8H4zM16 16h8v8h-8z" stroke="var(--teal-500)" stroke-width="1.5" stroke-linejoin="round"/></svg></div>
         <h3>Custom Sign Solutions</h3>
         <p>Unique requirements? We design and fabricate fully custom signage from the ground up — no template required.</p>
         <div class="svc-tags"><span class="tag">Custom Fab</span><span class="tag">LED</span><span class="tag">Specialty</span></div>
@@ -312,13 +335,13 @@
       <a href="./services.html" class="type-chip">Channel Letters</a>
       <a href="./services.html" class="type-chip">Dimensional Letters</a>
       <a href="./services.html" class="type-chip">Acrylic Signs</a>
-      <a href="./services.html" class="type-chip">Window Signs</a>
-      <a href="./services.html" class="type-chip">Window Graphics</a>
-      <a href="./services.html" class="type-chip">Wall Murals</a>
-      <a href="./services.html" class="type-chip">Vinyl Banners</a>
+      <a href="./products/window-graphics.html" class="type-chip">Window Signs</a>
+      <a href="./products/window-graphics.html" class="type-chip">Window Graphics</a>
+      <a href="./products/adhesive-vinyl.html" class="type-chip">Wall Murals</a>
+      <a href="./products/vinyl-banners.html" class="type-chip">Vinyl Banners</a>
       <a href="./services.html" class="type-chip">Vehicle Wraps</a>
-      <a href="./services.html" class="type-chip">Retractable Banners</a>
-      <a href="./services.html" class="type-chip">Trade Show Displays</a>
+      <a href="./products/banner-stands.html" class="type-chip">Retractable Banners</a>
+      <a href="./products/trade-show-displays.html" class="type-chip">Trade Show Displays</a>
       <a href="./services.html" class="type-chip">Wayfinding Signs</a>
       <a href="./services.html" class="type-chip">ADA Signs</a>
       <a href="./services.html" class="type-chip">Office Signs</a>
@@ -326,9 +349,9 @@
       <a href="./services.html" class="type-chip">Pylon Signs</a>
       <a href="./services.html" class="type-chip">Pole Signs</a>
       <a href="./services.html" class="type-chip">LED Signs</a>
-      <a href="./services.html" class="type-chip">Floor Graphics</a>
-      <a href="./services.html" class="type-chip">A-Frame Signs</a>
-      <a href="./services.html" class="type-chip">Real Estate Signs</a>
+      <a href="./products/adhesive-vinyl.html" class="type-chip">Floor Graphics</a>
+      <a href="./products/a-frame-sign-holders.html" class="type-chip">A-Frame Signs</a>
+      <a href="./products/real-estate-signs.html" class="type-chip">Real Estate Signs</a>
       <a href="./services.html" class="type-chip">Safety Signs</a>
       <a href="./services.html" class="type-chip">Metal Signs</a>
       <a href="./services.html" class="type-chip">Cabinet Signs</a>
@@ -337,6 +360,29 @@
     </div>
   </div>
 </section>
+
+<!-- ── PRODUCTS BROWSE ── -->
+<div class="products-browse">
+  <div class="container">
+    <div class="pb-left">
+      <span class="overline">Browse Products</span>
+      <h3>Shop Print &amp; Display Products Online</h3>
+      <p>Order vinyl banners, banner stands, trade show displays, window graphics, and more — with live pricing and fast Bay Area delivery.</p>
+    </div>
+    <div style="display:flex;flex-direction:column;gap:12px;align-items:flex-start">
+      <div class="pb-chips">
+        <a href="./products/vinyl-banners.html" class="pb-chip">Vinyl Banners</a>
+        <a href="./products/banner-stands.html" class="pb-chip">Banner Stands</a>
+        <a href="./products/trade-show-displays.html" class="pb-chip">Trade Show</a>
+        <a href="./products/window-graphics.html" class="pb-chip">Window Graphics</a>
+        <a href="./products/real-estate-signs.html" class="pb-chip">Real Estate Signs</a>
+        <a href="./products/advertising-flags.html" class="pb-chip">Advertising Flags</a>
+        <a href="./products/custom-event-tents.html" class="pb-chip">Event Tents</a>
+      </div>
+      <a href="./products/index.html" class="btn btn-primary" style="margin-top:4px">Browse All 12 Products <svg viewBox="0 0 16 16" fill="none" width="14" height="14"><path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+    </div>
+  </div>
+</div>
 
 <!-- ── INDUSTRIES ── -->
 <section class="section-dark" style="padding:80px 32px">
@@ -437,7 +483,7 @@
       </a>
       <a href="https://blog.clearlinesigns.com/posts/lobby-signs-silicon-valley/" class="blog-card">
         <div class="bc-img" style="background-image:url(./assets/images/service-indoor.webp);background-size:cover;background-position:center;"><span class="bc-label">Lobby Signs</span></div>
-        <div class="bc-body"><h3>Lobby Signs for Silicon Valley Businesses: Materials, Costs & What to Expect</h3><p>Everything you need to know about lobby sign materials, costs, and installation for Silicon Valley offices.</p><span class="bc-link">Read More →</span></div>
+        <div class="bc-body"><h3>Lobby Signs for Silicon Valley Businesses: Materials, Costs &amp; What to Expect</h3><p>Everything you need to know about lobby sign materials, costs, and installation for Silicon Valley offices.</p><span class="bc-link">Read More →</span></div>
       </a>
     </div>
     <div style="text-align:center;margin-top:40px">
@@ -464,7 +510,7 @@
         <div class="contact-highlight">
           <p>Call or Email Us</p>
           <a href="tel:4087801035">(408) 780-1035</a>
-          <a href="/cdn-cgi/l/email-protection#c0a9aea6af80a3aca5a1b2aca9aea5b3a9a7aeb3eea3afad" style="display:block;margin-top:6px;font-size:0.9rem;opacity:0.8;"><span class="__cf_email__" data-cfemail="e1888f878ea1828d8480938d888f849288868f92cf828e8c">[email&#160;protected]</span></a>
+          <a href="mailto:info@clearlinesigns.com" style="display:block;margin-top:6px;font-size:0.9rem;opacity:0.8;">info@clearlinesigns.com</a>
         </div>
       </div>
       <div class="quote-wrap">
@@ -473,7 +519,7 @@
         <form action="https://api.web3forms.com/submit" method="POST">
           <input type="hidden" name="access_key" value="0163d307-e9bf-40cd-a985-2e75f3a645c5">
           <input type="hidden" name="subject" value="New Quote Request — Clear Line Signs">
-          <input type="hidden" name="redirect" value="https://www.clearlinesigns.com/thank-you.html">
+          <input type="hidden" name="redirect" value="https://clearlinesigns.com/thank-you.html">
           <div class="form-row">
             <div class="form-group"><label>Full Name *</label><input type="text" name="name" placeholder="Jane Smith" required/></div>
             <div class="form-group"><label>Phone Number</label><input type="tel" name="phone" placeholder="(408) 555-0100"/></div>
