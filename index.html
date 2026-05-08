@@ -493,24 +493,51 @@
 </section>
 
 <!-- ── QUOTE ── -->
-<section class="quote-section" id="quote">
-  <div class="container">
-    <div class="quote-grid">
-      <div class="quote-left">
-        <span class="overline" style="color:var(--teal-400)">Get Started</span>
-        <h2>Get Your Free<br>Sign Quote</h2>
-        <p class="lead">Tell us about your project and we'll respond with options, pricing, and expert recommendations — fast.</p>
-        <ul class="promise-list">
-          <li><span class="promise-dot"></span>No obligation — completely free</li>
-          <li><span class="promise-dot"></span>Response within 1 business day</li>
-          <li><span class="promise-dot"></span>On-site estimates available</li>
-          <li><span class="promise-dot"></span>All sign types and sizes welcome</li>
-          <li><span class="promise-dot"></span>Transparent reference pricing online</li>
-        </ul>
-        <div class="contact-highlight">
-          <p>Call or Email Us</p>
-          <a href="tel:4087801035">(408) 780-1035</a>
-          <a href="mailto:info@clearlinesigns.com" style="display:block;margin-top:6px;font-size:0.9rem;opacity:0.8;">info@clearlinesigns.com</a>
+<div class="quote-wrap">
+        <div id="indexFormSuccess" style="display:none;text-align:center;padding:56px 24px;">
+          <div style="font-size:48px;margin-bottom:16px;">✅</div>
+          <h3 style="font-family:'DM Serif Display',serif;font-size:1.8rem;font-weight:400;margin-bottom:10px;">Quote Request Sent!</h3>
+          <p style="color:var(--text-muted);">We'll get back to you at <strong id="indexSuccessEmail"></strong> within 1 business day.</p>
+        </div>
+        <div id="indexFormBody">
+          <h3>Request a Free Quote</h3>
+          <p class="form-sub">We'll get back to you within 1 business day.</p>
+          <form id="indexQuoteForm" novalidate>
+            <!-- Zoho hidden fields -->
+            <input type="text" style="display:none;" name="xnQsjsdp" value="81a4ff2655d36c2d9398e158b57736ee09f39c637dae115960d482acbc1faa61">
+            <input type="hidden" name="zc_gad" value="">
+            <input type="text" style="display:none;" name="xmIwtLD" value="339d60d32589889e7a85ec867436c0707f8e99d1a2cf4df6b776ffdbdde93e63dafdcb0ba2bfed66fe7a9863a4f72985">
+            <input type="text" style="display:none;" name="actionType" value="TGVhZHM=">
+            <input type="text" style="display:none;" name="returnURL" value="null">
+            <input type="text" style="display:none;" name="aG9uZXlwb3Q" value="">
+            <div class="form-row">
+              <div class="form-group"><label>Full Name *</label><input type="text" id="iName" placeholder="Jane Smith"/></div>
+              <div class="form-group"><label>Phone Number</label><input type="tel" id="iPhone" placeholder="(408) 555-0100"/></div>
+            </div>
+            <div class="form-group"><label>Email Address *</label><input type="email" id="iEmail" placeholder="jane@yourbusiness.com"/></div>
+            <div class="form-group"><label>Business Name</label><input type="text" id="iBusiness" placeholder="Your Business Name"/></div>
+            <div class="form-group">
+              <label>Type of Sign Needed</label>
+              <select id="iSignType">
+                <option value="">Select a sign type...</option>
+                <option value="Storefront / Exterior Sign">Storefront / Exterior Sign</option>
+                <option value="Lobby / Interior Sign">Lobby / Interior Sign</option>
+                <option value="Vinyl Graphics / Window Graphics">Vinyl Graphics / Window Graphics</option>
+                <option value="Acrylic / Dimensional Letters">Acrylic / Dimensional Letters</option>
+                <option value="Trade Show / Event Display">Trade Show / Event Display</option>
+                <option value="Banners">Banners</option>
+                <option value="Vehicle Graphics / Wrap">Vehicle Graphics / Wrap</option>
+                <option value="ADA / Wayfinding Signs">ADA / Wayfinding Signs</option>
+                <option value="Monument / Pylon Sign">Monument / Pylon Sign</option>
+                <option value="LED Signs">LED Signs</option>
+                <option value="Print Collateral (Brochures, Folders, Flyers)">Print Collateral (Brochures, Folders, Flyers)</option>
+                <option value="Custom / Other">Custom / Other</option>
+              </select>
+            </div>
+            <div class="form-group"><label>Project Details</label><textarea id="iMessage" placeholder="Tell us about your project — size, quantity, location, timeline..."></textarea></div>
+            <button type="button" class="submit-btn" id="indexSubmitBtn" onclick="submitIndexForm()">Send My Quote Request →</button>
+            <p class="form-note">We respond within 1 business day · No spam, ever</p>
+          </form>
         </div>
       </div>
       <div class="quote-wrap">
@@ -548,6 +575,75 @@
   </div>
 </section>
 
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+<script>
+async function submitIndexForm() {
+  const fullName = document.getElementById('iName').value.trim();
+  const email    = document.getElementById('iEmail').value.trim();
+
+  if (!fullName) { alert('Please enter your name.'); document.getElementById('iName').focus(); return; }
+  if (!email || email.indexOf('@') < 1) { alert('Please enter a valid email address.'); document.getElementById('iEmail').focus(); return; }
+
+  const btn = document.getElementById('indexSubmitBtn');
+  btn.disabled = true; btn.textContent = 'Sending…';
+
+  const phone    = document.getElementById('iPhone').value.trim();
+  const business = document.getElementById('iBusiness').value.trim();
+  const sigType  = document.getElementById('iSignType');
+  const sigText  = sigType.options[sigType.selectedIndex].value;
+  const message  = document.getElementById('iMessage').value.trim();
+
+  const parts     = fullName.split(' ');
+  const lastName  = parts.length > 1 ? parts.slice(1).join(' ') : fullName;
+  const firstName = parts.length > 1 ? parts[0] : '';
+  const desc      = [sigText ? 'Sign type: ' + sigText : '', message].filter(Boolean).join('\n');
+
+  // 1. Zoho CRM
+  const zoho = new FormData();
+  zoho.append('xnQsjsdp',   '81a4ff2655d36c2d9398e158b57736ee09f39c637dae115960d482acbc1faa61');
+  zoho.append('zc_gad',     '');
+  zoho.append('xmIwtLD',    '339d60d32589889e7a85ec867436c0707f8e99d1a2cf4df6b776ffdbdde93e63dafdcb0ba2bfed66fe7a9863a4f72985');
+  zoho.append('actionType', 'TGVhZHM=');
+  zoho.append('returnURL',  'null');
+  zoho.append('aG9uZXlwb3Q','');
+  zoho.append('First Name', firstName);
+  zoho.append('Last Name',  lastName);
+  zoho.append('Email',      email);
+  zoho.append('Phone',      phone);
+  zoho.append('Company',    business);
+  zoho.append('Lead Source','Web Download');
+  zoho.append('Description', desc);
+  $.ajax({ url:'https://crm.zoho.com/crm/WebToLeadForm', type:'POST',
+           data:zoho, cache:false, contentType:false, processData:false,
+           success:()=>{}, error:()=>{} });
+
+  // 2. Web3Forms email notification
+  try {
+    await fetch('https://api.web3forms.com/submit', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({
+        access_key: '0163d307-e9bf-40cd-a985-2e75f3a645c5',
+        subject:    'New Quote Request — Clear Line Signs',
+        name:       fullName,
+        email:      email,
+        phone:      phone,
+        business:   business,
+        sign_type:  sigText || 'Not specified',
+        message:    message || 'No details provided'
+      })
+    });
+  } catch(e) {}
+
+  document.getElementById('indexFormBody').style.display    = 'none';
+  document.getElementById('indexFormSuccess').style.display = 'block';
+  document.getElementById('indexSuccessEmail').textContent  = email;
+}
+</script>
 <script src="./assets/js/shared.js"></script>
+
+<!-- Zoho Web Form Analytics — do not remove -->
+<script id="wf_anal" src="https://crm.zohopublic.com/crm/WebFormAnalyticsServeServlet?rid=8a0be9f316afcd085536509180e0f7d7ceeb82fd6350af8b7999d13a5cf7ea4c69294e55598faf1924703bcde73771a7gid14205c93e8d443a72decaf3e52da266ec4b13a6874d55c8c7a241b2875ba754egid26a4ec09a75fb8a4fb289e59905dab95488e907d416bbec7ef6f6f9dcf25cde5gid2aa478f2b61b4487bf81fbc0807d4f34a8019fb671e1b1f6dbb0c21f6772a97a&tw=8b99f5e6f0a3030bbeef84fe4168931776b5961c6ba91c5484c3a45944de8beb"></script>
+
 </body>
 </html>
