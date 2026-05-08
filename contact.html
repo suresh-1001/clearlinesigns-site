@@ -349,8 +349,8 @@
 
             <div class="form-row">
               <div class="form-group">
-                <label>Business Name</label>
-                <input type="text" name="Company" id="fCompany" placeholder="Your Business"/>
+                <label>Business Name <span class="req">*</span></label>
+                <input type="text" name="Company" id="fCompany" placeholder="Your Business" required/>
               </div>
               <div class="form-group">
                 <label>City</label>
@@ -359,7 +359,7 @@
             </div>
 
             <div class="form-group">
-              <label>Type of Sign Needed</label>
+              <label>Type of Sign Needed <span class="req">*</span></label>
               <select name="sign_type" id="fSignType">
                 <option value="">Select a sign type...</option>
                 <option value="Storefront / Exterior Sign">Storefront / Exterior Sign</option>
@@ -592,16 +592,27 @@ async function submitForm() {
     document.getElementById('fEmail').focus();
     return;
   }
+  const company = document.getElementById('fCompany').value.trim();
+  if (!company) {
+    alert('Please enter your business name.');
+    document.getElementById('fCompany').focus();
+    return;
+  }
+  const sigTypeEl  = document.getElementById('fSignType');
+  const sigTypeVal = sigTypeEl.options[sigTypeEl.selectedIndex].value;
+  if (!sigTypeVal) {
+    alert('Please select the type of sign you need.');
+    sigTypeEl.focus();
+    return;
+  }
 
   const btn = document.getElementById('submitBtn');
   btn.disabled    = true;
   btn.textContent = 'Sending…';
 
   const phone   = document.getElementById('fPhone').value.trim();
-  const company = document.getElementById('fCompany').value.trim();
   const city    = document.getElementById('fCity').value.trim();
-  const sigType = document.getElementById('fSignType');
-  const sigText = sigType.options[sigType.selectedIndex].value;
+  const sigText = sigTypeVal;
   const details = document.getElementById('fDetails').value.trim();
   const desc    = [sigText ? 'Sign type: ' + sigText : '', city ? 'City: ' + city : '', details].filter(Boolean).join('\n');
 
