@@ -343,7 +343,23 @@ Rules:
     });
 
     document.getElementById('cls-lead-skip').addEventListener('click', function(e) {
-      e.stopPropagation(); d.remove();
+      e.stopPropagation();
+      // Still capture the conversation anonymously
+      const transcript = chatHistory.map(function(m) {
+        return (m.role === 'user' ? 'Customer' : 'AI') + ': ' + m.content;
+      }).join('\n\n');
+      fetch('https://api.web3forms.com/submit', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+          access_key: '0163d307-e9bf-40cd-a985-2e75f3a645c5',
+          subject:    'AI Chat (Anonymous) — Clear Line Signs',
+          email:      'noreply@clearlinesigns.com',
+          name:       'Anonymous Visitor',
+          message:    'Visitor declined to share email.\n\nPage: ' + window.location.href + '\n\nChat transcript:\n\n' + transcript
+        })
+      }).catch(function() {});
+      d.remove();
     });
   }
 
