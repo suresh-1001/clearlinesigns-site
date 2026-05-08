@@ -445,6 +445,29 @@
   </div>
 </section>
 
+<script>
+/* Pre-fill form if redirected from Sign Copy Generator */
+(function() {
+  var pre = sessionStorage.getItem('cls_prefill_message');
+  if (!pre) return;
+  sessionStorage.removeItem('cls_prefill_message');
+  function tryFill() {
+    var el = document.getElementById('fDetails');
+    if (el) {
+      el.value = pre;
+      el.style.borderColor = 'var(--teal-500)';
+      el.scrollIntoView({ behavior: 'smooth', block: 'center' });
+    } else {
+      setTimeout(tryFill, 150);
+    }
+  }
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', tryFill);
+  } else {
+    tryFill();
+  }
+})();
+</script>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
 <script>
 // ═══════════════════════════════════════════════════
