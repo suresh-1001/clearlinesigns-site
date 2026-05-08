@@ -446,19 +446,22 @@
 </section>
 
 <script>
-/* Pre-fill form if redirected from Sign Copy Generator */
+/* Pre-fill form if redirected from Sign Copy Generator (URL param approach) */
 (function() {
-  var pre = sessionStorage.getItem('cls_prefill_message');
-  if (!pre) return;
-  sessionStorage.removeItem('cls_prefill_message');
+  var params = new URLSearchParams(window.location.search);
+  var copy   = params.get('copy');
+  if (!copy) return;
   function tryFill() {
     var el = document.getElementById('fDetails');
     if (el) {
-      el.value = pre;
+      el.value = decodeURIComponent(copy);
       el.style.borderColor = 'var(--teal-500)';
-      el.scrollIntoView({ behavior: 'smooth', block: 'center' });
+      el.style.background  = '#fff';
+      setTimeout(function() {
+        el.scrollIntoView({ behavior: 'smooth', block: 'center' });
+      }, 400);
     } else {
-      setTimeout(tryFill, 150);
+      setTimeout(tryFill, 100);
     }
   }
   if (document.readyState === 'loading') {

@@ -470,9 +470,8 @@ function escHtml(str) {
 }
 
 function useThisCopy(headline, subline) {
-  const details = 'Sign copy I\'d like to use: ' + headline + (subline ? '\nSubline: ' + subline : '');
-  sessionStorage.setItem('cls_prefill_message', details);
-  window.location.href = './contact.html#quote';
+  var text = 'Sign copy I\'d like to use: ' + headline + (subline ? '\nSubline: ' + subline : '');
+  window.location.href = './contact.html?copy=' + encodeURIComponent(text) + '#quote';
 }
 </script>
 
