@@ -547,13 +547,17 @@ document.getElementById('chatInp').addEventListener('keydown', e => {
 // FORM SUBMIT — Dual: Zoho CRM + Web3Forms email
 // ═══════════════════════════════════════════════════
 async function submitForm() {
-  const firstName = document.getElementById('fFirstName').value.trim();
-  const lastName  = document.getElementById('fLastName').value.trim();
+  // Handle single full-name field (fLastName) or split first/last fields
+  const nameEl  = document.getElementById('fLastName');
+  const fullName = nameEl ? nameEl.value.trim() : '';
+  const parts   = fullName.split(' ');
+  const lastName  = parts.length > 1 ? parts.slice(1).join(' ') : fullName;
+  const firstName = parts.length > 1 ? parts[0] : '';
   const email     = document.getElementById('fEmail').value.trim();
 
-  if (!lastName) {
-    alert('Please enter your last name.');
-    document.getElementById('fLastName').focus();
+  if (!fullName) {
+    alert('Please enter your name.');
+    nameEl && nameEl.focus();
     return;
   }
   if (!email || email.indexOf('@') < 1) {
