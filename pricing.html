@@ -1,0 +1,584 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Sign Pricing Guide & Estimator | Clear Line Signs — San Jose, CA</title>
+  <meta name="description" content="Get instant ballpark pricing for custom signs in San Jose. Channel letters, wall murals, vehicle wraps, window graphics and more. Free AI pricing estimator from Clear Line Signs."/>
+  <link rel="canonical" href="https://clearlinesigns.com/pricing.html"/>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@300;400;500;600;700&family=DM+Serif+Display:ital@0;1&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="./assets/css/main.css">
+  <style>
+    /* ── Page-specific styles ── */
+    .est-hero {
+      background: var(--teal-900); padding: 96px 32px 72px;
+      text-align: center; position: relative; overflow: hidden;
+    }
+    .est-hero::before {
+      content: ''; position: absolute; inset: 0;
+      background:
+        radial-gradient(ellipse 65% 70% at 15% 50%, rgba(0,163,187,0.12) 0%, transparent 60%),
+        radial-gradient(ellipse 55% 65% at 85% 40%, rgba(0,81,95,0.14) 0%, transparent 55%);
+      pointer-events: none;
+    }
+    .est-hero > * { position: relative; z-index: 1; }
+    .est-hero .overline { color: var(--teal-400); display: block; margin-bottom: 12px; }
+    .est-hero h1 { color: var(--white); max-width: 700px; margin: 0 auto 16px; }
+    .est-hero p  { color: rgba(255,255,255,0.5); max-width: 560px; margin: 0 auto; font-size: 1rem; line-height: 1.7; font-weight: 300; }
+
+    /* ── Estimator card ── */
+    .est-section { padding: 72px 32px; background: var(--gray-50); }
+    .est-card {
+      max-width: 860px; margin: 0 auto;
+      background: var(--white); border: 1px solid var(--gray-200);
+      border-radius: 12px; box-shadow: 0 4px 24px rgba(0,0,0,0.06);
+      overflow: hidden;
+    }
+
+    /* Step tabs */
+    .est-steps {
+      display: flex; border-bottom: 1px solid var(--gray-200);
+      background: var(--gray-50);
+    }
+    .est-step {
+      flex: 1; padding: 16px 20px; text-align: center;
+      font-size: 0.8rem; font-weight: 600; color: var(--text-muted);
+      border-bottom: 3px solid transparent;
+      transition: all 0.2s; cursor: default;
+      display: flex; align-items: center; justify-content: center; gap: 8px;
+    }
+    .est-step.active   { color: var(--teal-600); border-bottom-color: var(--teal-500); background: var(--white); }
+    .est-step.done     { color: var(--teal-500); }
+    .est-step-num {
+      width: 22px; height: 22px; border-radius: 50%;
+      background: var(--gray-200); color: var(--gray-600);
+      font-size: 11px; font-weight: 700;
+      display: flex; align-items: center; justify-content: center; flex-shrink: 0;
+    }
+    .est-step.active .est-step-num { background: var(--teal-500); color: var(--white); }
+    .est-step.done   .est-step-num { background: var(--teal-100); color: var(--teal-600); }
+
+    .est-body { padding: 44px 48px; }
+
+    /* Step 1 — sign type grid */
+    .sign-type-grid {
+      display: grid; grid-template-columns: repeat(3, 1fr); gap: 12px;
+      margin-top: 24px;
+    }
+    .sign-type-btn {
+      border: 1.5px solid var(--gray-200); border-radius: 8px;
+      padding: 20px 16px; cursor: pointer; text-align: left;
+      background: var(--white); font-family: 'DM Sans', sans-serif;
+      transition: all 0.18s;
+    }
+    .sign-type-btn:hover { border-color: var(--teal-400); background: var(--teal-50); }
+    .sign-type-btn.selected { border-color: var(--teal-500); background: var(--teal-50); box-shadow: 0 0 0 3px rgba(0,131,150,0.1); }
+    .sign-type-btn .sicon { font-size: 24px; margin-bottom: 10px; display: block; }
+    .sign-type-btn .sname { font-size: 14px; font-weight: 600; color: var(--gray-900); margin-bottom: 4px; }
+    .sign-type-btn .sdesc { font-size: 12px; color: var(--text-muted); line-height: 1.45; }
+
+    /* Step 2 — config fields */
+    .config-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 18px; margin-top: 8px; }
+    .cfg-group { display: flex; flex-direction: column; gap: 7px; }
+    .cfg-group.full { grid-column: 1/-1; }
+    .cfg-group label { font-size: 0.72rem; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; color: var(--text-muted); }
+    .cfg-group select,
+    .cfg-group input[type="number"],
+    .cfg-group input[type="text"] {
+      padding: 11px 13px; background: var(--gray-50);
+      border: 1px solid var(--gray-200); border-radius: 6px;
+      font-family: 'DM Sans', sans-serif; font-size: 14px;
+      color: var(--gray-900); outline: none;
+      transition: border-color 0.2s, background 0.2s; appearance: none;
+    }
+    .cfg-group select { background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 12 12'%3E%3Cpath fill='%236b7280' d='M6 8L1 3h10z'/%3E%3C/svg%3E"); background-repeat: no-repeat; background-position: right 13px center; padding-right: 34px; }
+    .cfg-group select:focus,
+    .cfg-group input:focus { border-color: var(--teal-500); background: var(--white); }
+
+    .est-btn {
+      width: 100%; padding: 15px; margin-top: 24px;
+      background: var(--teal-600); color: var(--white);
+      border: none; border-radius: 6px;
+      font-family: 'DM Sans', sans-serif; font-weight: 700; font-size: 15px;
+      cursor: pointer; transition: all 0.2s;
+      display: flex; align-items: center; justify-content: center; gap: 10px;
+    }
+    .est-btn:hover { background: var(--teal-700); transform: translateY(-1px); box-shadow: 0 6px 18px rgba(0,131,150,0.25); }
+    .est-btn:disabled { opacity: 0.6; cursor: not-allowed; transform: none; box-shadow: none; }
+    .back-btn {
+      background: none; border: 1px solid var(--gray-300); color: var(--text-muted);
+      border-radius: 6px; padding: 9px 20px; font-family: 'DM Sans', sans-serif;
+      font-size: 14px; cursor: pointer; transition: all 0.15s; margin-bottom: 20px;
+    }
+    .back-btn:hover { border-color: var(--teal-400); color: var(--teal-600); }
+
+    /* Step 3 — results */
+    .est-result { animation: est-in 0.3s ease; }
+    @keyframes est-in { from{opacity:0;transform:translateY(8px)} to{opacity:1;transform:none} }
+
+    .price-range-card {
+      background: linear-gradient(135deg, var(--teal-900), var(--teal-700));
+      border-radius: 10px; padding: 32px; margin-bottom: 24px;
+      display: flex; align-items: center; justify-content: space-between; gap: 24px;
+      flex-wrap: wrap;
+    }
+    .price-label { font-size: 0.72rem; font-weight: 700; letter-spacing: 0.15em; text-transform: uppercase; color: rgba(255,255,255,0.5); margin-bottom: 6px; }
+    .price-amount { font-family: 'DM Serif Display', serif; font-size: 2.4rem; color: var(--white); line-height: 1; }
+    .price-note { font-size: 12px; color: rgba(255,255,255,0.45); margin-top: 6px; }
+    .price-badge {
+      background: rgba(255,255,255,0.1); border: 1px solid rgba(255,255,255,0.2);
+      border-radius: 100px; padding: 6px 16px;
+      font-size: 12px; font-weight: 600; color: rgba(255,255,255,0.8);
+      white-space: nowrap;
+    }
+
+    .factors-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; margin-bottom: 24px; }
+    .factor-card {
+      border: 1px solid var(--gray-200); border-radius: 8px; padding: 16px;
+    }
+    .factor-label { font-size: 10px; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase; color: var(--teal-600); margin-bottom: 5px; }
+    .factor-value { font-size: 14px; color: var(--gray-900); line-height: 1.5; }
+
+    .est-explanation {
+      background: var(--teal-50); border: 1px solid var(--teal-100);
+      border-radius: 8px; padding: 20px; margin-bottom: 24px;
+      font-size: 14px; color: var(--gray-700); line-height: 1.75;
+    }
+    .est-explanation strong { color: var(--teal-700); }
+
+    .est-disclaimer {
+      font-size: 12px; color: var(--text-muted); text-align: center;
+      margin-bottom: 24px; line-height: 1.6;
+    }
+
+    .est-cta-bar {
+      background: var(--teal-900); border-radius: 10px; padding: 28px 32px;
+      display: flex; align-items: center; justify-content: space-between; gap: 24px;
+      flex-wrap: wrap;
+    }
+    .est-cta-bar h3 { font-family: 'DM Serif Display', serif; font-size: 1.2rem; font-weight: 400; color: var(--white); margin-bottom: 4px; }
+    .est-cta-bar p  { font-size: 13px; color: rgba(255,255,255,0.5); }
+
+    /* Loading */
+    .est-loading { text-align: center; padding: 56px 32px; }
+    .est-loading p { font-size: 14px; color: var(--text-muted); margin-top: 18px; }
+    .spin-dots { display: flex; gap: 6px; justify-content: center; }
+    .spin-dot { width: 10px; height: 10px; border-radius: 50%; background: var(--teal-400); animation: sdot 1.2s infinite; }
+    .spin-dot:nth-child(2){animation-delay:.2s}.spin-dot:nth-child(3){animation-delay:.4s}
+    @keyframes sdot { 0%,60%,100%{transform:translateY(0);opacity:.4} 30%{transform:translateY(-8px);opacity:1} }
+
+    /* Reference table */
+    .ref-section { padding: 72px 32px; background: var(--white); }
+    .ref-table { width: 100%; border-collapse: collapse; margin-top: 32px; font-size: 14px; }
+    .ref-table th { background: var(--teal-900); color: var(--white); padding: 14px 18px; text-align: left; font-weight: 600; font-size: 12px; letter-spacing: 0.05em; }
+    .ref-table th:first-child { border-radius: 8px 0 0 0; }
+    .ref-table th:last-child  { border-radius: 0 8px 0 0; }
+    .ref-table td { padding: 13px 18px; border-bottom: 1px solid var(--gray-100); color: var(--gray-700); vertical-align: top; }
+    .ref-table tr:last-child td { border-bottom: none; }
+    .ref-table tr:hover td { background: var(--teal-50); }
+    .ref-table td:first-child { font-weight: 600; color: var(--gray-900); white-space: nowrap; }
+    .price-col { font-family: 'DM Serif Display', serif; color: var(--teal-700) !important; font-size: 15px; }
+
+    @media(max-width:700px){
+      .sign-type-grid { grid-template-columns: 1fr 1fr; }
+      .config-grid, .factors-grid { grid-template-columns: 1fr; }
+      .est-body { padding: 28px 20px; }
+      .price-range-card { flex-direction: column; }
+      .est-cta-bar { flex-direction: column; text-align: center; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- ── HERO ── -->
+<div class="est-hero">
+  <span class="overline">Free AI Tool</span>
+  <h1>Sign Pricing Guide &amp; Estimator</h1>
+  <p>Get an instant ballpark estimate for your sign project — then request an exact quote from our team.</p>
+</div>
+
+<!-- ── ESTIMATOR ── -->
+<section class="est-section">
+  <div class="est-card">
+
+    <!-- Steps -->
+    <div class="est-steps">
+      <div class="est-step active" id="step-tab-1">
+        <div class="est-step-num">1</div> Sign Type
+      </div>
+      <div class="est-step" id="step-tab-2">
+        <div class="est-step-num">2</div> Configure
+      </div>
+      <div class="est-step" id="step-tab-3">
+        <div class="est-step-num">3</div> Your Estimate
+      </div>
+    </div>
+
+    <!-- Step 1: Choose sign type -->
+    <div class="est-body" id="step1">
+      <h2 style="font-size:1.4rem;margin-bottom:6px;">What type of sign do you need?</h2>
+      <p style="color:var(--text-muted);font-size:14px;">Select the category that best matches your project.</p>
+      <div class="sign-type-grid" id="signTypeGrid"></div>
+      <button class="est-btn" id="step1Btn" onclick="goToStep2()" style="margin-top:24px;" disabled>
+        Continue → Configure Your Sign
+      </button>
+    </div>
+
+    <!-- Step 2: Configure -->
+    <div class="est-body" id="step2" style="display:none;">
+      <button class="back-btn" onclick="goToStep1()">← Back</button>
+      <h2 style="font-size:1.4rem;margin-bottom:6px;" id="step2Title">Configure Your Sign</h2>
+      <p style="color:var(--text-muted);font-size:14px;margin-bottom:24px;">Fill in the details for a more accurate estimate.</p>
+      <div class="config-grid" id="configFields"></div>
+      <button class="est-btn" id="step2Btn" onclick="getEstimate()">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg>
+        Get My Price Estimate
+      </button>
+    </div>
+
+    <!-- Step 3: Results -->
+    <div class="est-body" id="step3" style="display:none;">
+      <button class="back-btn" onclick="goToStep2()">← Adjust Details</button>
+      <div id="resultsArea"></div>
+    </div>
+
+  </div>
+</section>
+
+<!-- ── REFERENCE TABLE ── -->
+<section class="ref-section">
+  <div class="container" style="max-width:960px;">
+    <span class="overline">Reference Pricing</span>
+    <h2>Ballpark Price Ranges</h2>
+    <p class="lead">Every project is custom — these ranges give you a starting point. Exact pricing depends on your specifications, materials, and site conditions.</p>
+    <table class="ref-table">
+      <thead>
+        <tr>
+          <th>Sign Type</th>
+          <th>Typical Range</th>
+          <th>Key Factors</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr><td>Channel Letters (non-lit)</td><td class="price-col">$1,500 – $4,000</td><td>Number of letters, height, material, installation complexity</td></tr>
+        <tr><td>Channel Letters (LED lit)</td><td class="price-col">$3,000 – $8,000+</td><td>Letter count, size, illumination type, electrical work</td></tr>
+        <tr><td>Cabinet / Box Sign</td><td class="price-col">$2,000 – $7,000</td><td>Dimensions, illuminated or not, face material</td></tr>
+        <tr><td>Monument Sign</td><td class="price-col">$3,500 – $15,000+</td><td>Height, material (foam, stone, metal), electrical, permit</td></tr>
+        <tr><td>Lobby / Dimensional Letters</td><td class="price-col">$500 – $3,500</td><td>Material (acrylic, metal, foam), finish, letter count</td></tr>
+        <tr><td>ADA / Wayfinding Signs</td><td class="price-col">$80 – $400 each</td><td>Quantity, braille, mounting, ADA compliance level</td></tr>
+        <tr><td>Window Graphics</td><td class="price-col">$5 – $18 per sq ft</td><td>Material, coverage, cut vinyl vs. printed</td></tr>
+        <tr><td>Wall Mural (printed vinyl)</td><td class="price-col">$8 – $22 per sq ft</td><td>Square footage, substrate, print quality, installation</td></tr>
+        <tr><td>Vehicle Wrap (full)</td><td class="price-col">$2,500 – $5,500</td><td>Vehicle size, design complexity, partial vs. full</td></tr>
+        <tr><td>Vehicle Wrap (partial)</td><td class="price-col">$500 – $2,000</td><td>Coverage area, vehicle type, number of panels</td></tr>
+        <tr><td>Retractable Banner Stand</td><td class="price-col">$120 – $450</td><td>Width, height, graphic quality, hardware grade</td></tr>
+        <tr><td>Trade Show Popup Display</td><td class="price-col">$600 – $3,500</td><td>Size, backlit or not, portability features</td></tr>
+        <tr><td>Vinyl Banner</td><td class="price-col">$2 – $6 per sq ft</td><td>Material weight, size, quantity, grommets</td></tr>
+        <tr><td>Real Estate Yard Sign</td><td class="price-col">$25 – $75 each</td><td>Material, single/double-sided, quantity, rider</td></tr>
+      </tbody>
+    </table>
+    <p style="font-size:13px;color:var(--text-muted);margin-top:16px;">* Ranges are for the Bay Area / San Jose market. Prices include design and materials; installation quoted separately where applicable. Permits billed at cost.</p>
+  </div>
+</section>
+
+<!-- ── BOTTOM CTA ── -->
+<section style="background:var(--teal-900);padding:72px 32px;text-align:center;position:relative;overflow:hidden;">
+  <div style="position:absolute;inset:0;background:radial-gradient(ellipse 60% 60% at 50% 50%, rgba(0,163,187,0.1) 0%, transparent 60%);pointer-events:none;"></div>
+  <div style="position:relative;z-index:1;max-width:560px;margin:0 auto;">
+    <span class="overline" style="color:var(--teal-400);display:block;margin-bottom:12px;">Ready for an Exact Quote?</span>
+    <h2 style="color:var(--white);font-size:2rem;margin-bottom:12px;">Talk to our sign team</h2>
+    <p style="color:rgba(255,255,255,0.5);margin-bottom:28px;font-weight:300;">We'll measure your space, spec the right materials, and give you a detailed quote — at no charge.</p>
+    <a href="./contact.html#quote" class="btn btn-white">Get a Free Quote →</a>
+  </div>
+</section>
+
+<script>
+const PROXY = 'https://ai-proxy.clearlinesigns.com/v1/messages';
+
+// ── Sign types & their config fields ──────────────────────────
+const SIGN_TYPES = [
+  {
+    id: 'channel', icon: '🔡', name: 'Channel Letters',
+    desc: 'Storefront letters, lit or non-lit',
+    fields: [
+      { id: 'chars',   label: 'Number of characters (letters/spaces)', type: 'number', placeholder: 'e.g. 12', min: 1 },
+      { id: 'height',  label: 'Letter height', type: 'select', options: ['4 inches', '6 inches', '8 inches', '10 inches', '12 inches', '18 inches', '24 inches', '30+ inches'] },
+      { id: 'lit',     label: 'Illumination', type: 'select', options: ['Non-illuminated', 'Front-lit LED', 'Halo/reverse-lit LED', 'Open face neon-style'] },
+      { id: 'material',label: 'Face material', type: 'select', options: ['Aluminum with acrylic face', 'Stainless steel', 'Painted aluminum', 'Brushed metal'] },
+      { id: 'install', label: 'Installation needed?', type: 'select', options: ['Yes — include installation', 'No — sign only'] },
+    ]
+  },
+  {
+    id: 'monument', icon: '🏛️', name: 'Monument / Pylon Sign',
+    desc: 'Freestanding ground signs',
+    fields: [
+      { id: 'height', label: 'Sign height', type: 'select', options: ['Under 4 ft', '4–6 ft', '6–10 ft', '10–15 ft', '15+ ft'] },
+      { id: 'width',  label: 'Sign width', type: 'select', options: ['Under 4 ft', '4–6 ft', '6–10 ft', '10+ ft'] },
+      { id: 'material', label: 'Primary material', type: 'select', options: ['Fabricated metal', 'Foam with stucco finish', 'Stone / masonry', 'PVC / HDU foam'] },
+      { id: 'lit',    label: 'Illumination', type: 'select', options: ['Non-illuminated', 'LED cabinet face', 'Ground-lit uplighting', 'Internal LED'] },
+      { id: 'panels', label: 'Number of tenant panels', type: 'select', options: ['None (single tenant)', '2–4 panels', '5–8 panels', '8+ panels'] },
+    ]
+  },
+  {
+    id: 'lobby', icon: '🏢', name: 'Lobby / Interior Signs',
+    desc: 'Dimensional letters, acrylic, ADA',
+    fields: [
+      { id: 'type',   label: 'Sign type', type: 'select', options: ['Dimensional letters (logo/name)', 'Acrylic flat-cut letters', 'Backlit/halo-lit letters', 'ADA compliant signs', 'Wayfinding / directional', 'Full lobby wall graphic'] },
+      { id: 'size',   label: 'Approximate size', type: 'select', options: ['Small (under 2 ft wide)', 'Medium (2–6 ft wide)', 'Large (6–12 ft wide)', 'Extra large (12+ ft)'] },
+      { id: 'material', label: 'Material preference', type: 'select', options: ['Acrylic (clear or color)', 'Brushed aluminum', 'Painted metal', 'Wood', 'PVC / foam board', 'Not sure — advise me'] },
+      { id: 'qty',    label: 'Quantity', type: 'select', options: ['1 sign', '2–5 signs', '6–15 signs', '15+ signs'] },
+    ]
+  },
+  {
+    id: 'window', icon: '🪟', name: 'Window Graphics',
+    desc: 'Cut vinyl, printed, frosted, perforated',
+    fields: [
+      { id: 'sqft',   label: 'Approximate square footage', type: 'select', options: ['Under 10 sq ft', '10–25 sq ft', '25–50 sq ft', '50–100 sq ft', '100+ sq ft'] },
+      { id: 'type',   label: 'Graphic type', type: 'select', options: ['Cut vinyl (logo/text only)', 'Full-color printed vinyl', 'Frosted / privacy film', 'Perforated window film (see-through)', 'One-way vision film'] },
+      { id: 'windows', label: 'Number of windows / panels', type: 'select', options: ['1 window', '2–4 windows', '5–10 windows', '10+ windows'] },
+    ]
+  },
+  {
+    id: 'mural', icon: '🎨', name: 'Wall Mural / Graphics',
+    desc: 'Large format printed wall graphics',
+    fields: [
+      { id: 'width',  label: 'Width of mural', type: 'select', options: ['Under 6 ft', '6–12 ft', '12–20 ft', '20–40 ft', '40+ ft'] },
+      { id: 'height', label: 'Height of mural', type: 'select', options: ['Under 4 ft', '4–8 ft', '8–12 ft', '12+ ft'] },
+      { id: 'surface', label: 'Wall surface', type: 'select', options: ['Smooth drywall', 'Textured / stucco', 'Brick or concrete', 'Glass', 'Not sure'] },
+      { id: 'type',   label: 'Graphic type', type: 'select', options: ['Full-color printed vinyl', 'Cut vinyl (logo/pattern)', 'Canvas print', 'Fabric / SEG system'] },
+    ]
+  },
+  {
+    id: 'vehicle', icon: '🚐', name: 'Vehicle Wrap / Graphics',
+    desc: 'Full wraps, partial wraps, decals',
+    fields: [
+      { id: 'vehicle', label: 'Vehicle type', type: 'select', options: ['Sedan / coupe', 'SUV / crossover', 'Pickup truck', 'Cargo van', 'Box truck (small)', 'Box truck (large / 24ft+)', 'Trailer'] },
+      { id: 'coverage', label: 'Coverage level', type: 'select', options: ['Full wrap (all panels)', 'Partial wrap (sides + back)', 'Partial wrap (one side only)', 'Decals only (logo/text)', 'Hood + roof only'] },
+      { id: 'qty',    label: 'Number of vehicles', type: 'select', options: ['1 vehicle', '2–5 vehicles', '6–10 vehicles', '10+ vehicles'] },
+    ]
+  },
+  {
+    id: 'tradeshow', icon: '🏪', name: 'Trade Show Display',
+    desc: 'Retractable banners, booths, backdrops',
+    fields: [
+      { id: 'type',   label: 'Display type', type: 'select', options: ['Retractable banner stand', 'X-stand banner', 'Popup booth display (curved/straight)', 'Step & repeat backdrop', 'Table throw / cover', 'Tension fabric display', 'Complete booth package'] },
+      { id: 'size',   label: 'Size / width', type: 'select', options: ['Small (under 3 ft)', 'Standard (3–4 ft)', 'Large (8–10 ft)', 'Extra large (10–20 ft)', 'Custom size'] },
+      { id: 'lit',    label: 'Backlit / illuminated?', type: 'select', options: ['No backlight', 'Backlit LED (SEG fabric)'] },
+      { id: 'qty',    label: 'Quantity', type: 'select', options: ['1 unit', '2–5 units', '6–10 units', '10+ units'] },
+    ]
+  },
+  {
+    id: 'realestate', icon: '🏡', name: 'Real Estate Signs',
+    desc: 'Yard signs, riders, A-frames',
+    fields: [
+      { id: 'type',   label: 'Sign type', type: 'select', options: ['Corrugated yard sign (18×24)', 'Aluminum yard sign (24×18)', 'H-stake rider', 'A-frame / sandwich board', 'Open house directional sign', 'Signicade A-frame', 'Post & panel sign'] },
+      { id: 'sides',  label: 'Single or double-sided?', type: 'select', options: ['Single-sided', 'Double-sided'] },
+      { id: 'qty',    label: 'Quantity', type: 'select', options: ['1–5', '6–25', '26–100', '100+'] },
+    ]
+  },
+];
+
+let selectedType = null;
+let currentStep  = 1;
+
+// ── Render sign type grid ──────────────────────────────────────
+function renderSignTypes() {
+  const grid = document.getElementById('signTypeGrid');
+  grid.innerHTML = SIGN_TYPES.map(t => `
+    <button class="sign-type-btn${selectedType === t.id ? ' selected' : ''}"
+            onclick="selectType('${t.id}')">
+      <span class="sicon">${t.icon}</span>
+      <div class="sname">${t.name}</div>
+      <div class="sdesc">${t.desc}</div>
+    </button>`).join('');
+}
+
+function selectType(id) {
+  selectedType = id;
+  renderSignTypes();
+  document.getElementById('step1Btn').disabled = false;
+}
+
+// ── Step navigation ────────────────────────────────────────────
+function goToStep1() {
+  document.getElementById('step1').style.display = '';
+  document.getElementById('step2').style.display = 'none';
+  document.getElementById('step3').style.display = 'none';
+  setActiveStep(1);
+}
+
+function goToStep2() {
+  if (!selectedType) return;
+  const type = SIGN_TYPES.find(t => t.id === selectedType);
+  document.getElementById('step2Title').textContent = 'Configure: ' + type.name;
+
+  const configDiv = document.getElementById('configFields');
+  configDiv.innerHTML = type.fields.map(f => {
+    if (f.type === 'select') {
+      return `<div class="cfg-group${f.full ? ' full' : ''}">
+        <label>${f.label}</label>
+        <select id="cfg_${f.id}">
+          <option value="">Select...</option>
+          ${f.options.map(o => `<option value="${o}">${o}</option>`).join('')}
+        </select>
+      </div>`;
+    } else {
+      return `<div class="cfg-group${f.full ? ' full' : ''}">
+        <label>${f.label}</label>
+        <input type="${f.type}" id="cfg_${f.id}" placeholder="${f.placeholder || ''}" min="${f.min || 1}"/>
+      </div>`;
+    }
+  }).join('');
+
+  document.getElementById('step1').style.display = 'none';
+  document.getElementById('step2').style.display = '';
+  document.getElementById('step3').style.display = 'none';
+  setActiveStep(2);
+}
+
+function setActiveStep(n) {
+  [1,2,3].forEach(i => {
+    const tab = document.getElementById('step-tab-' + i);
+    tab.classList.remove('active', 'done');
+    if (i === n) tab.classList.add('active');
+    else if (i < n) tab.classList.add('done');
+  });
+  currentStep = n;
+}
+
+// ── Get AI estimate ────────────────────────────────────────────
+async function getEstimate() {
+  const type  = SIGN_TYPES.find(t => t.id === selectedType);
+  const btn   = document.getElementById('step2Btn');
+
+  // Collect config values
+  const config = {};
+  type.fields.forEach(f => {
+    const el = document.getElementById('cfg_' + f.id);
+    if (el) config[f.label] = el.value || 'Not specified';
+  });
+
+  btn.disabled = true;
+  btn.innerHTML = '<span style="display:inline-flex;gap:5px"><span style="width:8px;height:8px;border-radius:50%;background:#fff;animation:sdot 1.2s infinite .0s both;display:inline-block"></span><span style="width:8px;height:8px;border-radius:50%;background:#fff;animation:sdot 1.2s infinite .2s both;display:inline-block"></span><span style="width:8px;height:8px;border-radius:50%;background:#fff;animation:sdot 1.2s infinite .4s both;display:inline-block"></span></span> Calculating…';
+
+  document.getElementById('step2').style.display = 'none';
+  document.getElementById('step3').style.display = '';
+  setActiveStep(3);
+  document.getElementById('resultsArea').innerHTML = `
+    <div class="est-loading">
+      <div class="spin-dots"><div class="spin-dot"></div><div class="spin-dot"></div><div class="spin-dot"></div></div>
+      <p>Calculating your estimate based on Bay Area market rates…</p>
+    </div>`;
+
+  const configText = Object.entries(config).map(([k,v]) => `- ${k}: ${v}`).join('\n');
+
+  const prompt = `You are a sign pricing specialist for Clear Line Signs in San Jose, CA. A customer wants a ballpark estimate.
+
+Sign type: ${type.name}
+Configuration:
+${configText}
+
+Bay Area market pricing reference (for context):
+- Channel letters non-lit: $1,500–$4,000 | LED lit: $3,000–$8,000+
+- Monument signs: $3,500–$15,000+
+- Lobby dimensional letters: $500–$3,500 | ADA signs: $80–$400 each
+- Window graphics: $5–$18/sq ft
+- Wall murals: $8–$22/sq ft
+- Full vehicle wrap: $2,500–$5,500 | Partial: $500–$2,000
+- Retractable banner: $120–$450 | Trade show popup: $600–$3,500
+- Vinyl banners: $2–$6/sq ft | Real estate yard signs: $25–$75 each
+
+Generate a realistic ballpark estimate. Respond ONLY with valid JSON (no markdown):
+{
+  "range_low": "$X,XXX",
+  "range_high": "$X,XXX",
+  "confidence": "Ballpark" or "Rough estimate" or "Typical range",
+  "factors": [
+    {"label": "Factor name", "value": "Brief explanation"},
+    {"label": "Factor name", "value": "Brief explanation"},
+    {"label": "Factor name", "value": "Brief explanation"},
+    {"label": "Factor name", "value": "Brief explanation"}
+  ],
+  "explanation": "2-3 sentence plain-English explanation of this estimate, what's included, and what could move the price up or down.",
+  "timeline": "Typical production timeline e.g. '2–4 weeks from design approval'",
+  "includes": "What's typically included at this price e.g. 'Design, materials, and installation'"
+}`;
+
+  try {
+    const res  = await fetch(PROXY, {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ model: 'claude-sonnet-4-6', max_tokens: 800, messages: [{ role: 'user', content: prompt }] })
+    });
+    const data = await res.json();
+    const json = JSON.parse(data.content[0].text.replace(/```json|```/g,'').trim());
+    renderEstimate(json, type, config);
+  } catch(err) {
+    document.getElementById('resultsArea').innerHTML = `
+      <p style="color:#ef4444;text-align:center;padding:32px;">
+        Something went wrong. <a href="./contact.html#quote" style="color:var(--teal-600)">Request a quote directly →</a>
+      </p>`;
+  }
+
+  btn.disabled = false;
+  btn.innerHTML = '<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg> Get My Price Estimate';
+}
+
+function renderEstimate(d, type, config) {
+  const configSummary = Object.entries(config)
+    .filter(([,v]) => v && v !== 'Not specified' && v !== 'Select...')
+    .map(([k,v]) => `${k}: ${v}`).join(' · ');
+
+  document.getElementById('resultsArea').innerHTML = `
+    <div class="est-result">
+      <h2 style="font-size:1.3rem;margin-bottom:6px;">Your Estimate: ${type.name}</h2>
+      <p style="font-size:13px;color:var(--text-muted);margin-bottom:20px;">${configSummary}</p>
+
+      <div class="price-range-card">
+        <div>
+          <div class="price-label">Estimated Price Range</div>
+          <div class="price-amount">${d.range_low} – ${d.range_high}</div>
+          <div class="price-note">Includes: ${d.includes || 'design & materials'}</div>
+        </div>
+        <div style="display:flex;flex-direction:column;gap:10px;align-items:flex-end;">
+          <span class="price-badge">⏱ ${d.timeline || '2–4 weeks'}</span>
+          <span class="price-badge">📍 Bay Area / San Jose</span>
+        </div>
+      </div>
+
+      <div class="factors-grid">
+        ${(d.factors || []).map(f => `
+          <div class="factor-card">
+            <div class="factor-label">${f.label}</div>
+            <div class="factor-value">${f.value}</div>
+          </div>`).join('')}
+      </div>
+
+      <div class="est-explanation">${d.explanation || ''}</div>
+
+      <p class="est-disclaimer">
+        This is a ballpark estimate based on typical Bay Area market rates for ${type.name.toLowerCase()}.
+        Final pricing depends on your exact specifications, site conditions, and materials.
+        <strong>No obligation — exact quotes are always free.</strong>
+      </p>
+
+      <div class="est-cta-bar">
+        <div>
+          <h3>Get your exact quote</h3>
+          <p>We'll review your specs and respond within 1 business day — free.</p>
+        </div>
+        <a href="./contact.html?copy=${encodeURIComponent('Interested in: ' + type.name + '. Estimate range: ' + d.range_low + ' – ' + d.range_high + '. Config: ' + configSummary)}#quote"
+           class="btn btn-white" style="white-space:nowrap;">
+          Request Exact Quote →
+        </a>
+      </div>
+    </div>`;
+}
+
+// ── Init ───────────────────────────────────────────────────────
+renderSignTypes();
+</script>
+
+<script src="./assets/js/shared.js"></script>
+</body>
+</html>
