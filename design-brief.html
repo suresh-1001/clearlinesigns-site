@@ -1,0 +1,715 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Sign Design Brief Generator | Clear Line Signs — San Jose, CA</title>
+  <meta name="description" content="Generate a professional sign design brief in minutes. Help our designers understand your vision before the first call. Free tool from Clear Line Signs, San Jose."/>
+  <link rel="canonical" href="https://clearlinesigns.com/design-brief.html"/>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@300;400;500;600;700&family=DM+Serif+Display:ital@0;1&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="./assets/css/main.css">
+  <style>
+    /* ── Hero ── */
+    .db-hero {
+      background: var(--teal-900); padding: 96px 32px 72px;
+      text-align: center; position: relative; overflow: hidden;
+    }
+    .db-hero::before {
+      content: ''; position: absolute; inset: 0;
+      background: radial-gradient(ellipse 60% 70% at 20% 50%, rgba(0,163,187,0.12) 0%, transparent 60%),
+                  radial-gradient(ellipse 50% 60% at 80% 40%, rgba(0,81,95,0.15) 0%, transparent 55%);
+      pointer-events: none;
+    }
+    .db-hero > * { position: relative; z-index: 1; }
+    .db-hero .overline { color: var(--teal-400); display: block; margin-bottom: 12px; }
+    .db-hero h1 { color: var(--white); max-width: 680px; margin: 0 auto 16px; }
+    .db-hero p  { color: rgba(255,255,255,0.5); max-width: 560px; margin: 0 auto; font-size: 1rem; line-height: 1.7; font-weight: 300; }
+
+    /* ── Benefits bar ── */
+    .db-benefits {
+      background: var(--white); border-bottom: 1px solid var(--gray-200);
+      padding: 28px 32px;
+    }
+    .db-benefits-inner {
+      max-width: 860px; margin: 0 auto;
+      display: flex; gap: 32px; justify-content: center; flex-wrap: wrap;
+    }
+    .db-benefit {
+      display: flex; align-items: center; gap: 10px;
+      font-size: 13px; font-weight: 500; color: var(--gray-700);
+    }
+    .db-benefit span { font-size: 18px; }
+
+    /* ── Main card ── */
+    .db-section { padding: 64px 32px; background: var(--gray-50); }
+    .db-card {
+      max-width: 860px; margin: 0 auto;
+      background: var(--white); border: 1px solid var(--gray-200);
+      border-radius: 12px; box-shadow: 0 4px 24px rgba(0,0,0,0.06);
+      overflow: hidden;
+    }
+
+    /* Progress bar */
+    .db-progress { height: 3px; background: var(--gray-100); }
+    .db-progress-fill { height: 100%; background: var(--teal-500); transition: width 0.4s ease; }
+
+    /* Step header */
+    .db-step-hdr {
+      padding: 32px 48px 0;
+      display: flex; align-items: center; gap: 14px;
+    }
+    .db-step-badge {
+      width: 32px; height: 32px; border-radius: 50%;
+      background: var(--teal-500); color: var(--white);
+      font-size: 13px; font-weight: 700;
+      display: flex; align-items: center; justify-content: center; flex-shrink: 0;
+    }
+    .db-step-hdr h2 { font-size: 1.25rem; margin: 0; }
+    .db-step-hdr p  { font-size: 13px; color: var(--text-muted); margin: 2px 0 0; }
+
+    /* Form body */
+    .db-form-body { padding: 28px 48px 40px; }
+    .field-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 18px; }
+    .fg { display: flex; flex-direction: column; gap: 6px; }
+    .fg.full { grid-column: 1/-1; }
+    .fg label {
+      font-size: 0.72rem; font-weight: 700; letter-spacing: 0.1em;
+      text-transform: uppercase; color: var(--text-muted);
+    }
+    .fg label .req { color: var(--teal-500); }
+    .fg input, .fg select, .fg textarea {
+      padding: 11px 13px; background: var(--gray-50);
+      border: 1px solid var(--gray-200); border-radius: 6px;
+      font-family: 'DM Sans', sans-serif; font-size: 14px;
+      color: var(--gray-900); outline: none;
+      transition: border-color 0.2s, background 0.2s; appearance: none;
+    }
+    .fg select {
+      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 12 12'%3E%3Cpath fill='%236b7280' d='M6 8L1 3h10z'/%3E%3C/svg%3E");
+      background-repeat: no-repeat; background-position: right 12px center; padding-right: 32px;
+    }
+    .fg input:focus, .fg select:focus, .fg textarea:focus {
+      border-color: var(--teal-500); background: var(--white);
+    }
+    .fg textarea { min-height: 88px; resize: vertical; }
+
+    /* Style selector */
+    .style-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 10px; }
+    .style-btn {
+      border: 1.5px solid var(--gray-200); border-radius: 8px;
+      padding: 14px 12px; cursor: pointer; text-align: center;
+      background: var(--white); font-family: 'DM Sans', sans-serif;
+      transition: all 0.15s;
+    }
+    .style-btn:hover { border-color: var(--teal-400); background: var(--teal-50); }
+    .style-btn.sel   { border-color: var(--teal-500); background: var(--teal-50); box-shadow: 0 0 0 3px rgba(0,131,150,0.1); }
+    .style-btn .sico { font-size: 22px; margin-bottom: 6px; }
+    .style-btn .snm  { font-size: 12px; font-weight: 600; color: var(--gray-900); }
+    .style-btn .sds  { font-size: 11px; color: var(--text-muted); margin-top: 2px; }
+
+    /* Color swatches */
+    .color-row { display: flex; gap: 8px; flex-wrap: wrap; align-items: center; }
+    .color-chip {
+      width: 32px; height: 32px; border-radius: 50%;
+      border: 2px solid transparent; cursor: pointer;
+      transition: transform 0.15s; position: relative;
+    }
+    .color-chip:hover  { transform: scale(1.15); }
+    .color-chip.sel    { border-color: var(--teal-500); transform: scale(1.1); }
+    .color-chip.sel::after {
+      content: '✓'; position: absolute; inset: 0;
+      display: flex; align-items: center; justify-content: center;
+      font-size: 13px; color: white; text-shadow: 0 1px 2px rgba(0,0,0,0.5);
+    }
+    .color-custom { font-size: 12px; color: var(--text-muted); }
+
+    /* Nav buttons */
+    .db-nav {
+      padding: 0 48px 36px;
+      display: flex; gap: 12px; align-items: center;
+    }
+    .btn-next {
+      flex: 1; padding: 14px; background: var(--teal-600); color: var(--white);
+      border: none; border-radius: 6px;
+      font-family: 'DM Sans', sans-serif; font-weight: 700; font-size: 14px;
+      cursor: pointer; transition: all 0.2s;
+      display: flex; align-items: center; justify-content: center; gap: 8px;
+    }
+    .btn-next:hover { background: var(--teal-700); transform: translateY(-1px); }
+    .btn-next:disabled { opacity: 0.5; cursor: not-allowed; transform: none; }
+    .btn-back {
+      padding: 14px 22px; background: none;
+      border: 1px solid var(--gray-300); color: var(--text-muted);
+      border-radius: 6px; font-family: 'DM Sans', sans-serif; font-size: 14px;
+      cursor: pointer; transition: all 0.15s;
+    }
+    .btn-back:hover { border-color: var(--teal-400); color: var(--teal-600); }
+
+    /* Loading */
+    .db-loading { padding: 64px 48px; text-align: center; }
+    .db-loading p { font-size: 14px; color: var(--text-muted); margin-top: 18px; }
+    .ld-dots { display: flex; gap: 6px; justify-content: center; }
+    .ld-dot { width: 10px; height: 10px; border-radius: 50%; background: var(--teal-400); animation: ldd 1.2s infinite; }
+    .ld-dot:nth-child(2){animation-delay:.2s}.ld-dot:nth-child(3){animation-delay:.4s}
+    @keyframes ldd { 0%,60%,100%{transform:translateY(0);opacity:.4} 30%{transform:translateY(-8px);opacity:1} }
+
+    /* ── Design Brief Output ── */
+    .brief-output { padding: 0; animation: dbIn 0.35s ease; }
+    @keyframes dbIn { from{opacity:0;transform:translateY(8px)} to{opacity:1;transform:none} }
+
+    .brief-header {
+      background: var(--teal-900); padding: 36px 48px;
+      display: flex; justify-content: space-between; align-items: flex-start;
+      flex-wrap: wrap; gap: 20px;
+    }
+    .brief-header h2 { font-family: 'DM Serif Display', serif; font-size: 1.5rem; font-weight: 400; color: var(--white); margin-bottom: 4px; }
+    .brief-header p  { font-size: 13px; color: rgba(255,255,255,0.5); }
+    .brief-badge { background: rgba(255,255,255,0.1); border: 1px solid rgba(255,255,255,0.2); border-radius: 100px; padding: 5px 14px; font-size: 12px; color: rgba(255,255,255,0.7); white-space: nowrap; }
+
+    .brief-body { padding: 36px 48px; }
+
+    .brief-section { margin-bottom: 32px; }
+    .brief-section-title {
+      font-size: 10px; font-weight: 700; letter-spacing: 0.18em;
+      text-transform: uppercase; color: var(--teal-600);
+      margin-bottom: 14px; padding-bottom: 8px;
+      border-bottom: 1px solid var(--teal-100);
+    }
+    .brief-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; }
+    .brief-field { display: flex; flex-direction: column; gap: 3px; }
+    .brief-field.full { grid-column: 1/-1; }
+    .brief-field-label { font-size: 11px; font-weight: 600; color: var(--text-muted); text-transform: uppercase; letter-spacing: 0.08em; }
+    .brief-field-value { font-size: 14px; color: var(--gray-900); line-height: 1.6; }
+
+    .brief-ai-section {
+      background: var(--teal-50); border: 1px solid var(--teal-100);
+      border-radius: 8px; padding: 22px; margin-bottom: 24px;
+    }
+    .brief-ai-section h4 {
+      font-size: 11px; font-weight: 700; letter-spacing: 0.12em;
+      text-transform: uppercase; color: var(--teal-600); margin-bottom: 10px;
+    }
+    .brief-ai-section p { font-size: 14px; color: var(--gray-700); line-height: 1.75; }
+    .brief-ai-section ul { font-size: 14px; color: var(--gray-700); line-height: 1.75; padding-left: 18px; margin: 0; }
+    .brief-ai-section li { margin-bottom: 4px; }
+
+    .brief-footer {
+      padding: 28px 48px; border-top: 1px solid var(--gray-200);
+      display: flex; gap: 12px; flex-wrap: wrap; align-items: center; justify-content: space-between;
+    }
+    .brief-footer p { font-size: 13px; color: var(--text-muted); }
+
+    @media(max-width:700px){
+      .db-step-hdr, .db-form-body, .db-nav, .brief-header, .brief-body, .brief-footer { padding-left: 24px; padding-right: 24px; }
+      .field-grid, .brief-grid { grid-template-columns: 1fr; }
+      .style-grid { grid-template-columns: 1fr 1fr; }
+      .db-benefits-inner { flex-direction: column; align-items: center; }
+    }
+  </style>
+</head>
+<body>
+
+<div class="db-hero">
+  <span class="overline">Free Tool</span>
+  <h1>Sign Design Brief Generator</h1>
+  <p>Answer a few questions about your vision. We'll generate a professional design brief your designer can start from immediately.</p>
+</div>
+
+<div class="db-benefits">
+  <div class="db-benefits-inner">
+    <div class="db-benefit"><span>⚡</span> 3 minutes to complete</div>
+    <div class="db-benefit"><span>🎯</span> Faster quotes with fewer back-and-forths</div>
+    <div class="db-benefit"><span>📄</span> Professional brief you can download &amp; share</div>
+    <div class="db-benefit"><span>✅</span> Submitted directly to our design team</div>
+  </div>
+</div>
+
+<section class="db-section">
+  <div class="db-card" id="dbCard">
+    <div class="db-progress"><div class="db-progress-fill" id="progressFill" style="width:0%"></div></div>
+
+    <!-- ═══ STEP 1: About your business ═══ -->
+    <div id="s1">
+      <div class="db-step-hdr">
+        <div class="db-step-badge">1</div>
+        <div>
+          <h2>About Your Business</h2>
+          <p>Step 1 of 4 — Basic business information</p>
+        </div>
+      </div>
+      <div class="db-form-body">
+        <div class="field-grid">
+          <div class="fg"><label>Business Name <span class="req">*</span></label><input id="s1_biz" type="text" placeholder="e.g. Munnar Kitchen"/></div>
+          <div class="fg"><label>Industry / Business Type <span class="req">*</span></label>
+            <select id="s1_industry">
+              <option value="">Select...</option>
+              <option>Restaurant / Food & Beverage</option>
+              <option>Retail Store</option>
+              <option>Medical / Dental / Healthcare</option>
+              <option>Real Estate / Property</option>
+              <option>Tech / Software Company</option>
+              <option>Professional Services (Law, Finance, etc.)</option>
+              <option>Salon / Spa / Beauty</option>
+              <option>Automotive</option>
+              <option>Construction / Contractor</option>
+              <option>Education / Childcare</option>
+              <option>Gym / Fitness / Wellness</option>
+              <option>Hospitality / Hotel</option>
+              <option>Non-profit / Government</option>
+              <option>Other</option>
+            </select>
+          </div>
+          <div class="fg"><label>City / Location</label><input id="s1_city" type="text" placeholder="e.g. San Jose, CA"/></div>
+          <div class="fg"><label>Website or Social (optional)</label><input id="s1_web" type="text" placeholder="clearlinesigns.com or @handle"/></div>
+          <div class="fg full"><label>What signs do you need? <span class="req">*</span></label>
+            <textarea id="s1_scope" placeholder="e.g. A storefront channel letter sign for my new restaurant + 2 window graphics showing hours and menu highlights"></textarea>
+          </div>
+        </div>
+      </div>
+      <div class="db-nav">
+        <button class="btn-next" onclick="goStep(2)">
+          Continue — Brand & Style <svg width="14" height="14" viewBox="0 0 16 16" fill="none"><path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </button>
+      </div>
+    </div>
+
+    <!-- ═══ STEP 2: Brand & Style ═══ -->
+    <div id="s2" style="display:none;">
+      <div class="db-step-hdr">
+        <div class="db-step-badge">2</div>
+        <div>
+          <h2>Brand &amp; Style</h2>
+          <p>Step 2 of 4 — Your look and feel</p>
+        </div>
+      </div>
+      <div class="db-form-body">
+        <div class="field-grid">
+          <div class="fg"><label>Do you have an existing logo?</label>
+            <select id="s2_logo">
+              <option value="Yes — I have print-ready files (AI, EPS, SVG, or high-res PNG)">Yes — print-ready files (AI/EPS/SVG)</option>
+              <option value="Yes — I have a logo but only in low resolution (JPG/PNG from web)">Yes — low-res only (JPG/PNG from web)</option>
+              <option value="No logo yet — need design help">No logo yet — need design help</option>
+              <option value="I have brand guidelines / style guide">I have a full style guide</option>
+            </select>
+          </div>
+          <div class="fg"><label>Primary brand color(s)</label><input id="s2_colors" type="text" placeholder="e.g. Navy blue #003366, gold #C9A84C — or 'not sure'"/></div>
+          <div class="fg full"><label>Design style — pick your vibe</label>
+            <div class="style-grid" id="styleGrid">
+              <button class="style-btn" data-style="Modern & Minimal" onclick="pickStyle(this)">
+                <div class="sico">◻</div><div class="snm">Modern & Minimal</div><div class="sds">Clean, simple, sleek</div>
+              </button>
+              <button class="style-btn" data-style="Bold & High-Impact" onclick="pickStyle(this)">
+                <div class="sico">⬛</div><div class="snm">Bold & High-Impact</div><div class="sds">Big, strong, attention-grabbing</div>
+              </button>
+              <button class="style-btn" data-style="Warm & Traditional" onclick="pickStyle(this)">
+                <div class="sico">🏛</div><div class="snm">Warm & Traditional</div><div class="sds">Classic, trustworthy, established</div>
+              </button>
+              <button class="style-btn" data-style="Playful & Creative" onclick="pickStyle(this)">
+                <div class="sico">🎨</div><div class="snm">Playful & Creative</div><div class="sds">Fun, vibrant, energetic</div>
+              </button>
+              <button class="style-btn" data-style="Luxury & Premium" onclick="pickStyle(this)">
+                <div class="sico">✦</div><div class="snm">Luxury & Premium</div><div class="sds">Sophisticated, upscale, refined</div>
+              </button>
+              <button class="style-btn" data-style="Professional & Corporate" onclick="pickStyle(this)">
+                <div class="sico">🏢</div><div class="snm">Professional & Corporate</div><div class="sds">Formal, credible, polished</div>
+              </button>
+              <button class="style-btn" data-style="Natural & Organic" onclick="pickStyle(this)">
+                <div class="sico">🌿</div><div class="snm">Natural & Organic</div><div class="sds">Earthy, sustainable, warm</div>
+              </button>
+              <button class="style-btn" data-style="Industrial & Edgy" onclick="pickStyle(this)">
+                <div class="sico">⚙</div><div class="snm">Industrial & Edgy</div><div class="sds">Raw, urban, bold textures</div>
+              </button>
+            </div>
+          </div>
+          <div class="fg full"><label>Inspiration or references (optional)</label>
+            <textarea id="s2_inspo" placeholder="Describe signs you love, competitors, brands with a similar look — or paste URLs. 'I like the look of Chipotle's signage' is totally valid."></textarea>
+          </div>
+        </div>
+      </div>
+      <div class="db-nav">
+        <button class="btn-back" onclick="goStep(1)">← Back</button>
+        <button class="btn-next" onclick="goStep(3)">
+          Continue — Sign Details <svg width="14" height="14" viewBox="0 0 16 16" fill="none"><path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </button>
+      </div>
+    </div>
+
+    <!-- ═══ STEP 3: Sign Specs ═══ -->
+    <div id="s3" style="display:none;">
+      <div class="db-step-hdr">
+        <div class="db-step-badge">3</div>
+        <div>
+          <h2>Sign Details</h2>
+          <p>Step 3 of 4 — What goes on the sign</p>
+        </div>
+      </div>
+      <div class="db-form-body">
+        <div class="field-grid">
+          <div class="fg full"><label>Sign copy / text <span class="req">*</span></label>
+            <textarea id="s3_copy" placeholder="Exactly what text should appear on the sign(s). e.g. 'MUNNAR KITCHEN' on main sign, 'Authentic Indian Cuisine' below, hours on window graphic: Mon–Sat 11am–9pm, Sun 12pm–8pm"></textarea>
+          </div>
+          <div class="fg"><label>Known size or space constraints</label><input id="s3_size" type="text" placeholder="e.g. Max 8 ft wide × 2 ft tall, or 'not sure'"/></div>
+          <div class="fg"><label>Installation location</label>
+            <select id="s3_location">
+              <option value="">Select...</option>
+              <option>Exterior building / storefront wall</option>
+              <option>Interior lobby or reception</option>
+              <option>Window / glass surface</option>
+              <option>Vehicle</option>
+              <option>Freestanding / ground mount</option>
+              <option>Trade show / event</option>
+              <option>Multiple locations</option>
+            </select>
+          </div>
+          <div class="fg"><label>Materials preference</label>
+            <select id="s3_material">
+              <option value="No preference — advise me">No preference — advise me</option>
+              <option value="Aluminum / metal">Aluminum / metal</option>
+              <option value="Acrylic / plastic">Acrylic / plastic</option>
+              <option value="Vinyl graphics">Vinyl graphics</option>
+              <option value="Wood">Wood</option>
+              <option value="Foam / PVC">Foam / PVC</option>
+              <option value="Illuminated / LED">Illuminated / LED</option>
+            </select>
+          </div>
+          <div class="fg"><label>Budget range (optional)</label>
+            <select id="s3_budget">
+              <option value="">Prefer not to say</option>
+              <option value="Under $500">Under $500</option>
+              <option value="$500 – $1,500">$500 – $1,500</option>
+              <option value="$1,500 – $3,500">$1,500 – $3,500</option>
+              <option value="$3,500 – $8,000">$3,500 – $8,000</option>
+              <option value="$8,000+">$8,000+</option>
+            </select>
+          </div>
+          <div class="fg"><label>Target completion date</label>
+            <select id="s3_timeline">
+              <option value="">Flexible</option>
+              <option value="ASAP / Rush">ASAP / Rush needed</option>
+              <option value="Within 2 weeks">Within 2 weeks</option>
+              <option value="Within 1 month">Within 1 month</option>
+              <option value="1–3 months">1–3 months</option>
+              <option value="3+ months (planning ahead)">3+ months (planning ahead)</option>
+            </select>
+          </div>
+          <div class="fg full"><label>Anything else we should know?</label>
+            <textarea id="s3_notes" placeholder="Special requirements, constraints, questions, what's most important to you…"></textarea>
+          </div>
+        </div>
+      </div>
+      <div class="db-nav">
+        <button class="btn-back" onclick="goStep(2)">← Back</button>
+        <button class="btn-next" onclick="goStep(4)">
+          Continue — Contact Info <svg width="14" height="14" viewBox="0 0 16 16" fill="none"><path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </button>
+      </div>
+    </div>
+
+    <!-- ═══ STEP 4: Contact + Submit ═══ -->
+    <div id="s4" style="display:none;">
+      <div class="db-step-hdr">
+        <div class="db-step-badge">4</div>
+        <div>
+          <h2>Your Contact Info</h2>
+          <p>Step 4 of 4 — We'll send your brief and follow up</p>
+        </div>
+      </div>
+      <div class="db-form-body">
+        <div class="field-grid">
+          <div class="fg"><label>Full Name <span class="req">*</span></label><input id="s4_name" type="text" placeholder="Jane Smith"/></div>
+          <div class="fg"><label>Phone</label><input id="s4_phone" type="tel" placeholder="(408) 555-0100"/></div>
+          <div class="fg full"><label>Email <span class="req">*</span></label><input id="s4_email" type="email" placeholder="jane@yourbusiness.com"/></div>
+        </div>
+        <div style="background:var(--teal-50);border:1px solid var(--teal-100);border-radius:8px;padding:16px;margin-top:20px;font-size:13px;color:var(--gray-700);line-height:1.6;">
+          ✅ We'll generate your design brief, email it to you, and have a team member follow up within 1 business day.
+        </div>
+      </div>
+      <div class="db-nav">
+        <button class="btn-back" onclick="goStep(3)">← Back</button>
+        <button class="btn-next" id="generateBtn" onclick="generateBrief()">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg>
+          Generate My Design Brief
+        </button>
+      </div>
+    </div>
+
+    <!-- ═══ LOADING ═══ -->
+    <div id="sLoading" style="display:none;">
+      <div class="db-loading">
+        <div class="ld-dots"><div class="ld-dot"></div><div class="ld-dot"></div><div class="ld-dot"></div></div>
+        <p id="loadingMsg">Generating your professional design brief…</p>
+      </div>
+    </div>
+
+    <!-- ═══ RESULT ═══ -->
+    <div id="sResult" style="display:none;" class="brief-output"></div>
+
+  </div>
+</section>
+
+<script>
+const PROXY = 'https://ai-proxy.clearlinesigns.com/v1/messages';
+let selectedStyle = '';
+const steps = [null,'s1','s2','s3','s4','sLoading','sResult'];
+const progress = [0, 0, 28, 55, 80, 95, 100];
+
+function goStep(n) {
+  // Validate current visible step
+  if (n === 2 && !validate1()) return;
+  if (n === 3 && !validate2()) return;
+  if (n === 4 && !validate3()) return;
+
+  steps.forEach((id, i) => {
+    if (!id) return;
+    document.getElementById(id).style.display = (i === n) ? '' : 'none';
+  });
+  document.getElementById('progressFill').style.width = progress[n] + '%';
+  document.getElementById('dbCard').scrollIntoView({ behavior: 'smooth', block: 'start' });
+}
+
+function validate1() {
+  if (!v('s1_biz'))      { alert('Please enter your business name.'); focus('s1_biz'); return false; }
+  if (!v('s1_industry')) { alert('Please select your industry.'); focus('s1_industry'); return false; }
+  if (!v('s1_scope'))    { alert('Please describe what signs you need.'); focus('s1_scope'); return false; }
+  return true;
+}
+function validate2() {
+  if (!selectedStyle) { alert('Please pick a design style.'); return false; }
+  return true;
+}
+function validate3() {
+  if (!v('s3_copy')) { alert('Please enter the text for your sign.'); focus('s3_copy'); return false; }
+  return true;
+}
+function validate4() {
+  if (!v('s4_name'))  { alert('Please enter your name.'); focus('s4_name'); return false; }
+  if (!v('s4_email') || !document.getElementById('s4_email').value.includes('@')) {
+    alert('Please enter a valid email address.'); focus('s4_email'); return false;
+  }
+  return true;
+}
+
+function v(id) { return document.getElementById(id).value.trim(); }
+function focus(id) { document.getElementById(id).focus(); }
+
+function pickStyle(btn) {
+  document.querySelectorAll('.style-btn').forEach(b => b.classList.remove('sel'));
+  btn.classList.add('sel');
+  selectedStyle = btn.dataset.style;
+}
+
+async function generateBrief() {
+  if (!validate4()) return;
+
+  const data = {
+    biz:      v('s1_biz'),
+    industry: v('s1_industry'),
+    city:     v('s1_city') || 'San Jose, CA',
+    web:      v('s1_web') || 'Not provided',
+    scope:    v('s1_scope'),
+    logo:     document.getElementById('s2_logo').value,
+    colors:   v('s2_colors') || 'Not specified',
+    style:    selectedStyle,
+    inspo:    v('s2_inspo') || 'None provided',
+    copy:     v('s3_copy'),
+    size:     v('s3_size') || 'Not specified',
+    location: document.getElementById('s3_location').value || 'Not specified',
+    material: document.getElementById('s3_material').value,
+    budget:   document.getElementById('s3_budget').value || 'Not specified',
+    timeline: document.getElementById('s3_timeline').value || 'Flexible',
+    notes:    v('s3_notes') || 'None',
+    name:     v('s4_name'),
+    phone:    v('s4_phone') || 'Not provided',
+    email:    v('s4_email'),
+  };
+
+  goStep(5);
+  const msgs = [
+    'Analyzing your project details…',
+    'Generating design direction…',
+    'Writing creative brief…',
+    'Finalizing recommendations…'
+  ];
+  let mi = 0;
+  const ticker = setInterval(() => { if (++mi < msgs.length) document.getElementById('loadingMsg').textContent = msgs[mi]; }, 1800);
+
+  const prompt = `You are a professional sign design consultant. Generate a complete design brief for this client.
+
+CLIENT INFO:
+- Business: ${data.biz}
+- Industry: ${data.industry}
+- Location: ${data.city}
+- Website: ${data.web}
+
+PROJECT SCOPE:
+${data.scope}
+
+BRAND:
+- Logo status: ${data.logo}
+- Colors: ${data.colors}
+- Design style: ${data.style}
+- Inspiration: ${data.inspo}
+
+SIGN DETAILS:
+- Copy/text: ${data.copy}
+- Size constraints: ${data.size}
+- Location: ${data.location}
+- Material preference: ${data.material}
+- Budget: ${data.budget}
+- Timeline: ${data.timeline}
+- Additional notes: ${data.notes}
+
+Generate a professional design brief. Respond ONLY with valid JSON (no markdown):
+{
+  "project_title": "Short project title e.g. 'Storefront Signage Package — Munnar Kitchen'",
+  "project_summary": "2-3 sentence overview of the project scope and goals",
+  "design_direction": "3-4 sentences describing the design direction based on their style, industry, and brand — be specific and creative",
+  "logo_recommendation": "Specific recommendation about logo/artwork based on their logo status",
+  "color_palette": "Describe the recommended color approach based on their input",
+  "typography_direction": "Recommend font style direction appropriate for their industry and style",
+  "sign_specifications": [
+    {"sign": "Sign name e.g. Main storefront sign", "copy": "Exact text", "material": "Recommended material", "size": "Estimated size if known"},
+    ...one per sign needed
+  ],
+  "designer_notes": ["Important note 1 for the designer", "Important note 2", "Important note 3"],
+  "questions_for_client": ["Question that needs clarification 1", "Question 2"],
+  "next_steps": "What happens next in the Clear Line Signs process"
+}`;
+
+  try {
+    const res  = await fetch(PROXY, {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ model: 'claude-sonnet-4-6', max_tokens: 1500, messages: [{ role: 'user', content: prompt }] })
+    });
+    const rd   = await res.json();
+    const json = JSON.parse(rd.content[0].text.replace(/```json|```/g,'').trim());
+    clearInterval(ticker);
+
+    // Also submit to Web3Forms
+    const briefText = `DESIGN BRIEF — ${json.project_title}
+
+SUMMARY: ${json.project_summary}
+
+DESIGN DIRECTION: ${json.design_direction}
+
+COPY: ${data.copy}
+
+SPECS:
+${(json.sign_specifications||[]).map(s=>`• ${s.sign}: "${s.copy}" | Material: ${s.material} | Size: ${s.size}`).join('\n')}
+
+DESIGNER NOTES:
+${(json.designer_notes||[]).map(n=>`• ${n}`).join('\n')}
+
+QUESTIONS FOR CLIENT:
+${(json.questions_for_client||[]).map(q=>`• ${q}`).join('\n')}
+
+Budget: ${data.budget} | Timeline: ${data.timeline}`;
+
+    fetch('https://api.web3forms.com/submit', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({
+        access_key: '0163d307-e9bf-40cd-a985-2e75f3a645c5',
+        subject: 'Design Brief — ' + data.biz + ' — Clear Line Signs',
+        name: data.name, email: data.email, phone: data.phone,
+        business: data.biz, message: briefText
+      })
+    }).catch(()=>{});
+
+    renderBrief(json, data);
+    goStep(6);
+  } catch(err) {
+    clearInterval(ticker);
+    document.getElementById('sResult').innerHTML = `<div style="padding:48px;text-align:center;color:#ef4444;">Something went wrong generating your brief. <a href="./contact.html#quote" style="color:var(--teal-600)">Contact us directly →</a></div>`;
+    document.getElementById('sResult').style.display = '';
+    document.getElementById('sLoading').style.display = 'none';
+  }
+}
+
+function renderBrief(j, d) {
+  const today = new Date().toLocaleDateString('en-US', { month: 'long', day: 'numeric', year: 'numeric' });
+  const specs = (j.sign_specifications || []).map(s => `
+    <div style="border:1px solid var(--gray-200);border-radius:6px;padding:14px;margin-bottom:10px;">
+      <div style="font-weight:600;font-size:14px;color:var(--gray-900);margin-bottom:8px;">${s.sign}</div>
+      <div class="brief-grid" style="gap:8px;">
+        <div class="brief-field"><div class="brief-field-label">Copy / Text</div><div class="brief-field-value">${s.copy}</div></div>
+        <div class="brief-field"><div class="brief-field-label">Material</div><div class="brief-field-value">${s.material}</div></div>
+        <div class="brief-field full"><div class="brief-field-label">Size Estimate</div><div class="brief-field-value">${s.size}</div></div>
+      </div>
+    </div>`).join('');
+
+  const contactQuoteUrl = `./contact.html?copy=${encodeURIComponent('Design Brief for ' + d.biz + ' — ' + j.project_title + '. Copy: ' + d.copy + '. Budget: ' + (d.budget||'TBD') + '. Timeline: ' + d.timeline)}#quote`;
+
+  document.getElementById('sResult').innerHTML = `
+    <div class="brief-header">
+      <div>
+        <h2>${j.project_title || 'Design Brief — ' + d.biz}</h2>
+        <p>Prepared for ${d.name} · ${d.biz} · ${today}</p>
+      </div>
+      <span class="brief-badge">Clear Line Signs · San Jose, CA</span>
+    </div>
+    <div class="brief-body">
+
+      <div class="brief-section">
+        <div class="brief-section-title">Project Overview</div>
+        <div class="brief-grid">
+          <div class="brief-field"><div class="brief-field-label">Client</div><div class="brief-field-value">${d.biz}</div></div>
+          <div class="brief-field"><div class="brief-field-label">Industry</div><div class="brief-field-value">${d.industry}</div></div>
+          <div class="brief-field"><div class="brief-field-label">Location</div><div class="brief-field-value">${d.city}</div></div>
+          <div class="brief-field"><div class="brief-field-label">Timeline</div><div class="brief-field-value">${d.timeline}</div></div>
+          <div class="brief-field"><div class="brief-field-label">Budget</div><div class="brief-field-value">${d.budget || 'To be discussed'}</div></div>
+          <div class="brief-field"><div class="brief-field-label">Logo Status</div><div class="brief-field-value">${d.logo}</div></div>
+          <div class="brief-field full"><div class="brief-field-label">Project Summary</div><div class="brief-field-value">${j.project_summary}</div></div>
+        </div>
+      </div>
+
+      <div class="brief-section">
+        <div class="brief-section-title">Design Direction</div>
+        <div class="brief-ai-section">
+          <h4>Creative Direction</h4>
+          <p>${j.design_direction}</p>
+        </div>
+        <div class="brief-grid">
+          <div class="brief-field"><div class="brief-field-label">Style</div><div class="brief-field-value">${d.style}</div></div>
+          <div class="brief-field"><div class="brief-field-label">Color Palette</div><div class="brief-field-value">${j.color_palette}</div></div>
+          <div class="brief-field"><div class="brief-field-label">Typography</div><div class="brief-field-value">${j.typography_direction}</div></div>
+          <div class="brief-field"><div class="brief-field-label">Logo / Artwork</div><div class="brief-field-value">${j.logo_recommendation}</div></div>
+        </div>
+      </div>
+
+      <div class="brief-section">
+        <div class="brief-section-title">Sign Specifications</div>
+        ${specs}
+      </div>
+
+      <div class="brief-ai-section" style="margin-bottom:20px;">
+        <h4>Designer Notes</h4>
+        <ul>${(j.designer_notes||[]).map(n=>`<li>${n}</li>`).join('')}</ul>
+      </div>
+
+      ${j.questions_for_client && j.questions_for_client.length ? `
+      <div class="brief-ai-section" style="margin-bottom:20px;">
+        <h4>Questions for Client</h4>
+        <ul>${j.questions_for_client.map(q=>`<li>${q}</li>`).join('')}</ul>
+      </div>` : ''}
+
+      <div style="background:var(--teal-900);border-radius:8px;padding:24px;color:var(--white);">
+        <div style="font-size:10px;font-weight:700;letter-spacing:0.15em;text-transform:uppercase;color:rgba(255,255,255,0.5);margin-bottom:6px;">Next Steps</div>
+        <p style="font-size:14px;color:rgba(255,255,255,0.8);line-height:1.6;">${j.next_steps || 'A Clear Line Signs team member will review this brief and follow up within 1 business day with questions, mock-ups, and a detailed quote.'}</p>
+      </div>
+    </div>
+    <div class="brief-footer">
+      <p>Brief emailed to ${d.email} · A team member will follow up within 1 business day.</p>
+      <div style="display:flex;gap:10px;flex-wrap:wrap;">
+        <button onclick="window.print()" class="btn-back" style="padding:10px 18px;font-size:13px;">🖨 Print Brief</button>
+        <a href="${contactQuoteUrl}" class="btn btn-primary" style="font-size:13px;padding:10px 20px;">Request Formal Quote →</a>
+      </div>
+    </div>`;
+}
+</script>
+
+<script src="./assets/js/shared.js"></script>
+</body>
+</html>
