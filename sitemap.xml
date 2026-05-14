@@ -2,6 +2,7 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 
   <!-- Core pages -->
+  <url><loc>https://clearlinesigns.com/about.html</loc><priority>0.6</priority></url>
   <url><loc>https://clearlinesigns.com/</loc><priority>1.0</priority></url>
   <url><loc>https://clearlinesigns.com/services.html</loc><priority>0.8</priority></url>
   <url><loc>https://clearlinesigns.com/portfolio.html</loc><priority>0.8</priority></url>
