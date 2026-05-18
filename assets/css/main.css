@@ -676,3 +676,27 @@ footer {
   .tb-right { gap: 12px; }
   .nav-phone { display: none; }
 }
+
+/* ── FOOTER SOCIAL ICONS ── */
+.footer-social {
+  display: flex;
+  gap: 12px;
+  margin-top: 16px;
+  align-items: center;
+}
+.footer-social a {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 38px;
+  height: 38px;
+  border-radius: 8px;
+  background: rgba(255,255,255,0.08);
+  color: rgba(255,255,255,0.6);
+  text-decoration: none;
+  transition: background 0.2s, color 0.2s;
+}
+.footer-social a:hover {
+  background: var(--teal-600);
+  color: #fff;
+}
