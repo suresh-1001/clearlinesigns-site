@@ -9,7 +9,6 @@
     gtag('js', new Date());
     gtag('config', 'G-8W1P7GCDBP');
   </script>
-
   <meta charset="UTF-8"/>
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>San Jose Commercial Sign Company | Clear Line Signs</title>
@@ -65,120 +64,60 @@
   <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@300;400;500;600;700&family=DM+Serif+Display:ital@0;1&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="./assets/css/main.css">
   <style>
-    .hero-ring {
-      position: absolute; width: 700px; height: 700px;
-      border-radius: 50%; border: 1px solid rgba(0,163,187,0.08);
-      top: 50%; left: 50%; transform: translate(-50%,-50%);
-      pointer-events: none; z-index: 0;
-    }
-    .hero-ring-2 { width: 500px; height: 500px; border-color: rgba(0,163,187,0.06); }
-    .hero-ring-3 { width: 300px; height: 300px; border-color: rgba(0,163,187,0.1); }
-    .about-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 80px; align-items: center; }
-    .about-visual {
-      position: relative; border-radius: var(--r-xl); overflow: hidden;
-      background: linear-gradient(135deg, var(--teal-800), var(--teal-700));
-      min-height: 480px; display: flex; align-items: center; justify-content: center;
-    }
-    .about-visual-geo {
-      position: absolute; inset: 0;
-      background-image:
-        linear-gradient(135deg, rgba(255,255,255,0.03) 25%, transparent 25%),
-        linear-gradient(225deg, rgba(255,255,255,0.03) 25%, transparent 25%),
-        linear-gradient(315deg, rgba(255,255,255,0.03) 25%, transparent 25%),
-        linear-gradient(45deg,  rgba(255,255,255,0.03) 25%, transparent 25%);
-      background-size: 48px 48px;
-    }
-    .about-visual-svg { position: relative; z-index: 1; opacity: 0.15; }
-    .about-badge {
-      position: absolute; bottom: 28px; left: 28px;
-      background: rgba(255,255,255,0.08); border: 1px solid rgba(255,255,255,0.15);
-      backdrop-filter: blur(12px); border-radius: var(--r);
-      padding: 18px 22px; z-index: 2;
-    }
-    .about-badge-num { font-family: 'DM Serif Display', serif; font-size: 2.4rem; color: var(--white); line-height: 1; }
-    .about-badge-label { font-size: 0.75rem; color: var(--text-dim); margin-top: 4px; }
-    .about-badge-2 { left: auto; right: 28px; bottom: auto; top: 28px; }
-    .why-list { list-style: none; margin-top: 36px; display: flex; flex-direction: column; gap: 20px; }
-    .why-item { display: flex; gap: 14px; align-items: flex-start; }
-    .why-icon {
-      width: 40px; height: 40px; border-radius: var(--r-sm); flex-shrink: 0;
-      background: linear-gradient(135deg, var(--teal-50), var(--teal-100));
-      display: flex; align-items: center; justify-content: center; margin-top: 2px;
-    }
-    .why-icon svg { width: 20px; height: 20px; }
-    .why-text strong { display: block; font-size: 1rem; font-weight: 600; color: var(--gray-900); margin-bottom: 3px; }
-    .why-text p { font-size: 0.88rem; color: var(--text-muted); line-height: 1.65; }
-    .products-browse { background: var(--teal-50); border-top: 1px solid var(--teal-100); border-bottom: 1px solid var(--teal-100); padding: 48px 32px; }
-    .products-browse .container { max-width: 1200px; margin: 0 auto; display: flex; align-items: center; justify-content: space-between; gap: 32px; flex-wrap: wrap; }
-    .pb-left .overline { display: block; font-size: 0.72rem; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase; color: var(--teal-600); font-family: var(--font-sans); margin-bottom: 8px; }
-    .pb-left h3 { font-family: 'DM Serif Display', serif; font-size: 1.5rem; font-weight: 400; color: #0d1f2d; line-height: 1.25; margin-bottom: 8px; }
-    .pb-left p { font-size: 0.9rem; color: #4a5568; max-width: 480px; line-height: 1.6; }
-    .pb-chips { display: flex; flex-wrap: wrap; gap: 8px; max-width: 480px; }
-    .pb-chip { display: inline-block; padding: 6px 14px; border: 1px solid var(--teal-300); border-radius: 999px; font-size: 0.8rem; font-weight: 500; color: var(--teal-700); text-decoration: none; background: var(--white); transition: background .15s, color .15s; }
-    .pb-chip:hover { background: var(--teal-600); color: var(--white); border-color: var(--teal-600); }
-    @media(max-width:860px) { .products-browse .container { flex-direction: column; align-items: flex-start; } }
-    .quote-section { background: var(--teal-900); position: relative; overflow: hidden; }
-    .quote-section::before {
-      content: '';
-      position: absolute; inset: 0;
-      background:
-        radial-gradient(ellipse 70% 60% at 15% 50%, rgba(0,163,187,0.14) 0%, transparent 55%),
-        radial-gradient(ellipse 50% 70% at 85% 40%, rgba(0,81,95,0.2) 0%, transparent 55%);
-      pointer-events: none;
-    }
-    .quote-grid { display: grid; grid-template-columns: 1fr 1.2fr; gap: 80px; align-items: start; position: relative; z-index: 1; }
-    .quote-left h2 { color: var(--white); }
-    .quote-left .lead { color: var(--text-light); max-width: 100%; margin-bottom: 36px; }
-    .promise-list { list-style: none; display: flex; flex-direction: column; gap: 14px; }
-    .promise-list li { display: flex; align-items: center; gap: 10px; font-size: 0.92rem; color: rgba(255,255,255,0.65); }
-    .promise-dot { width: 6px; height: 6px; border-radius: 50%; background: var(--teal-400); flex-shrink: 0; }
-    .contact-highlight {
-      margin-top: 32px; padding: 22px 24px;
-      background: rgba(255,255,255,0.06); border: 1px solid rgba(255,255,255,0.12);
-      border-radius: var(--r);
-    }
-    .contact-highlight p { font-size: 0.72rem; font-weight: 700; letter-spacing: 0.16em; text-transform: uppercase; color: var(--teal-400); margin-bottom: 6px; }
-    .contact-highlight a { color: var(--white); font-size: 1rem; font-weight: 500; text-decoration: none; }
-
+    .hero-ring { position:absolute; width:700px; height:700px; border-radius:50%; border:1px solid rgba(0,163,187,0.08); top:50%; left:50%; transform:translate(-50%,-50%); pointer-events:none; z-index:0; }
+    .hero-ring-2 { width:500px; height:500px; border-color:rgba(0,163,187,0.06); }
+    .hero-ring-3 { width:300px; height:300px; border-color:rgba(0,163,187,0.1); }
+    .about-grid { display:grid; grid-template-columns:1fr 1fr; gap:80px; align-items:center; }
+    .about-visual { position:relative; border-radius:var(--r-xl); overflow:hidden; background:linear-gradient(135deg,var(--teal-800),var(--teal-700)); min-height:480px; display:flex; align-items:center; justify-content:center; }
+    .about-visual-geo { position:absolute; inset:0; background-image:linear-gradient(135deg,rgba(255,255,255,0.03) 25%,transparent 25%),linear-gradient(225deg,rgba(255,255,255,0.03) 25%,transparent 25%),linear-gradient(315deg,rgba(255,255,255,0.03) 25%,transparent 25%),linear-gradient(45deg,rgba(255,255,255,0.03) 25%,transparent 25%); background-size:48px 48px; }
+    .about-badge { position:absolute; bottom:28px; left:28px; background:rgba(255,255,255,0.08); border:1px solid rgba(255,255,255,0.15); backdrop-filter:blur(12px); border-radius:var(--r); padding:18px 22px; z-index:2; }
+    .about-badge-num { font-family:'DM Serif Display',serif; font-size:2.4rem; color:var(--white); line-height:1; }
+    .about-badge-label { font-size:0.75rem; color:var(--text-dim); margin-top:4px; }
+    .about-badge-2 { left:auto; right:28px; bottom:auto; top:28px; }
+    .why-list { list-style:none; margin-top:36px; display:flex; flex-direction:column; gap:20px; }
+    .why-item { display:flex; gap:14px; align-items:flex-start; }
+    .why-icon { width:40px; height:40px; border-radius:var(--r-sm); flex-shrink:0; background:linear-gradient(135deg,var(--teal-50),var(--teal-100)); display:flex; align-items:center; justify-content:center; margin-top:2px; }
+    .why-icon svg { width:20px; height:20px; }
+    .why-text strong { display:block; font-size:1rem; font-weight:600; color:var(--gray-900); margin-bottom:3px; }
+    .why-text p { font-size:0.88rem; color:var(--text-muted); line-height:1.65; }
+    .products-browse { background:var(--teal-50); border-top:1px solid var(--teal-100); border-bottom:1px solid var(--teal-100); padding:48px 32px; }
+    .products-browse .container { max-width:1200px; margin:0 auto; display:flex; align-items:center; justify-content:space-between; gap:32px; flex-wrap:wrap; }
+    .pb-left .overline { display:block; font-size:0.72rem; font-weight:700; letter-spacing:0.12em; text-transform:uppercase; color:var(--teal-600); font-family:var(--font-sans); margin-bottom:8px; }
+    .pb-left h3 { font-family:'DM Serif Display',serif; font-size:1.5rem; font-weight:400; color:#0d1f2d; line-height:1.25; margin-bottom:8px; }
+    .pb-left p { font-size:0.9rem; color:#4a5568; max-width:480px; line-height:1.6; }
+    .pb-chips { display:flex; flex-wrap:wrap; gap:8px; max-width:480px; }
+    .pb-chip { display:inline-block; padding:6px 14px; border:1px solid var(--teal-300); border-radius:999px; font-size:0.8rem; font-weight:500; color:var(--teal-700); text-decoration:none; background:var(--white); transition:background .15s,color .15s; }
+    .pb-chip:hover { background:var(--teal-600); color:var(--white); border-color:var(--teal-600); }
+    @media(max-width:860px) { .products-browse .container { flex-direction:column; align-items:flex-start; } }
+    .quote-section { background:var(--teal-900); position:relative; overflow:hidden; }
+    .quote-section::before { content:''; position:absolute; inset:0; background:radial-gradient(ellipse 70% 60% at 15% 50%,rgba(0,163,187,0.14) 0%,transparent 55%),radial-gradient(ellipse 50% 70% at 85% 40%,rgba(0,81,95,0.2) 0%,transparent 55%); pointer-events:none; }
+    .quote-grid { display:grid; grid-template-columns:1fr 1.2fr; gap:80px; align-items:start; position:relative; z-index:1; }
+    .quote-left h2 { color:var(--white); }
+    .quote-left .lead { color:var(--text-light); max-width:100%; margin-bottom:36px; }
+    .promise-list { list-style:none; display:flex; flex-direction:column; gap:14px; }
+    .promise-list li { display:flex; align-items:center; gap:10px; font-size:0.92rem; color:rgba(255,255,255,0.65); }
+    .promise-dot { width:6px; height:6px; border-radius:50%; background:var(--teal-400); flex-shrink:0; }
+    .contact-highlight { margin-top:32px; padding:22px 24px; background:rgba(255,255,255,0.06); border:1px solid rgba(255,255,255,0.12); border-radius:var(--r); }
+    .contact-highlight p { font-size:0.72rem; font-weight:700; letter-spacing:0.16em; text-transform:uppercase; color:var(--teal-400); margin-bottom:6px; }
+    .contact-highlight a { color:var(--white); font-size:1rem; font-weight:500; text-decoration:none; }
     /* FILE UPLOAD */
-    .file-input-hidden { display: none; }
-    .file-upload-wrap { display: flex; align-items: center; gap: 12px; margin-top: 6px; }
-    .file-upload-btn {
-      display: inline-block; padding: 8px 16px;
-      background: rgba(0,163,187,0.15); border: 1px solid rgba(0,163,187,0.4);
-      border-radius: 6px; font-family: 'DM Sans', sans-serif;
-      font-size: 0.85rem; font-weight: 500; color: var(--teal-300, #5eead4);
-      cursor: pointer; white-space: nowrap;
-      transition: background .18s, border-color .18s; flex-shrink: 0;
-    }
-    .file-upload-btn:hover { background: rgba(0,163,187,0.28); border-color: rgba(0,163,187,0.65); }
-    .file-name-display {
-      font-size: 0.85rem; color: rgba(255,255,255,0.4);
-      font-style: italic; overflow: hidden; text-overflow: ellipsis; white-space: nowrap;
-    }
-    .file-name-display.has-file { color: rgba(255,255,255,0.85); font-style: normal; font-weight: 500; }
-    .form-hint { display: block; font-size: 0.76rem; color: rgba(255,255,255,0.35); margin-top: 6px; line-height: 1.5; }
-    .form-hint a { color: var(--teal-400, #2dd4bf); text-decoration: underline; }
-    .upload-divider {
-      display: flex; align-items: center; gap: 12px; margin: 4px 0;
-      font-size: 0.72rem; color: rgba(255,255,255,0.2);
-      text-transform: uppercase; letter-spacing: 0.12em;
-    }
-    .upload-divider::before, .upload-divider::after { content: ''; flex: 1; height: 1px; background: rgba(255,255,255,0.08); }
-
-    @media (max-width: 860px) {
-      .about-grid, .quote-grid { grid-template-columns: 1fr; gap: 44px; }
-      .about-visual { min-height: 280px; }
-    }
+    .file-input-hidden { display:none; }
+    .file-upload-wrap { display:flex; align-items:center; gap:12px; margin-top:6px; }
+    .file-upload-btn { display:inline-block; padding:8px 16px; background:rgba(0,163,187,0.15); border:1px solid rgba(0,163,187,0.4); border-radius:6px; font-family:'DM Sans',sans-serif; font-size:0.85rem; font-weight:500; color:var(--teal-300,#5eead4); cursor:pointer; white-space:nowrap; transition:background .18s,border-color .18s; flex-shrink:0; }
+    .file-upload-btn:hover { background:rgba(0,163,187,0.28); border-color:rgba(0,163,187,0.65); }
+    .file-name-display { font-size:0.85rem; color:rgba(255,255,255,0.4); font-style:italic; overflow:hidden; text-overflow:ellipsis; white-space:nowrap; }
+    .file-name-display.has-file { color:rgba(255,255,255,0.85); font-style:normal; font-weight:500; }
+    .form-hint { display:block; font-size:0.76rem; color:rgba(255,255,255,0.35); margin-top:6px; line-height:1.5; }
+    .form-hint a { color:var(--teal-400,#2dd4bf); text-decoration:underline; }
+    .upload-divider { display:flex; align-items:center; gap:12px; margin:4px 0; font-size:0.72rem; color:rgba(255,255,255,0.2); text-transform:uppercase; letter-spacing:0.12em; }
+    .upload-divider::before,.upload-divider::after { content:''; flex:1; height:1px; background:rgba(255,255,255,0.08); }
+    @media(max-width:860px) { .about-grid,.quote-grid { grid-template-columns:1fr; gap:44px; } .about-visual { min-height:280px; } }
   </style>
 </head>
 <body>
 
-<!-- HERO -->
-<section class="home-hero" style="background-image: url(./assets/images/hero-bg.webp); background-size: cover; background-position: center; background-blend-mode: overlay;">
-  <div class="hero-ring"></div>
-  <div class="hero-ring hero-ring-2"></div>
-  <div class="hero-ring hero-ring-3"></div>
+<section class="home-hero" style="background-image:url(./assets/images/hero-bg.webp);background-size:cover;background-position:center;background-blend-mode:overlay;">
+  <div class="hero-ring"></div><div class="hero-ring hero-ring-2"></div><div class="hero-ring hero-ring-3"></div>
   <div class="hero-inner">
     <div class="hero-badge"><span class="hero-badge-dot"></span>San Jose's Commercial Sign Company</div>
     <h1>San Jose Sign Company.<br><em>Precision in Every Detail.</em></h1>
@@ -190,128 +129,60 @@
     <div class="hero-stats">
       <div class="stat"><span class="stat-num">500+</span><span class="stat-label">Projects Completed</span></div>
       <div class="stat"><span class="stat-num">100%</span><span class="stat-label">Custom Made</span></div>
-      <div class="stat"><span class="stat-num">5 ★</span><span class="stat-label">Client Satisfaction</span></div>
-      <div class="stat"><span class="stat-num">Full-Service</span><span class="stat-label">Design · Fab · Install</span></div>
+      <div class="stat"><span class="stat-num">5 &#9733;</span><span class="stat-label">Client Satisfaction</span></div>
+      <div class="stat"><span class="stat-num">Full-Service</span><span class="stat-label">Design &middot; Fab &middot; Install</span></div>
     </div>
   </div>
 </section>
 
-<!-- TRUST BAR -->
 <div class="trust-bar">
   <div class="trust-bar-inner">
     <div class="trust-item"><div class="trust-dot"></div>Rated 5 Stars by San Jose Businesses</div>
-    <div class="trust-item"><div class="trust-dot"></div>Design · Fabrication · Installation</div>
+    <div class="trust-item"><div class="trust-dot"></div>Design &middot; Fabrication &middot; Installation</div>
     <div class="trust-item"><div class="trust-dot"></div>Fast Turnaround Times</div>
     <div class="trust-item"><div class="trust-dot"></div>ADA Compliant Options</div>
     <div class="trust-item"><div class="trust-dot"></div>Local San Jose Team</div>
   </div>
 </div>
 
-<!-- SERVICES -->
 <section style="background:var(--white)">
   <div class="container">
     <span class="overline">What We Do</span>
     <h2>Complete Signage Solutions<br>for Every Business</h2>
     <p class="lead">From concept to installation — your full-service sign and graphics partner across San Jose and Silicon Valley.</p>
     <div class="svc-grid">
-      <a href="./lobby-signs-san-jose.html" class="svc-card">
-        <div class="svc-icon-wrap"><svg viewBox="0 0 28 28" fill="none"><rect x="3" y="7" width="22" height="15" rx="2.5" stroke="var(--teal-500)" stroke-width="1.5"/><path d="M8 13h12M8 17h8" stroke="var(--teal-500)" stroke-width="1.5" stroke-linecap="round"/></svg></div>
-        <h3>Indoor &amp; Lobby Signs</h3>
-        <p>Lobby signs, ADA signage, wayfinding systems, and office branding that make lasting first impressions.</p>
-        <div class="svc-tags"><span class="tag">Lobby</span><span class="tag">Wayfinding</span><span class="tag">ADA</span><span class="tag">Office</span></div>
-        <div class="svc-arrow">Learn more <svg viewBox="0 0 16 16" fill="none"><path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
-      </a>
-      <a href="./storefront-signs-san-jose.html" class="svc-card">
-        <div class="svc-icon-wrap"><svg viewBox="0 0 28 28" fill="none"><rect x="3" y="4" width="22" height="14" rx="2.5" stroke="var(--teal-500)" stroke-width="1.5"/><path d="M10 23h8M14 18v5" stroke="var(--teal-500)" stroke-width="1.5" stroke-linecap="round"/></svg></div>
-        <h3>Outdoor &amp; Building Signs</h3>
-        <p>High-visibility storefront signs, monument signs, channel letters, and pylon signs built to represent your brand.</p>
-        <div class="svc-tags"><span class="tag">Storefront</span><span class="tag">Monument</span><span class="tag">Channel Letters</span></div>
-        <div class="svc-arrow">Learn more <svg viewBox="0 0 16 16" fill="none"><path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
-      </a>
-      <a href="./window-graphics-san-jose.html" class="svc-card">
-        <div class="svc-icon-wrap"><svg viewBox="0 0 28 28" fill="none"><path d="M4 22l5-10 4 6 4-5 5 9" stroke="var(--teal-500)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
-        <h3>Vinyl Graphics &amp; Decals</h3>
-        <p>Window graphics, wall murals, vehicle wraps, and vinyl banners for any surface or promotion.</p>
-        <div class="svc-tags"><span class="tag">Window</span><span class="tag">Wall Murals</span><span class="tag">Vehicle</span></div>
-        <div class="svc-arrow">Learn more <svg viewBox="0 0 16 16" fill="none"><path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
-      </a>
-      <a href="./dimensional-letters-san-jose.html" class="svc-card">
-        <div class="svc-icon-wrap"><svg viewBox="0 0 28 28" fill="none"><circle cx="14" cy="14" r="9" stroke="var(--teal-500)" stroke-width="1.5"/><path d="M10 14l3 3 5-6" stroke="var(--teal-500)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
-        <h3>Acrylic &amp; Dimensional Letters</h3>
-        <p>Premium 3D lettering and acrylic signs that add depth, sophistication, and a polished professional look.</p>
-        <div class="svc-tags"><span class="tag">Acrylic</span><span class="tag">Dimensional</span><span class="tag">Metal</span></div>
-        <div class="svc-arrow">Learn more <svg viewBox="0 0 16 16" fill="none"><path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
-      </a>
-      <a href="./trade-show-displays-silicon-valley.html" class="svc-card">
-        <div class="svc-icon-wrap"><svg viewBox="0 0 28 28" fill="none"><rect x="3" y="9" width="22" height="14" rx="2" stroke="var(--teal-500)" stroke-width="1.5"/><path d="M10 9V7a4 4 0 018 0v2" stroke="var(--teal-500)" stroke-width="1.5"/></svg></div>
-        <h3>Trade Show &amp; Event Displays</h3>
-        <p>Retractable banners, booth displays, fabric backdrops, and portable signage for events and trade shows.</p>
-        <div class="svc-tags"><span class="tag">Trade Show</span><span class="tag">Banners</span><span class="tag">Backdrops</span></div>
-        <div class="svc-arrow">Learn more <svg viewBox="0 0 16 16" fill="none"><path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
-      </a>
-      <a href="./services.html#custom" class="svc-card">
-        <div class="svc-icon-wrap"><svg viewBox="0 0 28 28" fill="none"><path d="M4 4h8v8H4zM16 4h8v8h-8zM4 16h8v8H4zM16 16h8v8h-8z" stroke="var(--teal-500)" stroke-width="1.5" stroke-linejoin="round"/></svg></div>
-        <h3>Custom Sign Solutions</h3>
-        <p>Unique requirements? We design and fabricate fully custom signage from the ground up — no template required.</p>
-        <div class="svc-tags"><span class="tag">Custom Fab</span><span class="tag">LED</span><span class="tag">Specialty</span></div>
-        <div class="svc-arrow">Learn more <svg viewBox="0 0 16 16" fill="none"><path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
-      </a>
+      <a href="./lobby-signs-san-jose.html" class="svc-card"><div class="svc-icon-wrap"><svg viewBox="0 0 28 28" fill="none"><rect x="3" y="7" width="22" height="15" rx="2.5" stroke="var(--teal-500)" stroke-width="1.5"/><path d="M8 13h12M8 17h8" stroke="var(--teal-500)" stroke-width="1.5" stroke-linecap="round"/></svg></div><h3>Indoor &amp; Lobby Signs</h3><p>Lobby signs, ADA signage, wayfinding systems, and office branding that make lasting first impressions.</p><div class="svc-tags"><span class="tag">Lobby</span><span class="tag">Wayfinding</span><span class="tag">ADA</span><span class="tag">Office</span></div><div class="svc-arrow">Learn more <svg viewBox="0 0 16 16" fill="none"><path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></div></a>
+      <a href="./storefront-signs-san-jose.html" class="svc-card"><div class="svc-icon-wrap"><svg viewBox="0 0 28 28" fill="none"><rect x="3" y="4" width="22" height="14" rx="2.5" stroke="var(--teal-500)" stroke-width="1.5"/><path d="M10 23h8M14 18v5" stroke="var(--teal-500)" stroke-width="1.5" stroke-linecap="round"/></svg></div><h3>Outdoor &amp; Building Signs</h3><p>High-visibility storefront signs, monument signs, channel letters, and pylon signs built to represent your brand.</p><div class="svc-tags"><span class="tag">Storefront</span><span class="tag">Monument</span><span class="tag">Channel Letters</span></div><div class="svc-arrow">Learn more <svg viewBox="0 0 16 16" fill="none"><path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></div></a>
+      <a href="./window-graphics-san-jose.html" class="svc-card"><div class="svc-icon-wrap"><svg viewBox="0 0 28 28" fill="none"><path d="M4 22l5-10 4 6 4-5 5 9" stroke="var(--teal-500)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></div><h3>Vinyl Graphics &amp; Decals</h3><p>Window graphics, wall murals, vehicle wraps, and vinyl banners for any surface or promotion.</p><div class="svc-tags"><span class="tag">Window</span><span class="tag">Wall Murals</span><span class="tag">Vehicle</span></div><div class="svc-arrow">Learn more <svg viewBox="0 0 16 16" fill="none"><path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></div></a>
+      <a href="./dimensional-letters-san-jose.html" class="svc-card"><div class="svc-icon-wrap"><svg viewBox="0 0 28 28" fill="none"><circle cx="14" cy="14" r="9" stroke="var(--teal-500)" stroke-width="1.5"/><path d="M10 14l3 3 5-6" stroke="var(--teal-500)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></div><h3>Acrylic &amp; Dimensional Letters</h3><p>Premium 3D lettering and acrylic signs that add depth, sophistication, and a polished professional look.</p><div class="svc-tags"><span class="tag">Acrylic</span><span class="tag">Dimensional</span><span class="tag">Metal</span></div><div class="svc-arrow">Learn more <svg viewBox="0 0 16 16" fill="none"><path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></div></a>
+      <a href="./trade-show-displays-silicon-valley.html" class="svc-card"><div class="svc-icon-wrap"><svg viewBox="0 0 28 28" fill="none"><rect x="3" y="9" width="22" height="14" rx="2" stroke="var(--teal-500)" stroke-width="1.5"/><path d="M10 9V7a4 4 0 018 0v2" stroke="var(--teal-500)" stroke-width="1.5"/></svg></div><h3>Trade Show &amp; Event Displays</h3><p>Retractable banners, booth displays, fabric backdrops, and portable signage for events and trade shows.</p><div class="svc-tags"><span class="tag">Trade Show</span><span class="tag">Banners</span><span class="tag">Backdrops</span></div><div class="svc-arrow">Learn more <svg viewBox="0 0 16 16" fill="none"><path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></div></a>
+      <a href="./services.html#custom" class="svc-card"><div class="svc-icon-wrap"><svg viewBox="0 0 28 28" fill="none"><path d="M4 4h8v8H4zM16 4h8v8h-8zM4 16h8v8H4zM16 16h8v8h-8z" stroke="var(--teal-500)" stroke-width="1.5" stroke-linejoin="round"/></svg></div><h3>Custom Sign Solutions</h3><p>Unique requirements? We design and fabricate fully custom signage from the ground up — no template required.</p><div class="svc-tags"><span class="tag">Custom Fab</span><span class="tag">LED</span><span class="tag">Specialty</span></div><div class="svc-arrow">Learn more <svg viewBox="0 0 16 16" fill="none"><path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></div></a>
     </div>
-    <div style="text-align:center;margin-top:40px">
-      <a href="./services.html" class="btn btn-outline">View All Services <svg viewBox="0 0 16 16" fill="none"><path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
-    </div>
+    <div style="text-align:center;margin-top:40px"><a href="./services.html" class="btn btn-outline">View All Services <svg viewBox="0 0 16 16" fill="none"><path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></a></div>
   </div>
 </section>
 
-<!-- WHY US -->
 <section class="feature-strip">
   <div class="container">
     <span class="overline" style="color:var(--teal-400)">Why Clear Line Signs</span>
     <h2 class="light">San Jose's Trusted Sign Partner</h2>
     <p class="lead light">We handle every step — so you don't have to manage multiple vendors.</p>
     <div class="feature-grid">
-      <div class="feature-item">
-        <div class="feature-check"><svg viewBox="0 0 14 14" fill="none"><path d="M2 7l3.5 3.5L12 3" stroke="var(--teal-400)" stroke-width="1.5" stroke-linecap="round"/></svg></div>
-        <div class="feature-num">01</div>
-        <h4>Full-Service Process</h4>
-        <p>Concept, design, permitting, fabrication, and installation — all under one roof with a single point of contact.</p>
-      </div>
-      <div class="feature-item">
-        <div class="feature-check"><svg viewBox="0 0 14 14" fill="none"><path d="M2 7l3.5 3.5L12 3" stroke="var(--teal-400)" stroke-width="1.5" stroke-linecap="round"/></svg></div>
-        <div class="feature-num">02</div>
-        <h4>Transparent Pricing</h4>
-        <p>Reference pricing available online. No surprises, no hidden fees — just honest quotes from the start.</p>
-      </div>
-      <div class="feature-item">
-        <div class="feature-check"><svg viewBox="0 0 14 14" fill="none"><path d="M2 7l3.5 3.5L12 3" stroke="var(--teal-400)" stroke-width="1.5" stroke-linecap="round"/></svg></div>
-        <div class="feature-num">03</div>
-        <h4>Local Expertise</h4>
-        <p>We know San Jose's sign codes, permitting process, and what works in Silicon Valley's competitive market.</p>
-      </div>
-      <div class="feature-item">
-        <div class="feature-check"><svg viewBox="0 0 14 14" fill="none"><path d="M2 7l3.5 3.5L12 3" stroke="var(--teal-400)" stroke-width="1.5" stroke-linecap="round"/></svg></div>
-        <div class="feature-num">04</div>
-        <h4>Premium Materials</h4>
-        <p>UV-resistant, weatherproof substrates and hardware rated for California's climate and long-term durability.</p>
-      </div>
+      <div class="feature-item"><div class="feature-check"><svg viewBox="0 0 14 14" fill="none"><path d="M2 7l3.5 3.5L12 3" stroke="var(--teal-400)" stroke-width="1.5" stroke-linecap="round"/></svg></div><div class="feature-num">01</div><h4>Full-Service Process</h4><p>Concept, design, permitting, fabrication, and installation — all under one roof with a single point of contact.</p></div>
+      <div class="feature-item"><div class="feature-check"><svg viewBox="0 0 14 14" fill="none"><path d="M2 7l3.5 3.5L12 3" stroke="var(--teal-400)" stroke-width="1.5" stroke-linecap="round"/></svg></div><div class="feature-num">02</div><h4>Transparent Pricing</h4><p>Reference pricing available online. No surprises, no hidden fees — just honest quotes from the start.</p></div>
+      <div class="feature-item"><div class="feature-check"><svg viewBox="0 0 14 14" fill="none"><path d="M2 7l3.5 3.5L12 3" stroke="var(--teal-400)" stroke-width="1.5" stroke-linecap="round"/></svg></div><div class="feature-num">03</div><h4>Local Expertise</h4><p>We know San Jose's sign codes, permitting process, and what works in Silicon Valley's competitive market.</p></div>
+      <div class="feature-item"><div class="feature-check"><svg viewBox="0 0 14 14" fill="none"><path d="M2 7l3.5 3.5L12 3" stroke="var(--teal-400)" stroke-width="1.5" stroke-linecap="round"/></svg></div><div class="feature-num">04</div><h4>Premium Materials</h4><p>UV-resistant, weatherproof substrates and hardware rated for California's climate and long-term durability.</p></div>
     </div>
   </div>
 </section>
 
-<!-- ABOUT -->
 <section style="background:var(--white)">
   <div class="container">
     <div class="about-grid">
-      <div class="about-visual" style="background-image: url(./assets/images/about-signage.webp); background-size: cover; background-position: center;">
-        <div class="about-visual-geo" style="opacity: 0.3;"></div>
-        <div class="about-badge">
-          <div class="about-badge-num">500+</div>
-          <div class="about-badge-label">Signs Installed</div>
-        </div>
-        <div class="about-badge about-badge-2">
-          <div class="about-badge-num">5 ★</div>
-          <div class="about-badge-label">Client Rating</div>
-        </div>
+      <div class="about-visual" style="background-image:url(./assets/images/about-signage.webp);background-size:cover;background-position:center;">
+        <div class="about-visual-geo" style="opacity:0.3;"></div>
+        <div class="about-badge"><div class="about-badge-num">500+</div><div class="about-badge-label">Signs Installed</div></div>
+        <div class="about-badge about-badge-2"><div class="about-badge-num">5 &#9733;</div><div class="about-badge-label">Client Rating</div></div>
       </div>
       <div>
         <span class="overline">About Us</span>
@@ -319,18 +190,9 @@
         <p class="lead" style="margin-bottom:16px">Clear Line Signs is a commercial signage company built on a simple philosophy: every business deserves signage that actually works. We serve companies across San Jose, Santa Clara, Sunnyvale, and all of Silicon Valley.</p>
         <p style="font-size:.95rem;color:var(--text-muted);line-height:1.8">From small storefronts to large corporate campuses, we bring the same craftsmanship and attention to detail to every project — handling design, fabrication, and installation as your single point of contact.</p>
         <ul class="why-list">
-          <li class="why-item">
-            <div class="why-icon"><svg viewBox="0 0 20 20" fill="none"><path d="M3 10l4 4 10-8" stroke="var(--teal-500)" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
-            <div class="why-text"><strong>One Team, Start to Finish</strong><p>Design proof to fabrication to permit to installation. No juggling multiple vendors.</p></div>
-          </li>
-          <li class="why-item">
-            <div class="why-icon"><svg viewBox="0 0 20 20" fill="none"><circle cx="10" cy="10" r="7" stroke="var(--teal-500)" stroke-width="1.8"/><path d="M10 7v3l2 2" stroke="var(--teal-500)" stroke-width="1.8" stroke-linecap="round"/></svg></div>
-            <div class="why-text"><strong>Fast, Reliable Turnaround</strong><p>Most projects delivered on schedule. Rush options available for time-sensitive needs.</p></div>
-          </li>
-          <li class="why-item">
-            <div class="why-icon"><svg viewBox="0 0 20 20" fill="none"><path d="M10 2l2.4 6.8H19l-5.6 4 2.2 6.8L10 15.4 4.4 19.6l2.2-6.8L1 8.8h6.6z" stroke="var(--teal-500)" stroke-width="1.5" stroke-linejoin="round"/></svg></div>
-            <div class="why-text"><strong>Quality That Lasts</strong><p>We use commercial-grade materials built to hold up against UV, weather, and heavy foot traffic.</p></div>
-          </li>
+          <li class="why-item"><div class="why-icon"><svg viewBox="0 0 20 20" fill="none"><path d="M3 10l4 4 10-8" stroke="var(--teal-500)" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></div><div class="why-text"><strong>One Team, Start to Finish</strong><p>Design proof to fabrication to permit to installation. No juggling multiple vendors.</p></div></li>
+          <li class="why-item"><div class="why-icon"><svg viewBox="0 0 20 20" fill="none"><circle cx="10" cy="10" r="7" stroke="var(--teal-500)" stroke-width="1.8"/><path d="M10 7v3l2 2" stroke="var(--teal-500)" stroke-width="1.8" stroke-linecap="round"/></svg></div><div class="why-text"><strong>Fast, Reliable Turnaround</strong><p>Most projects delivered on schedule. Rush options available for time-sensitive needs.</p></div></li>
+          <li class="why-item"><div class="why-icon"><svg viewBox="0 0 20 20" fill="none"><path d="M10 2l2.4 6.8H19l-5.6 4 2.2 6.8L10 15.4 4.4 19.6l2.2-6.8L1 8.8h6.6z" stroke="var(--teal-500)" stroke-width="1.5" stroke-linejoin="round"/></svg></div><div class="why-text"><strong>Quality That Lasts</strong><p>We use commercial-grade materials built to hold up against UV, weather, and heavy foot traffic.</p></div></li>
         </ul>
         <div style="margin-top:36px;display:flex;align-items:center;gap:24px;flex-wrap:wrap;">
           <a href="./contact.html" class="btn btn-primary">Start Your Project <svg viewBox="0 0 16 16" fill="none"><path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
@@ -341,7 +203,6 @@
   </div>
 </section>
 
-<!-- SIGN TYPES SEO -->
 <section class="section-muted">
   <div class="container">
     <span class="overline">Sign Types</span>
@@ -383,7 +244,6 @@
   </div>
 </section>
 
-<!-- PRODUCTS BROWSE -->
 <div class="products-browse">
   <div class="container">
     <div class="pb-left">
@@ -406,33 +266,17 @@
   </div>
 </div>
 
-<!-- INDUSTRIES -->
 <section class="section-dark" style="padding:80px 32px">
   <div class="container">
     <span class="overline" style="color:var(--teal-400)">Industries</span>
     <h2 class="light">Signage for Every Industry<br>in Silicon Valley</h2>
     <p class="lead light">We work with businesses of every type — from tech startups to established retail chains across the South Bay Area.</p>
     <div class="ind-grid">
-      <a href="./contact.html" class="ind-chip">Retail Stores</a>
-      <a href="./contact.html" class="ind-chip">Restaurants</a>
-      <a href="./contact.html" class="ind-chip">Tech Companies</a>
-      <a href="medical-office-signs-san-jose.html" class="ind-chip">Healthcare</a>
-      <a href="./contact.html" class="ind-chip">Real Estate</a>
-      <a href="private-school-signs-san-jose.html" class="ind-chip">Schools &amp; Colleges</a>
-      <a href="./contact.html" class="ind-chip">Automotive</a>
-      <a href="./contact.html" class="ind-chip">Hotels &amp; Hospitality</a>
-      <a href="corporate-signs-silicon-valley.html" class="ind-chip">Corporate Offices</a>
-      <a href="./contact.html" class="ind-chip">Salons &amp; Spas</a>
-      <a href="./contact.html" class="ind-chip">Financial Services</a>
-      <a href="./contact.html" class="ind-chip">Small Businesses</a>
-      <a href="./contact.html" class="ind-chip">Construction</a>
-      <a href="./contact.html" class="ind-chip">Government</a>
-      <a href="./contact.html" class="ind-chip">Non-Profits</a>
+      <a href="./contact.html" class="ind-chip">Retail Stores</a><a href="./contact.html" class="ind-chip">Restaurants</a><a href="./contact.html" class="ind-chip">Tech Companies</a><a href="medical-office-signs-san-jose.html" class="ind-chip">Healthcare</a><a href="./contact.html" class="ind-chip">Real Estate</a><a href="private-school-signs-san-jose.html" class="ind-chip">Schools &amp; Colleges</a><a href="./contact.html" class="ind-chip">Automotive</a><a href="./contact.html" class="ind-chip">Hotels &amp; Hospitality</a><a href="corporate-signs-silicon-valley.html" class="ind-chip">Corporate Offices</a><a href="./contact.html" class="ind-chip">Salons &amp; Spas</a><a href="./contact.html" class="ind-chip">Financial Services</a><a href="./contact.html" class="ind-chip">Small Businesses</a><a href="./contact.html" class="ind-chip">Construction</a><a href="./contact.html" class="ind-chip">Government</a><a href="./contact.html" class="ind-chip">Non-Profits</a>
     </div>
   </div>
 </section>
 
-<!-- PROCESS -->
 <section style="background:var(--white)">
   <div class="container">
     <span class="overline">How It Works</span>
@@ -447,14 +291,13 @@
   </div>
 </section>
 
-<!-- LOCATIONS -->
 <section class="section-dark" style="padding:80px 32px">
   <div class="container">
     <span class="overline" style="color:var(--teal-400)">Service Area</span>
     <h2 class="light">Serving San Jose &amp;<br>All of Silicon Valley</h2>
     <p class="lead light">Clear Line Signs serves businesses throughout the South Bay Area.</p>
     <div class="loc-grid">
-      <a href="./cities/san-jose.html" class="loc-card"><span class="loc-name">San Jose</span><span class="loc-desc">All sign types · Primary area</span></a>
+      <a href="./cities/san-jose.html" class="loc-card"><span class="loc-name">San Jose</span><span class="loc-desc">All sign types &middot; Primary area</span></a>
       <a href="./cities/santa-clara.html" class="loc-card"><span class="loc-name">Santa Clara</span><span class="loc-desc">Business &amp; corporate signs</span></a>
       <a href="./cities/sunnyvale.html" class="loc-card"><span class="loc-name">Sunnyvale</span><span class="loc-desc">Tech &amp; commercial signage</span></a>
       <a href="./cities/milpitas.html" class="loc-card"><span class="loc-name">Milpitas</span><span class="loc-desc">Retail &amp; warehouse signs</span></a>
@@ -468,33 +311,20 @@
   </div>
 </section>
 
-<!-- BLOG -->
 <section style="background:var(--gray-50);border-top:1px solid var(--gray-200)">
   <div class="container">
     <span class="overline">Resources</span>
     <h2>Sign Tips &amp; Industry Insights</h2>
     <p class="lead">Expert guidance on signage design, materials, and best practices from our team.</p>
     <div class="blog-grid">
-      <a href="https://blog.clearlinesigns.com/posts/choosing-the-right-exterior-sign/" class="blog-card">
-        <div class="bc-img" style="background-image:url(./assets/images/service-outdoor.webp);background-size:cover;background-position:center;"><span class="bc-label">Exterior Signs</span></div>
-        <div class="bc-body"><h3>Choosing the Right Exterior Sign for Your Business</h3><p>Materials, size, and placement all affect how well your sign performs in the San Jose market.</p><span class="bc-link">Read More</span></div>
-      </a>
-      <a href="https://blog.clearlinesigns.com/posts/flat-vinyl-vs-dimensional-signs/" class="blog-card">
-        <div class="bc-img" style="background-image:url(./assets/images/service-dimensional.webp);background-size:cover;background-position:center;"><span class="bc-label">Sign Materials</span></div>
-        <div class="bc-body"><h3>Flat Vinyl vs. Dimensional Signs: Which Is Best?</h3><p>Each option has advantages depending on your branding, budget, and space. A clear breakdown.</p><span class="bc-link">Read More</span></div>
-      </a>
-      <a href="https://blog.clearlinesigns.com/posts/lobby-signs-silicon-valley/" class="blog-card">
-        <div class="bc-img" style="background-image:url(./assets/images/service-indoor.webp);background-size:cover;background-position:center;"><span class="bc-label">Lobby Signs</span></div>
-        <div class="bc-body"><h3>Lobby Signs for Silicon Valley Businesses: Materials, Costs &amp; What to Expect</h3><p>Everything you need to know about lobby sign materials, costs, and installation for Silicon Valley offices.</p><span class="bc-link">Read More</span></div>
-      </a>
+      <a href="https://blog.clearlinesigns.com/posts/choosing-the-right-exterior-sign/" class="blog-card"><div class="bc-img" style="background-image:url(./assets/images/service-outdoor.webp);background-size:cover;background-position:center;"><span class="bc-label">Exterior Signs</span></div><div class="bc-body"><h3>Choosing the Right Exterior Sign for Your Business</h3><p>Materials, size, and placement all affect how well your sign performs in the San Jose market.</p><span class="bc-link">Read More</span></div></a>
+      <a href="https://blog.clearlinesigns.com/posts/flat-vinyl-vs-dimensional-signs/" class="blog-card"><div class="bc-img" style="background-image:url(./assets/images/service-dimensional.webp);background-size:cover;background-position:center;"><span class="bc-label">Sign Materials</span></div><div class="bc-body"><h3>Flat Vinyl vs. Dimensional Signs: Which Is Best?</h3><p>Each option has advantages depending on your branding, budget, and space. A clear breakdown.</p><span class="bc-link">Read More</span></div></a>
+      <a href="https://blog.clearlinesigns.com/posts/lobby-signs-silicon-valley/" class="blog-card"><div class="bc-img" style="background-image:url(./assets/images/service-indoor.webp);background-size:cover;background-position:center;"><span class="bc-label">Lobby Signs</span></div><div class="bc-body"><h3>Lobby Signs for Silicon Valley Businesses: Materials, Costs &amp; What to Expect</h3><p>Everything you need to know about lobby sign materials, costs, and installation for Silicon Valley offices.</p><span class="bc-link">Read More</span></div></a>
     </div>
-    <div style="text-align:center;margin-top:40px">
-      <a href="https://blog.clearlinesigns.com" class="btn btn-outline" target="_blank">Visit Our Blog</a>
-    </div>
+    <div style="text-align:center;margin-top:40px"><a href="https://blog.clearlinesigns.com" class="btn btn-outline" target="_blank">Visit Our Blog</a></div>
   </div>
 </section>
 
-<!-- QUOTE -->
 <section class="quote-section" id="quote">
   <div class="container">
     <div class="quote-grid">
@@ -541,25 +371,10 @@
               <label>Type of Sign Needed *</label>
               <select id="iSignType">
                 <option value="">Select a sign type...</option>
-                <option value="Storefront / Exterior Sign">Storefront / Exterior Sign</option>
-                <option value="Lobby / Interior Sign">Lobby / Interior Sign</option>
-                <option value="Vinyl Graphics / Window Graphics">Vinyl Graphics / Window Graphics</option>
-                <option value="Acrylic / Dimensional Letters">Acrylic / Dimensional Letters</option>
-                <option value="Trade Show / Event Display">Trade Show / Event Display</option>
-                <option value="Banners">Banners</option>
-                <option value="Vehicle Graphics / Wrap">Vehicle Graphics / Wrap</option>
-                <option value="ADA / Wayfinding Signs">ADA / Wayfinding Signs</option>
-                <option value="Monument / Pylon Sign">Monument / Pylon Sign</option>
-                <option value="LED Signs">LED Signs</option>
-                <option value="Print Collateral (Brochures, Folders, Flyers)">Print Collateral (Brochures, Folders, Flyers)</option>
-                <option value="Custom / Other">Custom / Other</option>
+                <option>Storefront / Exterior Sign</option><option>Lobby / Interior Sign</option><option>Vinyl Graphics / Window Graphics</option><option>Acrylic / Dimensional Letters</option><option>Trade Show / Event Display</option><option>Banners</option><option>Vehicle Graphics / Wrap</option><option>ADA / Wayfinding Signs</option><option>Monument / Pylon Sign</option><option>LED Signs</option><option>Print Collateral (Brochures, Folders, Flyers)</option><option>Custom / Other</option>
               </select>
             </div>
-            <div class="form-group">
-              <label>Project Details</label>
-              <textarea id="iMessage" placeholder="Tell us about your project — size, quantity, location, timeline..."></textarea>
-            </div>
-            <!-- ARTWORK UPLOAD -->
+            <div class="form-group"><label>Project Details</label><textarea id="iMessage" placeholder="Tell us about your project — size, quantity, location, timeline..."></textarea></div>
             <div class="form-group">
               <label>Upload Artwork / Logo <span style="font-weight:400;opacity:0.45;font-size:0.85em">— optional</span></label>
               <input type="file" id="iArtwork" class="file-input-hidden" />
@@ -567,13 +382,13 @@
                 <label for="iArtwork" class="file-upload-btn">&#128206; Choose File</label>
                 <span id="iArtworkName" class="file-name-display">No file chosen</span>
               </div>
-              <span class="form-hint">PDF, AI, EPS, PNG, JPG &nbsp;&middot;&nbsp; Max 5MB</span>
+              <span class="form-hint">PDF, AI, EPS, PNG, JPG &nbsp;&middot;&nbsp; Max 5MB via form &middot; Larger files: use link below</span>
             </div>
             <div class="upload-divider">or share a link for larger files</div>
             <div class="form-group">
               <label>File Sharing Link <span style="font-weight:400;opacity:0.45;font-size:0.85em">— optional</span></label>
               <input type="url" id="iFileLink" placeholder="Dropbox, Google Drive, or WeTransfer link" />
-              <span class="form-hint">For files over 5MB &mdash; send via <a href="https://wetransfer.com" target="_blank" rel="noopener">WeTransfer.com</a> to info@clearlinesigns.com, then paste the link here</span>
+              <span class="form-hint">For files over 5MB — send via <a href="https://wetransfer.com" target="_blank" rel="noopener">WeTransfer.com</a> to info@clearlinesigns.com, then paste the link here</span>
             </div>
             <button type="button" class="submit-btn" id="indexSubmitBtn" onclick="submitIndexForm()">Send My Quote Request &rarr;</button>
             <p class="form-note">We respond within 1 business day &middot; No spam, ever</p>
@@ -586,7 +401,6 @@
 
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
 <script>
-// Show filename when file is selected
 document.getElementById('iArtwork').addEventListener('change', function() {
   var nameEl = document.getElementById('iArtworkName');
   if (this.files && this.files[0]) {
@@ -599,59 +413,47 @@ document.getElementById('iArtwork').addEventListener('change', function() {
 });
 
 async function submitIndexForm() {
-  const fullName = document.getElementById('iName').value.trim();
-  const email    = document.getElementById('iEmail').value.trim();
+  var fullName = document.getElementById('iName').value.trim();
+  var email    = document.getElementById('iEmail').value.trim();
   if (!fullName) { alert('Please enter your name.'); document.getElementById('iName').focus(); return; }
   if (!email || email.indexOf('@') < 1) { alert('Please enter a valid email address.'); document.getElementById('iEmail').focus(); return; }
-  const business = document.getElementById('iBusiness').value.trim();
+  var business = document.getElementById('iBusiness').value.trim();
   if (!business) { alert('Please enter your business name.'); document.getElementById('iBusiness').focus(); return; }
-  const iSigType = document.getElementById('iSignType');
-  const sigText  = iSigType.options[iSigType.selectedIndex].value;
+  var iSigType = document.getElementById('iSignType');
+  var sigText  = iSigType.options[iSigType.selectedIndex].value;
   if (!sigText) { alert('Please select the type of sign you need.'); iSigType.focus(); return; }
 
-  const btn = document.getElementById('indexSubmitBtn');
+  var btn = document.getElementById('indexSubmitBtn');
   btn.disabled = true; btn.textContent = 'Sending...';
 
-  const phone    = document.getElementById('iPhone').value.trim();
-  const message  = document.getElementById('iMessage').value.trim();
-  const fileLink    = document.getElementById('iFileLink').value.trim();
-  const artworkFile = document.getElementById('iArtwork').files[0] || null;
-  const artworkName = artworkFile ? artworkFile.name : '';
-  const fileInfo    = fileLink
-    ? fileLink
-    : (artworkName
-      ? 'File selected by customer: ' + artworkName + ' — ask them to send via WeTransfer to info@clearlinesigns.com'
-      : 'None');
-  const parts    = fullName.split(' ');
-  const lastName  = parts.length > 1 ? parts.slice(1).join(' ') : fullName;
-  const firstName = parts.length > 1 ? parts[0] : '';
+  var phone        = document.getElementById('iPhone').value.trim();
+  var message      = document.getElementById('iMessage').value.trim();
+  var fileLink     = document.getElementById('iFileLink').value.trim();
+  var artworkInput = document.getElementById('iArtwork');
+  var artworkName  = (artworkInput.files && artworkInput.files[0]) ? artworkInput.files[0].name : '';
+  var fileInfo     = fileLink ? fileLink
+                   : (artworkName ? 'File selected: ' + artworkName + ' — customer to send via WeTransfer to info@clearlinesigns.com'
+                   : 'None');
 
-  const desc = [
-    sigText   ? 'Sign type: '  + sigText   : '',
-    fileLink  ? 'File link: '  + fileLink  : '',
+  var parts     = fullName.split(' ');
+  var lastName  = parts.length > 1 ? parts.slice(1).join(' ') : fullName;
+  var firstName = parts.length > 1 ? parts[0] : '';
+
+  var desc = [
+    sigText  ? 'Sign type: '  + sigText  : '',
+    fileInfo !== 'None' ? 'File info: ' + fileInfo : '',
     message
   ].filter(Boolean).join('\n');
 
-  // Zoho CRM
-  const zoho = new FormData();
-  zoho.append('xnQsjsdp',    '81a4ff2655d36c2d9398e158b57736ee09f39c637dae115960d482acbc1faa61');
-  zoho.append('zc_gad',      '');
-  zoho.append('xmIwtLD',     '339d60d32589889e7a85ec867436c0707f8e99d1a2cf4df6b776ffdbdde93e63dafdcb0ba2bfed66fe7a9863a4f72985');
-  zoho.append('actionType',  'TGVhZHM=');
-  zoho.append('returnURL',   'null');
-  zoho.append('aG9uZXlwb3Q', '');
-  zoho.append('First Name',  firstName);
-  zoho.append('Last Name',   lastName);
-  zoho.append('Email',       email);
-  zoho.append('Phone',       phone);
-  zoho.append('Company',     business);
-  zoho.append('Lead Source', 'Web Download');
-  zoho.append('Description', desc);
-  $.ajax({ url:'https://crm.zoho.com/crm/WebToLeadForm', type:'POST',
-           data: zoho, cache: false, contentType: false, processData: false,
-           success:function(){}, error:function(){} });
+  var zoho = new FormData();
+  zoho.append('xnQsjsdp','81a4ff2655d36c2d9398e158b57736ee09f39c637dae115960d482acbc1faa61');
+  zoho.append('zc_gad',''); zoho.append('xmIwtLD','339d60d32589889e7a85ec867436c0707f8e99d1a2cf4df6b776ffdbdde93e63dafdcb0ba2bfed66fe7a9863a4f72985');
+  zoho.append('actionType','TGVhZHM='); zoho.append('returnURL','null'); zoho.append('aG9uZXlwb3Q','');
+  zoho.append('First Name',firstName); zoho.append('Last Name',lastName);
+  zoho.append('Email',email); zoho.append('Phone',phone); zoho.append('Company',business);
+  zoho.append('Lead Source','Web Download'); zoho.append('Description',desc);
+  $.ajax({url:'https://crm.zoho.com/crm/WebToLeadForm',type:'POST',data:zoho,cache:false,contentType:false,processData:false,success:function(){},error:function(){}});
 
-  // Web3Forms - JSON (free plan compatible)
   try {
     await fetch('https://api.web3forms.com/submit', {
       method: 'POST',
@@ -665,7 +467,7 @@ async function submitIndexForm() {
         business:   business,
         sign_type:  sigText || 'Not specified',
         message:    message || 'No details provided',
-        file_link:  fileInfo
+        file_info:  fileInfo
       })
     });
   } catch(e) { console.warn('Web3Forms error:', e); }
@@ -676,8 +478,6 @@ async function submitIndexForm() {
 }
 </script>
 <script src="./assets/js/shared.js"></script>
-<!-- Zoho Web Form Analytics - do not remove -->
 <script id="wf_anal" src="https://crm.zohopublic.com/crm/WebFormAnalyticsServeServlet?rid=8a0be9f316afcd085536509180e0f7d7ceeb82fd6350af8b7999d13a5cf7ea4c69294e55598faf1924703bcde73771a7gid14205c93e8d443a72decaf3e52da266ec4b13a6874d55c8c7a241b2875ba754egid26a4ec09a75fb8a4fb289e59905dab95488e907d416bbec7ef6f6f9dcf25cde5gid2aa478f2b61b4487bf81fbc0807d4f34a8019fb671e1b1f6dbb0c21f6772a97a&tw=8b99f5e6f0a3030bbeef84fe4168931776b5961c6ba91c5484c3a45944de8beb"></script>
-
 </body>
 </html>
