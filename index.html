@@ -375,17 +375,6 @@
               </select>
             </div>
             <div class="form-group"><label>Project Details</label><textarea id="iMessage" placeholder="Tell us about your project — size, quantity, location, timeline..."></textarea></div>
-
-            <div class="form-group">
-              <label>File Sharing Link <span style="font-weight:400;opacity:0.45;font-size:0.85em">— optional</span></label>
-              <input type="url" id="iFileLink" placeholder="Dropbox, Google Drive, or WeTransfer link" />
-              <span class="form-hint">Paste a Dropbox, Google Drive, or WeTransfer link &nbsp;&middot;&nbsp; or <a href="https://forms.gle/qkKWkzvGjVWsUvBc8" target="_blank" rel="noopener">upload your files directly to our Google Drive &rarr;</a></span>
-            </div>
-            <button type="button" class="submit-btn" id="indexSubmitBtn" onclick="submitIndexForm()">Send My Quote Request &rarr;</button>
-            <p class="form-note">We respond within 1 business day &middot; No spam, ever</p>
-          </form>
-        </div>
-      </div>
     </div>
   </div>
 </section>
@@ -408,8 +397,6 @@ async function submitIndexForm() {
 
   var phone        = document.getElementById('iPhone').value.trim();
   var message      = document.getElementById('iMessage').value.trim();
-  var fileLink     = document.getElementById('iFileLink').value.trim();
-  var fileInfo = fileLink || 'None';
 
   var parts     = fullName.split(' ');
   var lastName  = parts.length > 1 ? parts.slice(1).join(' ') : fullName;
@@ -417,7 +404,6 @@ async function submitIndexForm() {
 
   var desc = [
     sigText  ? 'Sign type: '  + sigText  : '',
-    fileInfo !== 'None' ? 'File info: ' + fileInfo : '',
     message
   ].filter(Boolean).join('\n');
 
@@ -442,9 +428,7 @@ async function submitIndexForm() {
         phone:      phone || 'Not provided',
         business:   business,
         sign_type:  sigText || 'Not specified',
-        message:    message || 'No details provided',
-        file_info:  fileInfo
-      })
+        message:    message || 'No details provided'})
     });
   } catch(e) { console.warn('Web3Forms error:', e); }
 

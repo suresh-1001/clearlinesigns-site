@@ -184,17 +184,6 @@
               </select>
             </div>
             <div class="form-group"><label>Project Details &amp; Timeline</label><textarea name="Description" id="fDetails" placeholder="Size, quantity, location, installation needs, timeline, budget..."></textarea></div>
-
-            <div class="form-group">
-              <label>File Sharing Link <span style="font-weight:400;opacity:0.45;font-size:0.85em">— optional</span></label>
-              <input type="url" id="fFileLink" placeholder="Dropbox, Google Drive, or WeTransfer link" />
-              <span class="form-hint">Paste a Dropbox, Google Drive, or WeTransfer link &nbsp;&middot;&nbsp; or <a href="https://forms.gle/qkKWkzvGjVWsUvBc8" target="_blank" rel="noopener">upload your files directly to our Google Drive &rarr;</a></span>
-            </div>
-            <button type="button" class="submit-btn" id="submitBtn" onclick="submitForm()">Send My Quote Request &rarr;</button>
-            <p class="form-note">Leads go to Zoho CRM &middot; We respond within 1 business day &middot; No spam, ever</p>
-          </form>
-        </div>
-      </div>
     </div>
   </div>
 </section>
@@ -302,13 +291,10 @@ async function submitForm() {
   var city         = document.getElementById('fCity').value.trim();
   var sigText      = sigTypeVal;
   var details      = document.getElementById('fDetails').value.trim();
-  var fileLink     = document.getElementById('fFileLink').value.trim();
-  var fileInfo = fileLink || 'None';
 
   var desc = [
     sigText  ? 'Sign type: '  + sigText  : '',
     city     ? 'City: '       + city     : '',
-    fileInfo !== 'None' ? 'File info: ' + fileInfo : '',
     details
   ].filter(Boolean).join('\n');
 
@@ -334,9 +320,7 @@ async function submitForm() {
         business:   company,
         city:       city || 'Not provided',
         sign_type:  sigText || 'Not specified',
-        message:    details || 'No details provided',
-        file_info:  fileInfo
-      })
+        message:    details || 'No details provided'})
     });
   } catch(e) { console.warn('Web3Forms error:', e); }
 
