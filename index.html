@@ -614,7 +614,14 @@ async function submitIndexForm() {
 
   const phone    = document.getElementById('iPhone').value.trim();
   const message  = document.getElementById('iMessage').value.trim();
-  const fileLink = document.getElementById('iFileLink').value.trim();
+  const fileLink    = document.getElementById('iFileLink').value.trim();
+  const artworkFile = document.getElementById('iArtwork').files[0] || null;
+  const artworkName = artworkFile ? artworkFile.name : '';
+  const fileInfo    = fileLink
+    ? fileLink
+    : (artworkName
+      ? 'File selected by customer: ' + artworkName + ' — ask them to send via WeTransfer to info@clearlinesigns.com'
+      : 'None');
   const parts    = fullName.split(' ');
   const lastName  = parts.length > 1 ? parts.slice(1).join(' ') : fullName;
   const firstName = parts.length > 1 ? parts[0] : '';
@@ -658,7 +665,7 @@ async function submitIndexForm() {
         business:   business,
         sign_type:  sigText || 'Not specified',
         message:    message || 'No details provided',
-        file_link:  fileLink || 'None'
+        file_link:  fileInfo
       })
     });
   } catch(e) { console.warn('Web3Forms error:', e); }
