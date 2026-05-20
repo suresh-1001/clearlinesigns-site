@@ -184,20 +184,11 @@
               </select>
             </div>
             <div class="form-group"><label>Project Details &amp; Timeline</label><textarea name="Description" id="fDetails" placeholder="Size, quantity, location, installation needs, timeline, budget..."></textarea></div>
-            <div class="form-group">
-              <label>Upload Artwork / Logo <span style="font-weight:400;opacity:0.45;font-size:0.85em">— optional</span></label>
-              <input type="file" id="fArtwork" class="file-input-hidden" />
-              <div class="file-upload-wrap">
-                <label for="fArtwork" class="file-upload-btn">&#128206; Choose File</label>
-                <span id="fArtworkName" class="file-name-display">No file chosen</span>
-              </div>
-              <span class="form-hint">PDF, AI, EPS, PNG, JPG &nbsp;&middot;&nbsp; Max 5MB via form &middot; Larger files: use link below</span>
-            </div>
-            <div class="upload-divider">or share a link for larger files</div>
+
             <div class="form-group">
               <label>File Sharing Link <span style="font-weight:400;opacity:0.45;font-size:0.85em">— optional</span></label>
               <input type="url" id="fFileLink" placeholder="Dropbox, Google Drive, or WeTransfer link" />
-              <span class="form-hint">For files over 5MB — <a href="https://forms.gle/qkKWkzvGjVWsUvBc8" target="_blank" rel="noopener">upload directly to our Google Drive</a> &nbsp;&middot;&nbsp; or paste a sharing link above</span>
+              <span class="form-hint">Paste a Dropbox, Google Drive, or WeTransfer link &nbsp;&middot;&nbsp; or <a href="https://forms.gle/qkKWkzvGjVWsUvBc8" target="_blank" rel="noopener">upload your files directly to our Google Drive &rarr;</a></span>
             </div>
             <button type="button" class="submit-btn" id="submitBtn" onclick="submitForm()">Send My Quote Request &rarr;</button>
             <p class="form-note">Leads go to Zoho CRM &middot; We respond within 1 business day &middot; No spam, ever</p>
@@ -249,17 +240,6 @@
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
 <script>
 // Show filename when file selected
-document.getElementById('fArtwork').addEventListener('change', function() {
-  var nameEl = document.getElementById('fArtworkName');
-  if (this.files && this.files[0]) {
-    nameEl.textContent = this.files[0].name;
-    nameEl.classList.add('has-file');
-  } else {
-    nameEl.textContent = 'No file chosen';
-    nameEl.classList.remove('has-file');
-  }
-});
-
 // AI ADVISOR
 var chatHistory = [];
 var SYSTEM = 'You are a friendly and knowledgeable sign specialist at Clear Line Signs, a commercial sign company in San Jose, CA serving all of Silicon Valley.\n\nServices: storefront/exterior signs, channel letters, monument signs, pylon signs, lobby/indoor signs, dimensional letters, acrylic signs, ADA/wayfinding, vinyl graphics, window graphics, wall murals, vehicle wraps, trade show displays, banners, retractable banner stands, popup displays, SEG lightboxes. Full service: design, fabricate, permit, install.\n\nRules: Keep replies SHORT (2-4 sentences). Be specific. Ask one clarifying question at a time. Never quote prices. Always end with: "Fill out the quote form below and we\'ll get back to you within 1 business day."';
@@ -323,11 +303,7 @@ async function submitForm() {
   var sigText      = sigTypeVal;
   var details      = document.getElementById('fDetails').value.trim();
   var fileLink     = document.getElementById('fFileLink').value.trim();
-  var artworkInput = document.getElementById('fArtwork');
-  var artworkName  = (artworkInput.files && artworkInput.files[0]) ? artworkInput.files[0].name : '';
-  var fileInfo     = fileLink ? fileLink
-                   : (artworkName ? 'File selected: ' + artworkName + ' — customer to send via WeTransfer to info@clearlinesigns.com'
-                   : 'None');
+  var fileInfo = fileLink || 'None';
 
   var desc = [
     sigText  ? 'Sign type: '  + sigText  : '',

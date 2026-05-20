@@ -375,20 +375,11 @@
               </select>
             </div>
             <div class="form-group"><label>Project Details</label><textarea id="iMessage" placeholder="Tell us about your project — size, quantity, location, timeline..."></textarea></div>
-            <div class="form-group">
-              <label>Upload Artwork / Logo <span style="font-weight:400;opacity:0.45;font-size:0.85em">— optional</span></label>
-              <input type="file" id="iArtwork" class="file-input-hidden" />
-              <div class="file-upload-wrap">
-                <label for="iArtwork" class="file-upload-btn">&#128206; Choose File</label>
-                <span id="iArtworkName" class="file-name-display">No file chosen</span>
-              </div>
-              <span class="form-hint">PDF, AI, EPS, PNG, JPG &nbsp;&middot;&nbsp; Max 5MB via form &middot; Larger files: use link below</span>
-            </div>
-            <div class="upload-divider">or share a link for larger files</div>
+
             <div class="form-group">
               <label>File Sharing Link <span style="font-weight:400;opacity:0.45;font-size:0.85em">— optional</span></label>
               <input type="url" id="iFileLink" placeholder="Dropbox, Google Drive, or WeTransfer link" />
-              <span class="form-hint">For files over 5MB — <a href="https://forms.gle/qkKWkzvGjVWsUvBc8" target="_blank" rel="noopener">upload directly to our Google Drive</a> &nbsp;&middot;&nbsp; or paste a sharing link above</span>
+              <span class="form-hint">Paste a Dropbox, Google Drive, or WeTransfer link &nbsp;&middot;&nbsp; or <a href="https://forms.gle/qkKWkzvGjVWsUvBc8" target="_blank" rel="noopener">upload your files directly to our Google Drive &rarr;</a></span>
             </div>
             <button type="button" class="submit-btn" id="indexSubmitBtn" onclick="submitIndexForm()">Send My Quote Request &rarr;</button>
             <p class="form-note">We respond within 1 business day &middot; No spam, ever</p>
@@ -401,17 +392,6 @@
 
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
 <script>
-document.getElementById('iArtwork').addEventListener('change', function() {
-  var nameEl = document.getElementById('iArtworkName');
-  if (this.files && this.files[0]) {
-    nameEl.textContent = this.files[0].name;
-    nameEl.classList.add('has-file');
-  } else {
-    nameEl.textContent = 'No file chosen';
-    nameEl.classList.remove('has-file');
-  }
-});
-
 async function submitIndexForm() {
   var fullName = document.getElementById('iName').value.trim();
   var email    = document.getElementById('iEmail').value.trim();
@@ -429,11 +409,7 @@ async function submitIndexForm() {
   var phone        = document.getElementById('iPhone').value.trim();
   var message      = document.getElementById('iMessage').value.trim();
   var fileLink     = document.getElementById('iFileLink').value.trim();
-  var artworkInput = document.getElementById('iArtwork');
-  var artworkName  = (artworkInput.files && artworkInput.files[0]) ? artworkInput.files[0].name : '';
-  var fileInfo     = fileLink ? fileLink
-                   : (artworkName ? 'File selected: ' + artworkName + ' — customer to send via WeTransfer to info@clearlinesigns.com'
-                   : 'None');
+  var fileInfo = fileLink || 'None';
 
   var parts     = fullName.split(' ');
   var lastName  = parts.length > 1 ? parts.slice(1).join(' ') : fullName;
