@@ -64,6 +64,33 @@
       line-height: 1.8; margin-bottom: 18px;
     }
 
+    /* ── PORTFOLIO GRID ── */
+    .storefront-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      grid-template-rows: auto auto;
+      gap: 16px;
+      margin-top: 48px;
+    }
+    .storefront-photo {
+      border-radius: var(--r-lg); overflow: hidden;
+      position: relative; background: var(--gray-100);
+    }
+    .storefront-photo.featured { grid-column: span 2; grid-row: span 2; }
+    .storefront-photo img {
+      width: 100%; height: 100%; object-fit: cover; display: block;
+      transition: transform 0.5s ease; min-height: 220px;
+    }
+    .storefront-photo.featured img { min-height: 460px; }
+    .storefront-photo:hover img { transform: scale(1.04); }
+    .storefront-label {
+      position: absolute; bottom: 12px; left: 14px;
+      background: rgba(0,26,31,0.80); color: var(--white);
+      font-size: 0.7rem; font-weight: 600; letter-spacing: 0.08em;
+      text-transform: uppercase; padding: 5px 12px; border-radius: 100px;
+      backdrop-filter: blur(6px);
+    }
+
     /* ── VARIANTS GRID ── */
     .variants-grid {
       display: grid;
@@ -188,6 +215,9 @@
     }
 
     @media (max-width: 768px) {
+      .storefront-grid { grid-template-columns: 1fr 1fr; }
+      .storefront-photo.featured { grid-column: span 2; grid-row: span 1; }
+      .storefront-photo.featured img { min-height: 260px; }
       .variants-grid { grid-template-columns: 1fr 1fr; }
       .why-grid { grid-template-columns: 1fr; }
       .industries-grid { grid-template-columns: 1fr 1fr; }
@@ -225,7 +255,7 @@
 <body>
 
 <!-- ── HERO ── -->
-<section class="niche-hero" style="background-image: url(./assets/images/cities/san-jose-storefront-sign.webp);">
+<section class="niche-hero" style="background-image: url(./assets/images/proj-32.webp);">
   <div class="niche-hero-inner">
     <div class="niche-badge">
       <span class="niche-badge-dot"></span>
@@ -253,6 +283,54 @@
     <div class="trust-item"><div class="trust-dot"></div>Free Consultation</div>
   </div>
 </div>
+
+<!-- ── PORTFOLIO ── -->
+<section style="background:var(--white)">
+  <div class="container">
+    <span class="overline">Installed Work</span>
+    <h2>Exterior Signs We've Built<br>Across Silicon Valley</h2>
+    <p class="lead">Every project below was designed, permitted, fabricated, and installed by our team — real commercial signage for San Jose area businesses.</p>
+
+    <div class="storefront-grid">
+
+      <div class="storefront-photo featured">
+        <img src="./assets/images/proj-39.webp"
+             alt="Carnegie Institution for Science dimensional monument sign Palo Alto — Clear Line Signs"
+             loading="eager"/>
+        <span class="storefront-label">Carnegie Institution · Dimensional Monument Sign</span>
+      </div>
+
+      <div class="storefront-photo">
+        <img src="./assets/images/proj-01.webp"
+             alt="Netskope monument sign Los Altos — Clear Line Signs San Jose"
+             loading="lazy"/>
+        <span class="storefront-label">Netskope · Monument Sign</span>
+      </div>
+
+      <div class="storefront-photo">
+        <img src="./assets/images/proj-38.webp"
+             alt="Guggenheim Group commercial real estate available sign Silicon Valley — Clear Line Signs"
+             loading="lazy"/>
+        <span class="storefront-label">Guggenheim Group · Commercial Exterior</span>
+      </div>
+
+      <div class="storefront-photo">
+        <img src="./assets/images/proj-30.webp"
+             alt="Spring Valley Fire Department reflective double-sided post and panel sign Milpitas — Clear Line Signs"
+             loading="lazy"/>
+        <span class="storefront-label">Spring Valley Fire Dept · Reflective Post &amp; Panel</span>
+      </div>
+
+      <div class="storefront-photo">
+        <img src="./assets/images/proj-34.webp"
+             alt="Coleman Highline large format construction site billboard near SAP Center San Jose — Clear Line Signs"
+             loading="lazy"/>
+        <span class="storefront-label">Coleman Highline · Large Format Site Sign</span>
+      </div>
+
+    </div>
+  </div>
+</section>
 
 <!-- ── WHAT IT IS ── -->
 <section style="background:var(--white)">
