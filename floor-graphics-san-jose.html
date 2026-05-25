@@ -97,6 +97,21 @@
       transition: background 0.15s, border-color 0.15s;
     }
     .sign-tag:hover { background: var(--teal-100); border-color: var(--teal-200); }
+    
+    .blog-post-card {
+      display: block; background: var(--white);
+      border: 1px solid var(--gray-200); border-radius: var(--r-lg);
+      padding: 24px; text-decoration: none;
+      transition: box-shadow 0.15s, border-color 0.15s;
+    }
+    .blog-post-card:hover { box-shadow: var(--sh-md); border-color: var(--teal-200); }
+    .blog-post-card h3 {
+      font-size: 0.95rem; font-weight: 600; color: var(--gray-900);
+      line-height: 1.45; margin: 0 0 14px;
+    }
+    .read-more-link {
+      font-size: 0.82rem; font-weight: 600; color: var(--teal-600);
+    }
     @media (max-width: 900px) {
       .why-grid { grid-template-columns: 1fr; }
       .variants-grid { grid-template-columns: 1fr 1fr; }
@@ -281,6 +296,29 @@
 </section>
 
 <!-- ── QUOTE FORM ── -->
+
+<!-- ── RELATED READING ── -->
+<section style="background:var(--gray-50);border-top:1px solid var(--gray-200);border-bottom:1px solid var(--gray-200);">
+  <div class="container">
+    <span class="overline">From the Blog</span>
+    <h2 style="margin-bottom:28px;">Related Reading</h2>
+    <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:20px;">
+      <a href="https://clearlinesigns.com/blog/indoor-vs-outdoor-signage-materials/" class="blog-post-card" target="_blank" rel="noopener">
+        <h3>Indoor vs. Outdoor Signage: Choosing the Right Materials for Your Space</h3>
+        <span class="read-more-link">Read article →</span>
+      </a>
+      <a href="https://clearlinesigns.com/blog/flat-vinyl-vs-dimensional-signs/" class="blog-post-card" target="_blank" rel="noopener">
+        <h3>Flat Vinyl Signs vs. Dimensional Signs: Which Is Best for Your Business?</h3>
+        <span class="read-more-link">Read article →</span>
+      </a>
+      <a href="https://clearlinesigns.com/blog/how-long-do-commercial-signs-last/" class="blog-post-card" target="_blank" rel="noopener">
+        <h3>How Long Do Commercial Signs Last?</h3>
+        <span class="read-more-link">Read article →</span>
+      </a>
+    </div>
+  </div>
+</section>
+
 <section style="background:var(--teal-900);position:relative;overflow:hidden;" id="quote">
   <div style="position:absolute;inset:0;background:radial-gradient(ellipse 70% 60% at 15% 50%, rgba(0,163,187,0.14) 0%, transparent 55%),radial-gradient(ellipse 50% 70% at 85% 40%, rgba(0,81,95,0.2) 0%, transparent 55%);pointer-events:none;"></div>
   <div class="container" style="position:relative;z-index:1;">
