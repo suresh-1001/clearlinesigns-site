@@ -126,11 +126,44 @@
     .cta-section p { color: var(--text-light); font-size: 1.05rem; font-weight: 300; max-width: 480px; margin: 0 auto 36px; line-height: 1.8; }
     .cta-btns { display: flex; gap: 14px; justify-content: center; flex-wrap: wrap; }
 
+    /* About service area section */
+    .about-area-section {
+      padding: 72px 32px;
+      background: var(--white);
+      border-bottom: 1px solid var(--gray-200);
+    }
+    .about-area-inner {
+      max-width: 780px;
+      margin: 0 auto;
+    }
+    .about-area-inner h2 {
+      font-family: 'DM Serif Display', serif;
+      font-size: clamp(1.7rem, 3.5vw, 2.4rem);
+      font-weight: 400;
+      color: var(--gray-900);
+      line-height: 1.2;
+      margin: 10px 0 28px;
+    }
+    .about-area-body p {
+      font-size: 1rem;
+      color: var(--text-body);
+      line-height: 1.8;
+      margin-bottom: 18px;
+      font-weight: 300;
+    }
+    .about-area-chips {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-top: 32px;
+    }
+
     @media (max-width: 640px) {
       .hero-stats { flex-direction: column; gap: 20px; }
       .hero-stat { border-right: none; padding: 0; }
       .region-section { padding: 48px 20px; }
       .city-cards { grid-template-columns: 1fr; }
+      .about-area-section { padding: 48px 20px; }
     }
   </style>
 </head>
@@ -167,6 +200,33 @@
     <div class="trust-item"><div class="trust-dot"></div>Free Consultation</div>
   </div>
 </div>
+
+<!-- ABOUT SERVICE AREA -->
+<section class="about-area-section">
+  <div class="container">
+    <div class="about-area-inner">
+      <span class="overline">About Our Service Area</span>
+      <h2>Commercial Sign Company<br>Serving Silicon Valley &amp; Beyond</h2>
+      <div class="about-area-body">
+        <p>Clear Line Signs is a San Jose-based commercial sign company serving businesses from South Bay to Sacramento. We handle the full project lifecycle in-house — design, fabrication, permit submittal, and installation — with one point of contact throughout. No handoffs, no subcontracted surprises.</p>
+        <p>Our primary service area covers Silicon Valley and the South Bay, where we handle everything from storefront channel letters and lobby signs to monument signs, ADA-compliant room IDs, and vehicle graphics. We know the City of San Jose's sign code and permit process inside out, which means fewer delays and fewer back-and-forth rounds for our clients.</p>
+        <p>Beyond San Jose, we regularly install signs across the East Bay, Peninsula, Tri-Valley, and South County. For Sacramento-area clients, we fabricate locally and coordinate installation through trusted partners. If your city isn't listed below, contact us — chances are we cover your area.</p>
+      </div>
+      <div class="about-area-chips">
+        <a href="./storefront-signs-san-jose.html" class="type-chip">Storefront Signs</a>
+        <a href="./lobby-signs-san-jose.html" class="type-chip">Lobby Signs</a>
+        <a href="./channel-letter-signs-bay-area.html" class="type-chip">Channel Letters</a>
+        <a href="./monument-signs-silicon-valley.html" class="type-chip">Monument Signs</a>
+        <a href="./ada-compliant-signs-san-jose.html" class="type-chip">ADA Signs</a>
+        <a href="./office-signs-san-jose.html" class="type-chip">Office Signs</a>
+        <a href="./vehicle-graphics-san-jose.html" class="type-chip">Vehicle Graphics</a>
+        <a href="./window-graphics-san-jose.html" class="type-chip">Window Graphics</a>
+        <a href="./dimensional-letters-san-jose.html" class="type-chip">Dimensional Letters</a>
+        <a href="./wall-graphics-san-jose.html" class="type-chip">Wall Graphics</a>
+      </div>
+    </div>
+  </div>
+</section>
 
 <!-- SOUTH BAY / SILICON VALLEY -->
 <section class="region-section">
