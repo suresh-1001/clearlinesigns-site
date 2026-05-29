@@ -113,6 +113,7 @@
     .upload-divider::before,.upload-divider::after { content:''; flex:1; height:1px; background:rgba(255,255,255,0.08); }
     @media(max-width:860px) { .about-grid,.quote-grid { grid-template-columns:1fr; gap:44px; } .about-visual { min-height:280px; } }
   </style>
+  <link rel="preload" as="image" href="./assets/images/hero-bg.webp">
 </head>
 <body>
 
@@ -450,7 +451,7 @@ async function submitIndexForm() {
   document.getElementById('indexSuccessEmail').textContent  = email;
 }
 </script>
-<script src="./assets/js/shared.js"></script>
+<script src="./assets/js/shared.js" defer></script>
 <script id="wf_anal" src="https://crm.zohopublic.com/crm/WebFormAnalyticsServeServlet?rid=8a0be9f316afcd085536509180e0f7d7ceeb82fd6350af8b7999d13a5cf7ea4c69294e55598faf1924703bcde73771a7gid14205c93e8d443a72decaf3e52da266ec4b13a6874d55c8c7a241b2875ba754egid26a4ec09a75fb8a4fb289e59905dab95488e907d416bbec7ef6f6f9dcf25cde5gid2aa478f2b61b4487bf81fbc0807d4f34a8019fb671e1b1f6dbb0c21f6772a97a&tw=8b99f5e6f0a3030bbeef84fe4168931776b5961c6ba91c5484c3a45944de8beb"></script>
 </body>
 </html>
