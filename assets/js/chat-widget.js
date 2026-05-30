@@ -336,7 +336,7 @@ Rules:
       if (userMsgCount >= 2) showLeadCapture();
     } catch {
       removeTyping();
-      addMsg('ai', 'Something went wrong — visit <a href="/contact.html" style="color:#0891B2">our contact page</a> for help!');
+      addMsg('ai', 'Something went wrong — visit <a href="/contact.html" style="color:#0891B2;text-decoration:underline">our contact page</a> for help!');
     }
     goBtn.disabled = false;
     inp.focus();
