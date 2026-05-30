@@ -11,6 +11,7 @@
 @font-face {
   font-family: 'DM Sans Fallback';
   src: local('Arial');
+  font-display: swap;
   size-adjust: 105%;
   ascent-override: 94%;
   descent-override: 24%;
@@ -685,7 +686,7 @@ footer {
   .footer-top { grid-template-columns: 1fr; gap: 32px; }
   .footer-grid { grid-template-columns: 1fr; gap: 28px; }
   .form-row { grid-template-columns: 1fr; }
-  .home-hero { min-height: auto; padding: 80px 20px 70px; }
+  .home-hero { min-height: 100svh; padding: 80px 20px 70px; }
   .quote-wrap { padding: 28px 20px; }
   .tb-right { gap: 12px; }
   .nav-phone { display: none; }
