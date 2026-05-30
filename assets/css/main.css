@@ -52,7 +52,7 @@
   --text:       #1A3035;
   --text-muted: #5A7A80;
   --text-light: rgba(255,255,255,0.7);
-  --text-dim:   rgba(255,255,255,0.4);
+  --text-dim:   rgba(255,255,255,0.55);
 
   /* Radius */
   --r-sm: 6px;
@@ -95,7 +95,7 @@ body {
   display: flex; align-items: center; gap: 6px; color: var(--text-dim);
 }
 .topbar-left svg { width: 13px; height: 13px; opacity: 0.5; flex-shrink: 0; }
-.topbar a { color: var(--text-light); text-decoration: none; transition: color .2s; }
+.topbar a { color: var(--text-light); text-decoration: underline; text-underline-offset: 2px; transition: color .2s; }
 .topbar a:hover { color: var(--white); }
 .tb-left { color: var(--text-dim); }
 .tb-right { display: flex; align-items: center; gap: 20px; }
