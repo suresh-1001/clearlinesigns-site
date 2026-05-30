@@ -107,7 +107,7 @@
     .upload-divider::before,.upload-divider::after { content:''; flex:1; height:1px; background:rgba(255,255,255,0.08); }
     @media(max-width:860px) { .about-grid,.quote-grid { grid-template-columns:1fr; gap:44px; } .about-visual { min-height:280px; } }
   </style>
-  <link rel="preload" as="image" href="./assets/images/hero-bg.webp" fetchpriority="high">
+  <link rel="preload" as="image" href="./assets/images/hero-bg.webp" imagesrcset="./assets/images/hero-bg-mobile.webp 768w, ./assets/images/hero-bg.webp 1440w" imagesizes="(max-width:768px) 100vw, 1440px" fetchpriority="high">
 </head>
 <body>
 <main>
@@ -452,13 +452,27 @@ async function submitIndexForm() {
 <script src="./assets/js/shared.js" defer></script>
 <script src="./assets/js/chat-widget.js" defer></script>
 
-<!-- Google Analytics -->
-  <script async src="https://www.googletagmanager.com/gtag/js?id=G-8W1P7GCDBP"></script>
+<!-- Google Analytics — deferred until first interaction -->
   <script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
-    gtag('js', new Date());
-    gtag('config', 'G-8W1P7GCDBP');
+    (function() {
+      var loaded = false;
+      function loadGA() {
+        if (loaded) return;
+        loaded = true;
+        var s = document.createElement('script');
+        s.src = 'https://www.googletagmanager.com/gtag/js?id=G-8W1P7GCDBP';
+        s.async = true;
+        document.head.appendChild(s);
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'G-8W1P7GCDBP');
+      }
+      ['scroll','click','keydown','touchstart'].forEach(function(e) {
+        window.addEventListener(e, loadGA, {once: true, passive: true});
+      });
+      setTimeout(loadGA, 5000);
+    })();
   </script>
 
 </body>
