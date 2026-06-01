@@ -456,28 +456,14 @@ async function submitIndexForm() {
 <script src="./assets/js/shared.js" defer></script>
 <script src="./assets/js/chat-widget.js" defer></script>
 
-<!-- Google Analytics — deferred until first interaction -->
-  <script>
-    (function() {
-      var loaded = false;
-      function loadGA() {
-        if (loaded) return;
-        loaded = true;
-        var s = document.createElement('script');
-        s.src = 'https://www.googletagmanager.com/gtag/js?id=G-8W1P7GCDBP';
-        s.async = true;
-        document.head.appendChild(s);
-        window.dataLayer = window.dataLayer || [];
-        function gtag(){dataLayer.push(arguments);}
-        gtag('js', new Date());
-        gtag('config', 'G-8W1P7GCDBP');
-      }
-      ['scroll','click','keydown','touchstart'].forEach(function(e) {
-        window.addEventListener(e, loadGA, {once: true, passive: true});
-      });
-      setTimeout(loadGA, 5000);
-    })();
-  </script>
+<!-- Google Analytics (GA4) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-8W1P7GCDBP"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-8W1P7GCDBP');
+</script>
 
 </body>
 </html>
