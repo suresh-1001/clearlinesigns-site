@@ -333,6 +333,15 @@ async function submitForm() {
   document.getElementById('formBody').style.display       = 'none';
   document.getElementById('formSuccessMsg').style.display = 'block';
   document.getElementById('successEmailDisplay').textContent = email;
+
+  // Fire GA4 conversion on successful quote submission
+  if (typeof gtag === 'function') {
+    gtag('event', 'generate_lead', {
+      form_name: 'quote_request',
+      sign_type: sigText || 'Not specified',
+      city:      city || 'Not provided'
+    });
+  }
 }
 
 function toggleFaq(btn) {
