@@ -187,7 +187,7 @@
             </div>
             <div class="form-group"><label>Project Details &amp; Timeline</label><textarea name="Description" id="fDetails" placeholder="Size, quantity, location, installation needs, timeline, budget..."></textarea></div>
             <button type="button" class="submit-btn" id="submitBtn" onclick="submitForm()">Send My Quote Request &rarr;</button>
-            <p class="form-note">Leads go to Zoho CRM &middot; We respond within 1 business day &middot; No spam, ever</p>
+            <p class="form-note">We respond within 1 business day &middot; No spam, ever</p>
           </form>
         </div>
       </div>
@@ -297,21 +297,6 @@ async function submitForm() {
   var city         = document.getElementById('fCity').value.trim();
   var sigText      = sigTypeVal;
   var details      = document.getElementById('fDetails').value.trim();
-
-  var desc = [
-    sigText  ? 'Sign type: '  + sigText  : '',
-    city     ? 'City: '       + city     : '',
-    details
-  ].filter(Boolean).join('\n');
-
-  var zoho = new FormData();
-  zoho.append('xnQsjsdp','81a4ff2655d36c2d9398e158b57736ee09f39c637dae115960d482acbc1faa61');
-  zoho.append('zc_gad',''); zoho.append('xmIwtLD','339d60d32589889e7a85ec867436c0707f8e99d1a2cf4df6b776ffdbdde93e63dafdcb0ba2bfed66fe7a9863a4f72985');
-  zoho.append('actionType','TGVhZHM='); zoho.append('returnURL','null'); zoho.append('aG9uZXlwb3Q','');
-  zoho.append('First Name',firstName); zoho.append('Last Name',lastName);
-  zoho.append('Email',email); zoho.append('Phone',phone); zoho.append('Company',company);
-  zoho.append('Lead Source','Web Download'); zoho.append('Description',desc);
-  $.ajax({url:'https://crm.zoho.com/crm/WebToLeadForm',type:'POST',data:zoho,cache:false,contentType:false,processData:false,success:function(){},error:function(){}});
 
   try {
     await fetch('https://api.web3forms.com/submit', {
