@@ -4,6 +4,10 @@ on:
   push:
     branches:
       - main
+    paths:
+      - '**.html'
+      - 'cities/**.html'
+      - 'products/**.html'
   workflow_dispatch:
 
 jobs:
@@ -29,6 +33,7 @@ jobs:
           if git diff --staged --quiet; then
             echo "No changes to sitemap — skipping commit"
           else
+            git pull --rebase origin main
             git commit -m "chore: auto-update sitemap.xml [skip ci]"
             git push
           fi
