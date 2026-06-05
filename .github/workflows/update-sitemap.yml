@@ -32,8 +32,8 @@ jobs:
           if git diff --quiet sitemap.xml; then
             echo "No changes to sitemap — skipping commit"
           else
-            git pull --rebase origin main
             git add sitemap.xml
             git commit -m "chore: auto-update sitemap.xml [skip ci]"
+            git pull --rebase origin main
             git push
           fi
