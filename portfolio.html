@@ -956,6 +956,37 @@
           <div class="go-client">VTA · Milpitas BART Station</div>
         </div>
       </div>
+
+      <div class="gallery-item" onclick="openLb(81)">
+        <span class="gi-badge">Monument Sign</span>
+        <img src="./assets/images/proj-sj-christian-alliance-church-monument.webp" alt="San Jose Christian Alliance Church aluminum monument sign stainless steel letters on brick base San Jose — Clear Line Signs" loading="lazy"/>
+        <div class="gallery-overlay">
+          <div class="go-category">Monument Signs · Aluminum on Brick Base</div>
+          <div class="go-title">Aluminum Monument · Stainless Steel Letters</div>
+          <div class="go-client">SJ Christian Alliance Church · San Jose, CA</div>
+        </div>
+      </div>
+
+      <div class="gallery-item" onclick="openLb(82)">
+        <span class="gi-badge">Monument Sign</span>
+        <img src="./assets/images/proj-westhope-church-monument.webp" alt="Westhope Presbyterian Church MDO monument sign on white wood posts San Jose — Clear Line Signs" loading="lazy"/>
+        <div class="gallery-overlay">
+          <div class="go-category">Monument Signs · MDO</div>
+          <div class="go-title">MDO Monument Sign</div>
+          <div class="go-client">Westhope Presbyterian Church · San Jose, CA</div>
+        </div>
+      </div>
+
+      <div class="gallery-item" onclick="openLb(83)">
+        <span class="gi-badge">Monument Sign</span>
+        <img src="./assets/images/school/proj-appleseed-monument-sign.webp" alt="AppleSeed Montessori School lexan lightbox sign translucent print vinyl on steel posts San Jose — Clear Line Signs" loading="lazy"/>
+        <div class="gallery-overlay">
+          <div class="go-category">Monument Signs · Lexan Lightbox</div>
+          <div class="go-title">Lexan Lightbox · Translucent Print Vinyl</div>
+          <div class="go-client">AppleSeed Montessori School · San Jose, CA</div>
+        </div>
+      </div>
+
     </div>
   </div>
 </section>
@@ -1089,6 +1120,9 @@ const PROJECTS = [
   { src:'./assets/images/proj-87.webp', cat:'Exterior Signs · Dimensional Acrylic',     title:'Exterior Dimensional Sign — Brick Wall',              client:'Thrive Therapy & Social Center · San Jose, CA' },
   { src:'./assets/images/proj-88.webp', cat:'Lobby Signs · Foam Dimensional',           title:'Foam Dimensional Lobby Sign',                         client:'Vidcie · San Jose, CA' },
   { src:'./assets/images/proj-vta-milpitas-bart-logo.webp', cat:'Exterior Signs · Painted Acrylic Dimensional', title:'4″ Painted Acrylic Letters — BART Station', client:'VTA · Milpitas BART Station' },
+  { src:'./assets/images/proj-sj-christian-alliance-church-monument.webp', cat:'Monument Signs · Aluminum on Brick Base', title:'Aluminum Monument · Stainless Steel Letters', client:'SJ Christian Alliance Church · San Jose, CA' },
+  { src:'./assets/images/proj-westhope-church-monument.webp', cat:'Monument Signs · MDO', title:'MDO Monument Sign', client:'Westhope Presbyterian Church · San Jose, CA' },
+  { src:'./assets/images/school/proj-appleseed-monument-sign.webp', cat:'Monument Signs · Lexan Lightbox', title:'Lexan Lightbox · Translucent Print Vinyl', client:'AppleSeed Montessori School · San Jose, CA' },
 ];
 let cur = 0;
 function openLb(i) { cur=i; setLb(); document.getElementById('lightbox').classList.add('open'); document.body.style.overflow='hidden'; }
