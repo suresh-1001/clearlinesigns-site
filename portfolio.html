@@ -12,6 +12,7 @@
   <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@300;400;500;600;700&family=DM+Serif+Display:ital@0;1&display=swap" onload="this.onload=null;this.rel='stylesheet'">
   <noscript><link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@300;400;500;600;700&family=DM+Serif+Display:ital@0;1&display=swap" rel="stylesheet"></noscript>
   <link rel="stylesheet" href="./assets/css/main.css">
+  <link rel="preload" as="image" href="./assets/images/proj-01.webp" fetchpriority="high">
   <style>
     .gallery-grid {
       display: grid;
@@ -132,7 +133,7 @@
 
       <div class="gallery-item gi-tall" onclick="openLb(0)">
         <span class="gi-badge">Monument Sign</span>
-        <img src="./assets/images/proj-01.webp" alt="Netskope monument sign San Jose — Clear Line Signs" loading="lazy"/>
+        <img src="./assets/images/proj-01.webp" alt="Netskope monument sign San Jose — Clear Line Signs" loading="eager" fetchpriority="high"/>
         <div class="gallery-overlay">
           <div class="go-category">Outdoor · Monument Sign</div>
           <div class="go-title">Dimensional Logo Monument Sign</div>
