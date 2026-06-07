@@ -131,6 +131,10 @@
     .read-more-link {
       font-size: 0.82rem; font-weight: 600; color: var(--teal-600);
     }
+    .portfolio-item { position: relative; overflow: hidden; border-radius: var(--r-lg); aspect-ratio: 4/3; background: var(--gray-100); }
+    .portfolio-item img { width: 100%; height: 100%; object-fit: cover; display: block; transition: transform 0.4s ease; }
+    .portfolio-item:hover img { transform: scale(1.04); }
+    .portfolio-label { position: absolute; bottom: 0; left: 0; right: 0; background: linear-gradient(to top, rgba(0,10,14,0.82) 0%, transparent 100%); color: #fff; font-size: 0.75rem; font-weight: 600; letter-spacing: 0.06em; text-transform: uppercase; padding: 20px 14px 12px; }
     @media (max-width: 900px) {
       .why-grid { grid-template-columns: 1fr; }
       .variants-grid { grid-template-columns: 1fr 1fr; }
@@ -196,47 +200,47 @@
     <h2>Acrylic Sign Installations<br>Across Silicon Valley</h2>
     <p class="lead">Frosted panels, backlit displays, flat-cut acrylic letters, and ADA room signs — real projects from San Jose and the South Bay.</p>
     <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin-top:32px;">
-      <div class="lobby-photo">
+      <div class="portfolio-item">
         <img src="./assets/images/lobby/proj-grellas-shah-llp.webp"
              alt="Grellas Shah LLP frosted acrylic panel lobby sign San Jose"
              loading="eager"/>
-        <span class="lobby-photo-label">Grellas Shah LLP · Frosted Acrylic Panel</span>
+        <span class="portfolio-label">Grellas Shah LLP · Frosted Acrylic Panel</span>
       </div>
-      <div class="lobby-photo">
+      <div class="portfolio-item">
         <img src="./assets/images/lobby/proj-mirantis.webp"
              alt="Mirantis acrylic lobby sign and frosted vinyl glass San Jose"
              loading="eager"/>
-        <span class="lobby-photo-label">Mirantis · Acrylic + Frosted Glass</span>
+        <span class="portfolio-label">Mirantis · Acrylic + Frosted Glass</span>
       </div>
-      <div class="lobby-photo">
+      <div class="portfolio-item">
         <img src="./assets/images/lobby/proj-krypt.webp"
              alt="Krypt acrylic logo and dimensional letters on reception wall Silicon Valley"
              loading="lazy"/>
-        <span class="lobby-photo-label">Krypt · Acrylic Logo + Letters</span>
+        <span class="portfolio-label">Krypt · Acrylic Logo + Letters</span>
       </div>
-      <div class="lobby-photo">
+      <div class="portfolio-item">
         <img src="./assets/images/lobby/epiphany-dermatology-lobby-sign.webp"
              alt="Epiphany Dermatology frosted acrylic lobby sign San Jose medical office"
              loading="lazy"/>
-        <span class="lobby-photo-label">Epiphany Dermatology · Acrylic Panel</span>
+        <span class="portfolio-label">Epiphany Dermatology · Acrylic Panel</span>
       </div>
-      <div class="lobby-photo">
+      <div class="portfolio-item">
         <img src="./assets/images/lobby/lscpa-lobby-sign.webp"
              alt="LSCPA acrylic lobby sign dimensional letters Silicon Valley"
              loading="lazy"/>
-        <span class="lobby-photo-label">LSCPA · Flat Cut Acrylic</span>
+        <span class="portfolio-label">LSCPA · Flat Cut Acrylic</span>
       </div>
-      <div class="lobby-photo">
+      <div class="portfolio-item">
         <img src="./assets/images/lobby/proj-china-unicom-glass.webp"
              alt="China Unicom frosted vinyl city skyline on curved glass partition"
              loading="lazy"/>
-        <span class="lobby-photo-label">China Unicom · Frosted Glass Partition</span>
+        <span class="portfolio-label">China Unicom · Frosted Glass Partition</span>
       </div>
-      <div class="lobby-photo">
+      <div class="portfolio-item">
         <img src="./assets/images/proj-vta-milpitas-bart-logo.webp"
              alt="VTA Milpitas BART station 4-inch painted acrylic dimensional letters stud-mounted on concrete Silicon Valley"
              loading="lazy"/>
-        <span class="lobby-photo-label">VTA · 4″ Painted Acrylic · Milpitas BART</span>
+        <span class="portfolio-label">VTA · 4″ Painted Acrylic · Milpitas BART</span>
       </div>
     </div>
   </div>
