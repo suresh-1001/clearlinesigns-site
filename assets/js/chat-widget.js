@@ -367,4 +367,15 @@ Rules:
     if (isOpen && e.target !== btn) togglePanel();
   });
 
+  /* ── Auto-open (once per session) ── */
+  try {
+    if (!sessionStorage.getItem('cls-auto-opened')) {
+      setTimeout(function() {
+        if (!isOpen) togglePanel();
+      }, 4000);
+      sessionStorage.setItem('cls-auto-opened', '1');
+    }
+  } catch (e) {}
+
+
 })();
