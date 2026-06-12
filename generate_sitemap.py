@@ -7,7 +7,14 @@ TODAY = datetime.date.today().isoformat()
 
 EXCLUDE = {
     "thank-you.html", "404.html", "design-brief.html",
-    "sign-copy-generator.html", "pricing.html",
+    "sign-copy-generator.html",
+}
+
+# Subpaths (relative to their subdirectory) that are redirect stubs
+# or otherwise shouldn't be in the sitemap.
+SUBDIR_EXCLUDE = {
+    "cities": {"pricing.html"},
+    "products": set(),
 }
 
 def get_priority(slug):
@@ -16,6 +23,7 @@ def get_priority(slug):
     if slug in ("services.html", "portfolio.html", "cities.html"): return "0.8"
     if slug in ("contact.html",):       return "0.7"
     if slug in ("about.html",):         return "0.6"
+    if slug in ("pricing.html",):       return "0.8"
     if slug.startswith("cities/"):
         high = {"cities/san-jose.html","cities/santa-clara.html",
                 "cities/palo-alto.html","cities/oakland.html",
@@ -34,8 +42,9 @@ def collect_urls():
     for sub in ("cities", "products"):
         d = os.path.join(base, sub)
         if os.path.isdir(d):
+            excl = SUBDIR_EXCLUDE.get(sub, set())
             for fname in sorted(os.listdir(d)):
-                if fname.endswith(".html"):
+                if fname.endswith(".html") and fname not in excl:
                     path = f"{sub}/{fname}"
                     urls.append((path, get_priority(path)))
     return urls
