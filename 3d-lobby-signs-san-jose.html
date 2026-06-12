@@ -66,6 +66,46 @@
  ]
 }
 </script>
+<script type="application/ld+json">
+{
+ "@context": "https://schema.org",
+ "@type": "FAQPage",
+ "mainEntity": [
+  {
+   "@type": "Question",
+   "name": "How thick should dimensional letters be?",
+   "acceptedAnswer": {
+    "@type": "Answer",
+    "text": "Most reception signage uses ½\" to 1\" thickness for acrylic and aluminum letters — enough to read as dimensional without looking bulky. Foam letters are typically 1\" to 2\" thick since the material is lightweight relative to its size."
+   }
+  },
+  {
+   "@type": "Question",
+   "name": "Will dimensional letters damage drywall when removed?",
+   "acceptedAnswer": {
+    "@type": "Answer",
+    "text": "Standard mounting uses studs with adhesive and/or mechanical fasteners set into drywall anchors or wall studs where possible. Removal typically leaves small holes that patch easily."
+   }
+  },
+  {
+   "@type": "Question",
+   "name": "Can you match our exact brand colors?",
+   "acceptedAnswer": {
+    "@type": "Answer",
+    "text": "Yes. We work from Pantone references or brand guideline files for painted finishes, and from CMYK/RGB specs for printed acrylic panels, with a physical color sample for sign-off when accuracy is critical."
+   }
+  },
+  {
+   "@type": "Question",
+   "name": "Do halo-lit signs need an electrician?",
+   "acceptedAnswer": {
+    "@type": "Answer",
+    "text": "Halo-lit signs need a nearby power source. If power isn't already in place, we coordinate with an electrician for the run — this is the main reason halo-lit projects have a longer lead time than non-illuminated options."
+   }
+  }
+ ]
+}
+</script>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@300;400;500;600;700&family=DM+Serif+Display:ital@0;1&display=swap" onload="this.onload=null;this.rel='stylesheet'">
@@ -97,6 +137,17 @@
     .sign-tags { display:flex;flex-wrap:wrap;gap:10px;margin-top:36px; }
     .sign-tag { background:var(--teal-50);border:1px solid var(--teal-100);color:var(--teal-600);font-size:0.83rem;font-weight:500;padding:8px 16px;border-radius:100px;text-decoration:none;transition:background 0.15s,border-color 0.15s; }
     .sign-tag:hover { background:var(--teal-100);border-color:var(--teal-200); }
+    .spec-grid { display:grid;grid-template-columns:repeat(2,1fr);gap:20px;margin-top:36px; }
+    .spec-card { background:var(--white);border:1px solid var(--gray-200);border-left:4px solid var(--teal-500);border-radius:var(--r-lg);padding:22px; }
+    .spec-card h3 { font-size:0.93rem;font-weight:600;color:var(--gray-900);margin-bottom:8px; }
+    .spec-card p { font-size:0.84rem;color:var(--text-muted);line-height:1.65; }
+    .spec-meta { display:flex;gap:14px;margin-top:10px;flex-wrap:wrap; }
+    .spec-meta span { font-size:0.72rem;font-weight:600;letter-spacing:0.06em;text-transform:uppercase;color:var(--teal-600);background:var(--teal-50);border:1px solid var(--teal-100);padding:4px 10px;border-radius:100px; }
+    .faq-item { border-bottom:1px solid var(--gray-200);padding:22px 0; }
+    .faq-item:last-child { border-bottom:none; }
+    .faq-item h3 { font-size:1rem;font-weight:600;color:var(--gray-900);margin-bottom:8px; }
+    .faq-item p { font-size:0.9rem;color:var(--text-muted);line-height:1.7; }
+    @media(max-width:900px){ .spec-grid{grid-template-columns:1fr;} }
     @media(max-width:900px){ .why-grid{grid-template-columns:1fr;} .variants-grid{grid-template-columns:1fr 1fr;} .portfolio-grid{grid-template-columns:1fr 1fr;} }
     @media(max-width:580px){ .variants-grid{grid-template-columns:1fr;} .portfolio-grid{grid-template-columns:1fr;} }
   </style>
@@ -236,18 +287,69 @@
   </div>
 </section>
 
-<!-- ── INDUSTRIES ── -->
+<!-- ── MATERIAL COMPARISON ── -->
 <section style="background:var(--white)">
   <div class="container">
-    <span class="overline">Who We Serve</span>
-    <h2>3D Lobby Signs for Every<br>Industry in Silicon Valley</h2>
-    <div class="industries-grid">
-      <div class="industry-card"><h3>Technology &amp; SaaS</h3><p>From seed-stage startups fitting out their first office to established tech companies refreshing a headquarters look — halo-lit logos and brushed aluminum letters are the standard for Silicon Valley tech reception areas.</p></div>
-      <div class="industry-card"><h3>Medical &amp; Healthcare</h3><p>Practice name signs for medical offices, dental practices, and healthcare facilities — professional finish, precise color matching, and clean installation that reflects the care standard of the practice.</p></div>
-      <div class="industry-card"><h3>Law &amp; Professional Services</h3><p>Dimensional letter signs for law firms, accounting practices, financial advisors, and consulting firms — the lobby sign is often the first and strongest signal of credibility to a prospective client.</p></div>
-      <div class="industry-card"><h3>Corporate &amp; Enterprise</h3><p>Branded reception walls, executive floor lobby signs, and multi-location corporate sign programs for large companies with Bay Area offices — consistent across locations, matched to HQ brand standards.</p></div>
-      <div class="industry-card"><h3>Biotech &amp; Life Sciences</h3><p>3D lobby signs for biotech companies, pharmaceutical offices, and research institutions in the South Bay — precise, compliant, and designed to match the professional standards of regulated industries.</p></div>
-      <div class="industry-card"><h3>Real Estate &amp; Property</h3><p>Building lobby signs, tenant directory signs, and property name installations for commercial real estate — permanent dimensional signage that adds to the perceived value of the property.</p></div>
+    <span class="overline">Cost &amp; Lead Time</span>
+    <h2>Which 3D Letter Material<br>Fits Your Budget?</h2>
+    <p class="lead">Rough cost tiers and lead times for a typical reception wall logo (per linear foot of lettering, fabrication only — final quotes depend on size, finish, and mounting).</p>
+    <div class="spec-grid">
+      <div class="spec-card">
+        <h3>Painted Foam (HDU)</h3>
+        <p>The lowest-cost option for large-format letters. CNC-cut and hand-finished, paintable to any color or faux-metal finish. Best when letters are 18"+ and weight or budget rules out metal.</p>
+        <div class="spec-meta"><span>$ Lowest Cost</span><span>5–7 Day Lead Time</span><span>Indoor Only</span></div>
+      </div>
+      <div class="spec-card">
+        <h3>Layered Acrylic</h3>
+        <p>Mid-range cost with strong color accuracy and dimensional presence. Good middle ground when full metal fabrication isn't in the budget but flat-cut acrylic feels too plain.</p>
+        <div class="spec-meta"><span>$$ Mid Cost</span><span>7–10 Day Lead Time</span><span>Indoor/Outdoor</span></div>
+      </div>
+      <div class="spec-card">
+        <h3>Acrylic Standoff</h3>
+        <p>Mid-range cost, fast turnaround since the panel is typically printed rather than fabricated piece-by-piece. Best for logos with gradients, photography, or complex color that's hard to reproduce in cut metal.</p>
+        <div class="spec-meta"><span>$$ Mid Cost</span><span>5–8 Day Lead Time</span><span>Indoor/Outdoor</span></div>
+      </div>
+      <div class="spec-card">
+        <h3>Brushed Aluminum</h3>
+        <p>Higher cost due to metal fabrication and finishing time, but the most durable and premium-reading option. The standard choice for tech, legal, and financial reception areas.</p>
+        <div class="spec-meta"><span>$$$ Higher Cost</span><span>10–14 Day Lead Time</span><span>Indoor/Outdoor</span></div>
+      </div>
+      <div class="spec-card">
+        <h3>Halo-Lit (Reverse-Lit)</h3>
+        <p>Highest cost — metal fabrication plus LED wiring, power supply, and standoff mounting. Adds significant visual impact, especially in lower-light reception areas.</p>
+        <div class="spec-meta"><span>$$$$ Highest Cost</span><span>12–16 Day Lead Time</span><span>Power Access Needed</span></div>
+      </div>
+      <div class="spec-card">
+        <h3>Mixed-Material</h3>
+        <p>Cost varies based on the combination — typically priced as a sum of its components. Common for logos with both text (metal or acrylic) and a graphic mark (printed panel or separate fabricated piece).</p>
+        <div class="spec-meta"><span>$$–$$$$ Varies</span><span>10–14 Day Lead Time</span><span>Custom Quote</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── FAQ ── -->
+<section class="section-muted">
+  <div class="container">
+    <span class="overline">Common Questions</span>
+    <h2>3D Lobby Sign Questions,<br>Answered</h2>
+    <div style="max-width:760px;">
+      <div class="faq-item">
+        <h3>How thick should dimensional letters be?</h3>
+        <p>Most reception signage uses ½" to 1" thickness for acrylic and aluminum letters — enough to read as dimensional without looking bulky. Foam letters are typically 1" to 2" thick since the material is lightweight relative to its size. We'll recommend a depth based on your letter height and viewing distance.</p>
+      </div>
+      <div class="faq-item">
+        <h3>Will dimensional letters damage drywall when removed?</h3>
+        <p>Standard mounting uses studs with adhesive and/or mechanical fasteners set into drywall anchors or wall studs where possible. Removal typically leaves small holes that patch easily — we can advise on a low-impact mounting method if you're in a leased space and need to restore the wall at lease-end.</p>
+      </div>
+      <div class="faq-item">
+        <h3>Can you match our exact brand colors?</h3>
+        <p>Yes. We work from Pantone references or brand guideline files for painted finishes, and from CMYK/RGB specs for printed acrylic panels. We produce a physical color sample for sign-off before fabricating the full piece when color accuracy is critical.</p>
+      </div>
+      <div class="faq-item">
+        <h3>Do halo-lit signs need an electrician?</h3>
+        <p>Halo-lit signs need a nearby power source — typically a standard outlet behind the wall or above the ceiling. If power isn't already in place, we coordinate with an electrician for the run. This is the main reason halo-lit projects have a longer lead time than non-illuminated options.</p>
+      </div>
     </div>
   </div>
 </section>
